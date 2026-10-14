@@ -1,4 +1,7 @@
-# «Носи носки» — мини-магазин носков и белья
+# «Носи носки» — мини-магазин носков
+
+**Демо:** https://planetasofa2012-code.github.io/nosi-noski/ · **Демо студии:** https://planetasofa2012-code.github.io/nosi-noski/studio/
+Обновить демо: `bash deploy/publish-demo.sh`
 
 Две части:
 - **`shop/`** — сайт-магазин (каталог, карточки, корзина, заказ в Telegram, остатки, фид для Авито).

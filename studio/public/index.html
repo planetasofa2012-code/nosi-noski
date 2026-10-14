@@ -7,15 +7,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@600&display=swap" rel="stylesheet" />
 <style>
-  :root { --bg:#fbf7f2; --surface:#fff; --surface-2:#f3e9de; --ink:#2b2622; --muted:#7a6f66; --accent:#c95a3c; --accent-ink:#fff; --ok:#6f8b6a; --line:#ece3d9; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#1a1714; --surface:#24201c; --surface-2:#2e2924; --ink:#f3ede6; --muted:#a89c91; --accent:#e88466; --accent-ink:#1a1714; --ok:#9fb99a; --line:#3a332d; } }
+  :root { --bg:#f4f1ea; --surface:#fff; --surface-2:#ebe6da; --ink:#111; --muted:#625d55; --accent:#ff3d8b; --accent-ink:#111; --ok:#3d7a2a; --line:#e2dccf; --lime:#dcff3a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111; --surface:#1b1b1b; --surface-2:#262626; --ink:#f4f1ea; --muted:#a39d93; --accent:#ff4fa3; --accent-ink:#111; --ok:#b6e05a; --line:#333; --lime:#dcff3a; } }
   * { box-sizing: border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 Manrope, system-ui, sans-serif; }
   header { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
   .wrap { max-width:1200px; margin:0 auto; padding:0 16px; }
   .bar { display:flex; align-items:center; gap:16px; height:60px; flex-wrap:wrap; }
   h1 { font:600 18px Unbounded, sans-serif; margin:0; }
-  h1 b { color:var(--accent); }
+  h1 b { background:var(--lime); color:#111; padding:2px 8px; border:2px solid #111; border-radius:6px; display:inline-block; transform:rotate(-2deg); }
+  .btn { border:2px solid #111 !important; box-shadow:3px 3px 0 #111; }
+  .demo { background:var(--lime); color:#111; border-bottom:2px solid #111; padding:8px 16px; font-weight:700; text-align:center; font-size:14px; }
   nav { display:flex; gap:6px; }
   nav button, .pill { border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:8px 16px; font:inherit; cursor:pointer; }
   nav button[aria-selected=true] { background:var(--ink); color:var(--bg); border-color:var(--ink); }
@@ -79,7 +81,7 @@
 <body>
 <header>
   <div class="wrap bar">
-    <h1>Фотостудия <b>«Носи носки»</b></h1>
+    <h1>Фотостудия <b>НОСИ НОСКИ!</b></h1>
     <nav role="tablist">
       <button role="tab" data-tab="photo" aria-selected="true">📸 Фото</button>
       <button role="tab" data-tab="avito" aria-selected="false">🟢 Авито</button>
@@ -167,7 +169,36 @@
 
 <script>
 const $ = (s) => document.querySelector(s);
+// Демо: студия открыта не на компьютере (например, на GitHub Pages) — показываем готовые примеры
+const DEMO = !['127.0.0.1', 'localhost'].includes(location.hostname);
+// Пути к фото товаров: в демо магазин лежит на уровень выше
+const P = (src) => (DEMO && src.startsWith('/') ? '..' + src : src);
+const demoApi = async (url, body) => {
+  if (url === '/api/config') {
+    const m = await import('./scenes.mjs');
+    return { scenes: Object.entries(m.SCENES).map(([id, sc]) => ({ id, title: sc.title, icon: sc.icon })), models: m.MODELS, aspects: m.ASPECTS, provider: 'демо' };
+  }
+  if (url === '/api/products') {
+    const list = (await (await fetch('./products.json')).json()).filter((p) => p.images.some((i) => !i.endsWith('.svg')));
+    const stock = {}; for (const p of list) for (const v of p.variants) stock[v.sku] = v.stock;
+    return { products: list, stock, source: 'products.json (демо)' };
+  }
+  if (url === '/api/generate') {
+    await new Promise((r) => setTimeout(r, 2200));
+    const p = state.products.find((x) => x.slug === $('#target').value);
+    const ai = (p?.images ?? []).filter((i) => i.endsWith('.png'));
+    if (!ai.length) throw new Error('Для этого товара в демо нет примеров');
+    return { images: ai.slice(0, body.count).map((i) => ({ url: P(i) })), errors: [], cost: 0.068 * Math.min(body.count, ai.length) };
+  }
+  if (url.startsWith('/api/avito')) {
+    const { avitoAd } = await import('./avito-text.mjs');
+    const p = state.products.find((x) => x.slug === new URL(url, location.href).searchParams.get('slug'));
+    return { ...avitoAd(p, state.stock, { shopName: 'Носи носки' }), images: p.images };
+  }
+  throw new Error('В демо-версии сохранение отключено — настоящая студия работает на компьютере Иры');
+};
 const api = async (url, body) => {
+  if (DEMO) return demoApi(url, body);
   const r = await fetch(url, body ? { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) } : undefined);
   const j = await r.json();
   if (!r.ok || j.error) throw new Error(j.error || 'Ошибка');
@@ -254,7 +285,7 @@ function renderResults(items, prepend) {
       <div class="act">
         <button class="btn ghost" data-save="${i}">＋ В товар</button>
         <button class="btn ghost" data-cover="${i}">★ Главным</button>
-        <a class="btn ghost" href="/output/${encodeURIComponent(r.file)}" download="${esc(r.file)}">⬇</a>
+        <a class="btn ghost" href="${r.file ? '/output/' + encodeURIComponent(r.file) : r.url}" download="${esc(r.file ?? 'foto.png')}">⬇</a>
       </div>
     </div>`).join('') + '</div>';
   $('#results').querySelectorAll('[data-zoom]').forEach((el) => el.onclick = () => zoom(results[+el.dataset.zoom].url));
@@ -278,7 +309,7 @@ function renderGallery() {
   const p = state.products.find((x) => x.slug === $('#target').value);
   if (!p) return;
   $('#gallery').innerHTML = p.images.map((src, i) => `
-    <figure><img src="${src}" alt="" data-z="${esc(src)}">
+    <figure><img src="${P(src)}" alt="" data-z="${esc(P(src))}">
       <div class="ctl">
         <button data-l="${i}" title="Левее">←</button><button data-d="${i}" title="Убрать из галереи">✕</button><button data-r="${i}" title="Правее">→</button>
       </div></figure>`).join('');
@@ -298,7 +329,14 @@ function renderGallery() {
   });
   $('#gallery').querySelectorAll('[data-z]').forEach((im) => im.onclick = () => zoom(im.dataset.z));
 }
-$('#target').onchange = renderGallery;
+async function demoRefs() {
+  if (!DEMO) return;
+  const p = state.products.find((x) => x.slug === $('#target').value);
+  const orig = p?.images.find((i) => /\.jpe?g$/.test(i));
+  state.refs = orig ? [P(orig)] : [];
+  renderThumbs();
+}
+$('#target').onchange = () => { renderGallery(); demoRefs(); };
 
 // ---------- Авито ----------
 $('#avitoProduct').onchange = async () => {
@@ -312,7 +350,7 @@ $('#avitoProduct').onchange = async () => {
       ${field('Цена, ₽', String(a.price))}
       ${field('Описание', a.description)}
       <div style="margin-top:14px"><b>Фото</b> <span class="hint">— скачайте и загрузите в объявление (первое — обложка)</span>
-      <div class="gallery" style="margin-top:6px">${a.images.map((s, i) => `<a href="${s}" download><img src="${s}" alt="фото ${i + 1}"></a>`).join('')}</div></div>`;
+      <div class="gallery" style="margin-top:6px">${a.images.map((s, i) => `<a href="${P(s)}" download><img src="${P(s)}" alt="фото ${i + 1}"></a>`).join('')}</div></div>`;
     out.querySelectorAll('[data-copy]').forEach((b) => b.onclick = async () => { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = '✓ Скопировано'; setTimeout(() => b.textContent = 'Скопировать', 1500); });
   } catch (e) { out.innerHTML = `<div class="msg err">${esc(e.message)}</div>`; }
 };
@@ -353,6 +391,8 @@ $('#stockReload').onclick = renderStock;
   const opts = state.products.map((p) => `<option value="${p.slug}">${esc(p.title)}</option>`).join('');
   $('#target').innerHTML = opts; $('#avitoProduct').innerHTML = opts;
   renderGallery();
+  demoRefs();
+  if (DEMO) document.body.insertAdjacentHTML('afterbegin', '<div class="demo">ДЕМО: генерация показывает готовые примеры на фото Иры. Настоящая студия с Nano Banana работает на компьютере.</div>');
   $('#avitoProduct').onchange();
 })().catch((e) => { $('#status').textContent = 'Ошибка: ' + e.message; });
 </script>
