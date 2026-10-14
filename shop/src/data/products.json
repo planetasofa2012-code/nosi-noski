@@ -1,0 +1,881 @@
+[
+  {
+    "slug": "socks-teddy-1986",
+    "title": "Носки «Мишка Teddy 1986»",
+    "category": "socks",
+    "price": 350,
+    "colors": [
+      {
+        "id": "white",
+        "name": "Белый",
+        "hex": "#F4F1EA"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#1F1D1C"
+      },
+      {
+        "id": "navy",
+        "name": "Тёмно-синий",
+        "hex": "#1E2A4A"
+      }
+    ],
+    "images": [
+      "/products/socks-teddy-1986/1791995509438.png",
+      "/products/socks-teddy-1986/1791995509457.png",
+      "/products/socks-teddy-1986/1791995509465.jpg"
+    ],
+    "description": "Высокие носки с мягким плюшевым мишкой на голени и вязаной надписью «Teddy Bear 1986» на стопе. Резинка в рубчик держит и не давит. Бренд Cozy Socks.",
+    "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи",
+    "badges": [
+      "new",
+      "hit"
+    ],
+    "popularity": 100,
+    "variants": [
+      {
+        "sku": "socks-teddy-1986-35-40-white",
+        "size": "35-40",
+        "color": "white",
+        "stock": 5
+      },
+      {
+        "sku": "socks-teddy-1986-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "socks-teddy-1986-35-40-navy",
+        "size": "35-40",
+        "color": "navy",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "slug": "socks-leopard-letter",
+    "title": "Носки «Леопардовая буква»",
+    "category": "socks",
+    "price": 350,
+    "colors": [
+      {
+        "id": "ivory",
+        "name": "Молочный (буква C)",
+        "hex": "#F3EEE3"
+      },
+      {
+        "id": "gray",
+        "name": "Серый меланж (буква P)",
+        "hex": "#8A8A8A"
+      }
+    ],
+    "images": [
+      "/products/socks-leopard-letter/1791995509482.png",
+      "/products/socks-leopard-letter/1791995509498.png",
+      "/products/socks-leopard-letter/1791995509503.jpg"
+    ],
+    "description": "Носки с пушистой буквой в леопардовый принт — стильно с кедами и как маленький подарок с инициалом. Рубчик на резинке. Бренд Cozy Socks.",
+    "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи",
+    "badges": [
+      "new"
+    ],
+    "popularity": 98,
+    "variants": [
+      {
+        "sku": "socks-leopard-letter-35-40-ivory",
+        "size": "35-40",
+        "color": "ivory",
+        "stock": 5
+      },
+      {
+        "sku": "socks-leopard-letter-35-40-gray",
+        "size": "35-40",
+        "color": "gray",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "slug": "men-socks-argyle",
+    "title": "Мужские носки «Ромб», Корея",
+    "category": "socks",
+    "price": 300,
+    "colors": [
+      {
+        "id": "blue",
+        "name": "Серый с синим ромбом",
+        "hex": "#2F6FD1"
+      },
+      {
+        "id": "beige",
+        "name": "Серый с бежевым ромбом",
+        "hex": "#C9B39A"
+      }
+    ],
+    "images": [
+      "/products/men-socks-argyle/1791995509517.png",
+      "/products/men-socks-argyle/1791995509532.png",
+      "/products/men-socks-argyle/1791995509537.jpg"
+    ],
+    "description": "Классические мужские носки с узором «аргайл» — под брюки и на каждый день. Мягкая резинка без сдавливания (без давления на щиколотку). Сделано в Корее.",
+    "composition": "Хлопок с добавлением полиэстера и спандекса (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "badges": [
+      "hit"
+    ],
+    "popularity": 97,
+    "variants": [
+      {
+        "sku": "men-socks-argyle-40-45-blue",
+        "size": "40-45",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-argyle-40-45-beige",
+        "size": "40-45",
+        "color": "beige",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "slug": "socks-avocado",
+    "title": "Носки «Авокадо»",
+    "category": "socks",
+    "price": 390,
+    "oldPrice": 450,
+    "colors": [
+      {
+        "id": "green",
+        "name": "Зелёный",
+        "hex": "#7BA05B"
+      },
+      {
+        "id": "mustard",
+        "name": "Горчичный",
+        "hex": "#D9A441"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "socks-avocado-36-39-green",
+        "size": "36-39",
+        "color": "green",
+        "stock": 3
+      },
+      {
+        "sku": "socks-avocado-36-39-mustard",
+        "size": "36-39",
+        "color": "mustard",
+        "stock": 2
+      },
+      {
+        "sku": "socks-avocado-40-43-green",
+        "size": "40-43",
+        "color": "green",
+        "stock": 6
+      },
+      {
+        "sku": "socks-avocado-40-43-mustard",
+        "size": "40-43",
+        "color": "mustard",
+        "stock": 1
+      }
+    ],
+    "images": [
+      "/products/socks-avocado/1791994496310.png",
+      "/products/socks-avocado/1791994496329.png"
+    ],
+    "description": "Яркие хлопковые носки с принтом авокадо. Мягкая резинка не давит, усиленные пятка и мысок.",
+    "composition": "80% хлопок, 17% полиамид, 3% эластан",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [
+      "hit"
+    ],
+    "popularity": 95
+  },
+  {
+    "slug": "socks-wool-cozy",
+    "title": "Шерстяные носки «Уют»",
+    "category": "socks",
+    "price": 590,
+    "colors": [
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      },
+      {
+        "id": "grey",
+        "name": "Серый меланж",
+        "hex": "#A8A29C"
+      },
+      {
+        "id": "terracotta",
+        "name": "Терракота",
+        "hex": "#C8664A"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "socks-wool-cozy-36-39-milk",
+        "size": "36-39",
+        "color": "milk",
+        "stock": 0
+      },
+      {
+        "sku": "socks-wool-cozy-36-39-grey",
+        "size": "36-39",
+        "color": "grey",
+        "stock": 1
+      },
+      {
+        "sku": "socks-wool-cozy-36-39-terracotta",
+        "size": "36-39",
+        "color": "terracotta",
+        "stock": 1
+      },
+      {
+        "sku": "socks-wool-cozy-40-43-milk",
+        "size": "40-43",
+        "color": "milk",
+        "stock": 4
+      },
+      {
+        "sku": "socks-wool-cozy-40-43-grey",
+        "size": "40-43",
+        "color": "grey",
+        "stock": 0
+      },
+      {
+        "sku": "socks-wool-cozy-40-43-terracotta",
+        "size": "40-43",
+        "color": "terracotta",
+        "stock": 0
+      }
+    ],
+    "images": [
+      "/products/socks-wool-cozy/1.svg",
+      "/products/socks-wool-cozy/2.svg"
+    ],
+    "description": "Тёплые носки с шерстью мериноса для дома и прогулок. Не колются, держат тепло.",
+    "composition": "50% шерсть мериноса, 40% хлопок, 10% полиамид",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [
+      "new"
+    ],
+    "popularity": 88
+  },
+  {
+    "slug": "socks-basic-black",
+    "title": "Базовые носки «Каждый день»",
+    "category": "socks",
+    "price": 250,
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#2B2622"
+      },
+      {
+        "id": "grey",
+        "name": "Серый меланж",
+        "hex": "#A8A29C"
+      },
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "socks-basic-black-36-39-black",
+        "size": "36-39",
+        "color": "black",
+        "stock": 6
+      },
+      {
+        "sku": "socks-basic-black-36-39-grey",
+        "size": "36-39",
+        "color": "grey",
+        "stock": 1
+      },
+      {
+        "sku": "socks-basic-black-36-39-milk",
+        "size": "36-39",
+        "color": "milk",
+        "stock": 0
+      },
+      {
+        "sku": "socks-basic-black-40-43-black",
+        "size": "40-43",
+        "color": "black",
+        "stock": 1
+      },
+      {
+        "sku": "socks-basic-black-40-43-grey",
+        "size": "40-43",
+        "color": "grey",
+        "stock": 1
+      },
+      {
+        "sku": "socks-basic-black-40-43-milk",
+        "size": "40-43",
+        "color": "milk",
+        "stock": 4
+      }
+    ],
+    "images": [
+      "/products/socks-basic-black/1.svg",
+      "/products/socks-basic-black/2.svg"
+    ],
+    "description": "Классические носки средней длины на каждый день. Плотный хлопок, плоский шов.",
+    "composition": "85% хлопок, 12% полиамид, 3% эластан",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [],
+    "popularity": 80
+  },
+  {
+    "slug": "socks-short-sport",
+    "title": "Короткие носки «Спорт»",
+    "category": "socks",
+    "price": 290,
+    "colors": [
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#2B2622"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "socks-short-sport-36-39-milk",
+        "size": "36-39",
+        "color": "milk",
+        "stock": 2
+      },
+      {
+        "sku": "socks-short-sport-36-39-black",
+        "size": "36-39",
+        "color": "black",
+        "stock": 6
+      },
+      {
+        "sku": "socks-short-sport-40-43-milk",
+        "size": "40-43",
+        "color": "milk",
+        "stock": 1
+      },
+      {
+        "sku": "socks-short-sport-40-43-black",
+        "size": "40-43",
+        "color": "black",
+        "stock": 0
+      }
+    ],
+    "images": [
+      "/products/socks-short-sport/1.svg",
+      "/products/socks-short-sport/2.svg"
+    ],
+    "description": "Укороченные носки с махровой стопой — для кроссовок и тренировок.",
+    "composition": "75% хлопок, 22% полиамид, 3% эластан",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [],
+    "popularity": 70
+  },
+  {
+    "slug": "socks-stars",
+    "title": "Носки «Звёзды»",
+    "category": "socks",
+    "price": 390,
+    "colors": [
+      {
+        "id": "navy",
+        "name": "Тёмно-синий",
+        "hex": "#2E3F5C"
+      },
+      {
+        "id": "pink",
+        "name": "Пудровый",
+        "hex": "#E6B8B0"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "socks-stars-36-39-navy",
+        "size": "36-39",
+        "color": "navy",
+        "stock": 0
+      },
+      {
+        "sku": "socks-stars-36-39-pink",
+        "size": "36-39",
+        "color": "pink",
+        "stock": 0
+      },
+      {
+        "sku": "socks-stars-40-43-navy",
+        "size": "40-43",
+        "color": "navy",
+        "stock": 3
+      },
+      {
+        "sku": "socks-stars-40-43-pink",
+        "size": "40-43",
+        "color": "pink",
+        "stock": 2
+      }
+    ],
+    "images": [
+      "/products/socks-stars/1.svg",
+      "/products/socks-stars/2.svg"
+    ],
+    "description": "Носки с россыпью звёзд — отличный маленький подарок.",
+    "composition": "80% хлопок, 17% полиамид, 3% эластан",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [
+      "new"
+    ],
+    "popularity": 76
+  },
+  {
+    "slug": "women-briefs-cotton",
+    "title": "Трусики-слипы хлопковые",
+    "category": "women",
+    "price": 490,
+    "oldPrice": 590,
+    "colors": [
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      },
+      {
+        "id": "pink",
+        "name": "Пудровый",
+        "hex": "#E6B8B0"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#2B2622"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "women-briefs-cotton-xs-milk",
+        "size": "XS",
+        "color": "milk",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-xs-pink",
+        "size": "XS",
+        "color": "pink",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-xs-black",
+        "size": "XS",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-s-milk",
+        "size": "S",
+        "color": "milk",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-s-pink",
+        "size": "S",
+        "color": "pink",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-s-black",
+        "size": "S",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-m-milk",
+        "size": "M",
+        "color": "milk",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-m-pink",
+        "size": "M",
+        "color": "pink",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-m-black",
+        "size": "M",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-l-milk",
+        "size": "L",
+        "color": "milk",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-l-pink",
+        "size": "L",
+        "color": "pink",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-l-black",
+        "size": "L",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-xl-milk",
+        "size": "XL",
+        "color": "milk",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-xl-pink",
+        "size": "XL",
+        "color": "pink",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-cotton-xl-black",
+        "size": "XL",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-briefs-cotton/1.svg",
+      "/products/women-briefs-cotton/2.svg"
+    ],
+    "description": "Мягкие трусики из органического хлопка, без жёстких швов. Широкая эластичная резинка.",
+    "composition": "95% хлопок, 5% эластан",
+    "care": "Деликатная стирка при 30°, в мешке для белья, не отжимать сильно",
+    "badges": [
+      "hit"
+    ],
+    "popularity": 90
+  },
+  {
+    "slug": "women-bra-soft",
+    "title": "Бра без косточек «Лёгкость»",
+    "category": "women",
+    "price": 1290,
+    "colors": [
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      },
+      {
+        "id": "sage",
+        "name": "Шалфей",
+        "hex": "#8FA98A"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#2B2622"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "women-bra-soft-s-milk",
+        "size": "S",
+        "color": "milk",
+        "stock": 1
+      },
+      {
+        "sku": "women-bra-soft-s-sage",
+        "size": "S",
+        "color": "sage",
+        "stock": 0
+      },
+      {
+        "sku": "women-bra-soft-s-black",
+        "size": "S",
+        "color": "black",
+        "stock": 1
+      },
+      {
+        "sku": "women-bra-soft-m-milk",
+        "size": "M",
+        "color": "milk",
+        "stock": 1
+      },
+      {
+        "sku": "women-bra-soft-m-sage",
+        "size": "M",
+        "color": "sage",
+        "stock": 4
+      },
+      {
+        "sku": "women-bra-soft-m-black",
+        "size": "M",
+        "color": "black",
+        "stock": 0
+      },
+      {
+        "sku": "women-bra-soft-l-milk",
+        "size": "L",
+        "color": "milk",
+        "stock": 0
+      },
+      {
+        "sku": "women-bra-soft-l-sage",
+        "size": "L",
+        "color": "sage",
+        "stock": 3
+      },
+      {
+        "sku": "women-bra-soft-l-black",
+        "size": "L",
+        "color": "black",
+        "stock": 2
+      }
+    ],
+    "images": [
+      "/products/women-bra-soft/1.svg",
+      "/products/women-bra-soft/2.svg"
+    ],
+    "description": "Удобный бралетт без косточек из мягкого трикотажа. Съёмные чашечки.",
+    "composition": "92% модал, 8% эластан",
+    "care": "Деликатная стирка при 30°, в мешке для белья, не отжимать сильно",
+    "badges": [
+      "new"
+    ],
+    "popularity": 82
+  },
+  {
+    "slug": "men-boxers-classic",
+    "title": "Боксеры мужские «Классика»",
+    "category": "men",
+    "price": 690,
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#2B2622"
+      },
+      {
+        "id": "navy",
+        "name": "Тёмно-синий",
+        "hex": "#2E3F5C"
+      },
+      {
+        "id": "grey",
+        "name": "Серый меланж",
+        "hex": "#A8A29C"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "men-boxers-classic-m-black",
+        "size": "M",
+        "color": "black",
+        "stock": 1
+      },
+      {
+        "sku": "men-boxers-classic-m-navy",
+        "size": "M",
+        "color": "navy",
+        "stock": 4
+      },
+      {
+        "sku": "men-boxers-classic-m-grey",
+        "size": "M",
+        "color": "grey",
+        "stock": 0
+      },
+      {
+        "sku": "men-boxers-classic-l-black",
+        "size": "L",
+        "color": "black",
+        "stock": 0
+      },
+      {
+        "sku": "men-boxers-classic-l-navy",
+        "size": "L",
+        "color": "navy",
+        "stock": 3
+      },
+      {
+        "sku": "men-boxers-classic-l-grey",
+        "size": "L",
+        "color": "grey",
+        "stock": 2
+      },
+      {
+        "sku": "men-boxers-classic-xl-black",
+        "size": "XL",
+        "color": "black",
+        "stock": 6
+      },
+      {
+        "sku": "men-boxers-classic-xl-navy",
+        "size": "XL",
+        "color": "navy",
+        "stock": 1
+      },
+      {
+        "sku": "men-boxers-classic-xl-grey",
+        "size": "XL",
+        "color": "grey",
+        "stock": 0
+      },
+      {
+        "sku": "men-boxers-classic-xxl-black",
+        "size": "XXL",
+        "color": "black",
+        "stock": 1
+      },
+      {
+        "sku": "men-boxers-classic-xxl-navy",
+        "size": "XXL",
+        "color": "navy",
+        "stock": 1
+      },
+      {
+        "sku": "men-boxers-classic-xxl-grey",
+        "size": "XXL",
+        "color": "grey",
+        "stock": 4
+      }
+    ],
+    "images": [
+      "/products/men-boxers-classic/1.svg",
+      "/products/men-boxers-classic/2.svg"
+    ],
+    "description": "Боксеры из хлопка-стрейч. Мягкая резинка, анатомический крой, не перекручиваются.",
+    "composition": "95% хлопок, 5% эластан",
+    "care": "Деликатная стирка при 30°, в мешке для белья, не отжимать сильно",
+    "badges": [
+      "hit"
+    ],
+    "popularity": 85
+  },
+  {
+    "slug": "men-boxers-print",
+    "title": "Боксеры мужские «Узор»",
+    "category": "men",
+    "price": 790,
+    "colors": [
+      {
+        "id": "terracotta",
+        "name": "Терракота",
+        "hex": "#C8664A"
+      },
+      {
+        "id": "sage",
+        "name": "Шалфей",
+        "hex": "#8FA98A"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "men-boxers-print-m-terracotta",
+        "size": "M",
+        "color": "terracotta",
+        "stock": 4
+      },
+      {
+        "sku": "men-boxers-print-m-sage",
+        "size": "M",
+        "color": "sage",
+        "stock": 0
+      },
+      {
+        "sku": "men-boxers-print-l-terracotta",
+        "size": "L",
+        "color": "terracotta",
+        "stock": 0
+      },
+      {
+        "sku": "men-boxers-print-l-sage",
+        "size": "L",
+        "color": "sage",
+        "stock": 3
+      },
+      {
+        "sku": "men-boxers-print-xl-terracotta",
+        "size": "XL",
+        "color": "terracotta",
+        "stock": 2
+      },
+      {
+        "sku": "men-boxers-print-xl-sage",
+        "size": "XL",
+        "color": "sage",
+        "stock": 6
+      }
+    ],
+    "images": [
+      "/products/men-boxers-print/1.svg",
+      "/products/men-boxers-print/2.svg"
+    ],
+    "description": "Боксеры с геометрическим принтом — для тех, кто любит поярче.",
+    "composition": "95% хлопок, 5% эластан",
+    "care": "Деликатная стирка при 30°, в мешке для белья, не отжимать сильно",
+    "badges": [],
+    "popularity": 60
+  },
+  {
+    "slug": "set-week",
+    "title": "Набор носков «Неделя» (7 пар)",
+    "category": "sets",
+    "price": 1990,
+    "oldPrice": 2450,
+    "colors": [
+      {
+        "id": "milk",
+        "name": "Молочный",
+        "hex": "#EFE6DA"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "set-week-36-39-milk",
+        "size": "36-39",
+        "color": "milk",
+        "stock": 0
+      },
+      {
+        "sku": "set-week-40-43-milk",
+        "size": "40-43",
+        "color": "milk",
+        "stock": 3
+      }
+    ],
+    "images": [
+      "/products/set-week/1.svg",
+      "/products/set-week/2.svg"
+    ],
+    "description": "Семь пар разных расцветок в подарочной коробке — на каждый день недели. Экономия 460 ₽.",
+    "composition": "80% хлопок, 17% полиамид, 3% эластан",
+    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "badges": [
+      "hit"
+    ],
+    "popularity": 92
+  }
+]

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Логотип «Носи носки» — 5 концептов</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root { --bg:#fbf7f2; --ink:#2b2622; --muted:#7a6f66; --accent:#c95a3c; --sage:#8fa98a; --line:#ece3d9; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.5 Manrope, sans-serif; padding:32px 16px 60px; }
+  .wrap { max-width:1180px; margin:0 auto; }
+  h1 { font:800 30px Unbounded, sans-serif; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 28px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:20px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:24px; overflow:hidden; display:flex; flex-direction:column; }
+  .hero { height:240px; display:flex; align-items:center; justify-content:center; padding:20px; }
+  .row { display:grid; grid-template-columns:1.4fr 1fr; border-top:1px solid var(--line); }
+  .row > div { height:110px; display:flex; align-items:center; justify-content:center; gap:12px; }
+  .dark { background:#2b2622; }
+  .info { padding:16px 18px 20px; border-top:1px solid var(--line); flex:1; }
+  .info b { font:600 18px Unbounded, sans-serif; }
+  .info p { margin:6px 0 0; color:var(--muted); font-size:14px; }
+  .info .use { margin-top:8px; font-size:13px; color:var(--ink); }
+  svg text { font-family: Unbounded, sans-serif; }
+  .fav { width:32px; height:32px; } .app { width:64px; height:64px; }
+</style>
+</head>
+<body>
+<!-- Общий силуэт носка: голень, пятка, мысок (viewBox 0 0 100 100). Цвета через CSS-переменные -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="sock" viewBox="0 0 100 100">
+      <path d="M30 8q0-4 4-4h22q4 0 4 4v40l23 12q12 7 6 20t-17 8H42q-14 0-14-14z" style="fill:var(--s1)"/>
+      <rect x="30" y="12" width="30" height="7" style="fill:var(--s2)"/>
+      <rect x="30" y="23" width="30" height="4" style="fill:var(--s2)"/>
+      <path d="M28 74q0 14 14 14h6V70q-10 0-20 4z" style="fill:var(--s2)" opacity=".85"/>
+      <path d="M78 63q12 6 9 18t-15 7z" style="fill:var(--s2)" opacity=".85"/>
+    </symbol>
+    <!-- носок, свёрнутый в клубок — как буква «о» -->
+    <symbol id="ball" viewBox="0 0 100 100">
+      <path d="M70 10q14-6 22 2l-8 18q-6-6-16-4z" style="fill:var(--s2)"/>
+      <circle cx="50" cy="50" r="46" style="fill:var(--s1)"/>
+      <path d="M66 8q14-8 26 0l-6 16q-8-6-18-2z" style="fill:var(--s1)"/>
+      <path d="M12 38q38-18 76 0M8 56q42-18 84 0M16 74q34-14 68 0" style="stroke:var(--s2)" stroke-width="7" fill="none" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+<h1>«Носи носки» — 5 концептов</h1>
+<p class="sub">Пять разных характеров: от уютного до дерзкого. Каждый — на светлом и тёмном фоне + иконка вкладки и аватарка (Авито, Telegram, MAX).</p>
+
+<div class="grid">
+
+<!-- 1. ПАРА -->
+<div class="card">
+  <div class="hero">
+    <svg viewBox="0 0 320 120" width="310">
+      <use href="#sock" x="22" y="2" width="96" height="96" style="--s1:#8fa98a;--s2:#fbf7f2"/>
+      <use href="#sock" x="0" y="18" width="96" height="96" style="--s1:#c95a3c;--s2:#fbf7f2"/>
+      <text x="118" y="58" font-size="38" font-weight="800" fill="#2b2622">носи</text>
+      <text x="118" y="100" font-size="38" font-weight="800" fill="#c95a3c">носки</text>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="dark"><svg viewBox="0 0 320 120" width="190"><use href="#sock" x="22" y="2" width="96" height="96" style="--s1:#9fb99a;--s2:#2b2622"/><use href="#sock" x="0" y="18" width="96" height="96" style="--s1:#e88466;--s2:#2b2622"/><text x="118" y="58" font-size="38" font-weight="800" fill="#f3ede6">носи</text><text x="118" y="100" font-size="38" font-weight="800" fill="#e88466">носки</text></svg></div>
+    <div>
+      <svg class="fav" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#c95a3c"/><use href="#sock" x="6" y="4" width="56" height="56" style="--s1:#fbf7f2;--s2:#c95a3c"/></svg>
+      <svg class="app" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#c95a3c"/><use href="#sock" x="14" y="2" width="46" height="46" style="--s1:#f0c9bc;--s2:#c95a3c"/><use href="#sock" x="4" y="12" width="48" height="48" style="--s1:#fbf7f2;--s2:#c95a3c"/></svg>
+    </div>
+  </div>
+  <div class="info"><b>1. Пара</b>
+    <p>Два носка внахлёст — пара, которая не теряется. Тёплый, семейный, «как у бренда».</p>
+    <p class="use">👍 Сайт, бирки, упаковка. Спокойный и надёжный.</p></div>
+</div>
+
+<!-- 2. ШТАМП -->
+<div class="card">
+  <div class="hero">
+    <svg viewBox="0 0 200 200" width="200">
+      <defs><path id="r1" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+      <circle cx="100" cy="100" r="98" fill="#2b2622"/>
+      <circle cx="100" cy="100" r="58" fill="#c95a3c"/>
+      <text font-size="19" font-weight="800" fill="#fbf7f2"><textPath href="#r1" textLength="458" lengthAdjust="spacing">НОСИ НОСКИ ✦ НОСКИ И БЕЛЬЁ ✦ </textPath></text>
+      <use href="#sock" x="58" y="56" width="88" height="88" style="--s1:#fbf7f2;--s2:#2b2622"/>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="dark"><svg viewBox="0 0 200 200" width="96"><defs><path id="r2" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><circle cx="100" cy="100" r="98" fill="#e88466"/><circle cx="100" cy="100" r="58" fill="#2b2622"/><text font-size="19" font-weight="800" fill="#2b2622"><textPath href="#r2" textLength="458" lengthAdjust="spacing">НОСИ НОСКИ ✦ НОСКИ И БЕЛЬЁ ✦ </textPath></text><use href="#sock" x="58" y="56" width="88" height="88" style="--s1:#e88466;--s2:#2b2622"/></svg></div>
+    <div>
+      <svg class="fav" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#2b2622"/><use href="#sock" x="8" y="6" width="54" height="54" style="--s1:#e88466;--s2:#2b2622"/></svg>
+      <svg class="app" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="#2b2622"/><circle cx="32" cy="32" r="20" fill="#c95a3c"/><use href="#sock" x="16" y="14" width="34" height="34" style="--s1:#fbf7f2;--s2:#2b2622"/></svg>
+    </div>
+  </div>
+  <div class="info"><b>2. Штамп</b>
+    <p>Круглая печать с бегущей надписью — как на крафтовой коробке или кофейном стакане.</p>
+    <p class="use">👍 Наклейки на пакеты, аватарка, подарочная упаковка.</p></div>
+</div>
+
+<!-- 3. КЛУБКИ ВМЕСТО «О» -->
+<div class="card">
+  <div class="hero">
+    <svg viewBox="0 0 340 130" width="320">
+      <text x="0" y="56" font-size="46" font-weight="800" fill="#2b2622">н</text>
+      <use href="#ball" x="34" y="18" width="40" height="40" style="--s1:#c95a3c;--s2:#f3c4b5"/>
+      <text x="76" y="56" font-size="46" font-weight="800" fill="#2b2622">си</text>
+      <text x="0" y="116" font-size="46" font-weight="800" fill="#2b2622">н</text>
+      <use href="#ball" x="34" y="78" width="40" height="40" style="--s1:#8fa98a;--s2:#d5e2d2"/>
+      <text x="76" y="116" font-size="46" font-weight="800" fill="#2b2622">ски</text>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="dark"><svg viewBox="0 0 340 130" width="160"><text x="0" y="56" font-size="46" font-weight="800" fill="#f3ede6">н</text><use href="#ball" x="34" y="18" width="40" height="40" style="--s1:#e88466;--s2:#7a3a28"/><text x="76" y="56" font-size="46" font-weight="800" fill="#f3ede6">си</text><text x="0" y="116" font-size="46" font-weight="800" fill="#f3ede6">н</text><use href="#ball" x="34" y="78" width="40" height="40" style="--s1:#9fb99a;--s2:#4c5e49"/><text x="76" y="116" font-size="46" font-weight="800" fill="#f3ede6">ски</text></svg></div>
+    <div>
+      <svg class="fav" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="#fbf7f2"/><use href="#ball" x="4" y="4" width="56" height="56" style="--s1:#c95a3c;--s2:#f3c4b5"/></svg>
+      <svg class="app" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#fbf7f2"/><use href="#ball" x="4" y="14" width="34" height="34" style="--s1:#c95a3c;--s2:#f3c4b5"/><use href="#ball" x="26" y="18" width="34" height="34" style="--s1:#8fa98a;--s2:#d5e2d2"/></svg>
+    </div>
+  </div>
+  <div class="info"><b>3. Клубки</b>
+    <p>Буквы «о» — это носки, свёрнутые в клубок, и их тоже пара: терракотовый и шалфейный. Игра прямо в названии.</p>
+    <p class="use">👍 Умный и милый. Иконка — просто клубок, узнаётся сразу.</p></div>
+</div>
+
+<!-- 4. СТРИТ-СТИКЕР (жёстко) -->
+<div class="card">
+  <div class="hero" style="background:#efe9df">
+    <svg viewBox="0 0 330 170" width="320">
+      <g transform="rotate(-7 165 85)">
+        <rect x="14" y="26" width="300" height="118" rx="8" fill="#111"/>
+        <rect x="8" y="20" width="300" height="118" rx="8" fill="#dcff3a" stroke="#111" stroke-width="5"/>
+        <text x="26" y="74" font-size="38" font-weight="900" fill="#111" letter-spacing="-1">НОСИ</text>
+        <text x="26" y="124" font-size="38" font-weight="900" fill="#111" letter-spacing="-1">НОСКИ!</text>
+        <use href="#sock" x="222" y="36" width="84" height="84" style="--s1:#ff4fa3;--s2:#111"/>
+      </g>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="dark"><svg viewBox="0 0 330 170" width="180"><g transform="rotate(-7 165 85)"><rect x="8" y="20" width="300" height="118" rx="8" fill="#dcff3a"/><text x="26" y="74" font-size="38" font-weight="900" fill="#111" letter-spacing="-1">НОСИ</text><text x="26" y="124" font-size="38" font-weight="900" fill="#111" letter-spacing="-1">НОСКИ!</text><use href="#sock" x="222" y="36" width="84" height="84" style="--s1:#ff4fa3;--s2:#111"/></g></svg></div>
+    <div>
+      <svg class="fav" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#dcff3a"/><use href="#sock" x="6" y="4" width="56" height="56" style="--s1:#ff4fa3;--s2:#111"/></svg>
+      <svg class="app" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#111"/><text x="32" y="30" font-size="12" font-weight="900" fill="#dcff3a" text-anchor="middle">НОСИ</text><text x="32" y="48" font-size="12" font-weight="900" fill="#ff4fa3" text-anchor="middle">НОСКИ</text></svg>
+    </div>
+  </div>
+  <div class="info"><b>4. Стикер 🔥</b>
+    <p>Кислотный жёлтый, розовый носок, наклон, жирные буквы и восклицательный знак — как наклейка на скейте. Это приказ, а не просьба.</p>
+    <p class="use">👍 Молодёжь, Reels, яркие носки с принтами. ⚠️ Меняет весь стиль сайта на дерзкий.</p></div>
+</div>
+
+<!-- 5. БИРКА -->
+<div class="card">
+  <div class="hero">
+    <svg viewBox="0 0 300 200" width="290">
+      <path d="M36 100 Q10 60 30 20" stroke="#7a6f66" stroke-width="2.5" fill="none"/>
+      <path d="M60 30h200a12 12 0 0 1 12 12v116a12 12 0 0 1-12 12H60l-28-30V60z" fill="#2b2622"/>
+      <circle cx="52" cy="100" r="7" fill="#fbf7f2"/>
+      <text x="82" y="88" font-size="32" font-weight="800" fill="#fbf7f2">носи</text>
+      <text x="82" y="126" font-size="32" font-weight="800" fill="#e88466">носки</text>
+      <line x1="82" y1="142" x2="250" y2="142" stroke="#7a6f66" stroke-width="1.5"/>
+      <text x="82" y="160" font-size="10" font-weight="600" fill="#a89c91" letter-spacing="2" style="font-family:Manrope">НОСКИ · БЕЛЬЁ · С 2026</text>
+    </svg>
+  </div>
+  <div class="row">
+    <div style="background:#c95a3c"><svg viewBox="0 0 300 200" width="140"><path d="M60 30h200a12 12 0 0 1 12 12v116a12 12 0 0 1-12 12H60l-28-30V60z" fill="#fbf7f2"/><circle cx="52" cy="100" r="7" fill="#c95a3c"/><text x="82" y="88" font-size="32" font-weight="800" fill="#2b2622">носи</text><text x="82" y="126" font-size="32" font-weight="800" fill="#c95a3c">носки</text></svg></div>
+    <div>
+      <svg class="fav" viewBox="0 0 64 64"><path d="M18 4h38a4 4 0 0 1 4 4v48a4 4 0 0 1-4 4H18L4 46V18z" fill="#2b2622"/><circle cx="14" cy="32" r="4" fill="#fbf7f2"/><text x="22" y="40" font-size="22" font-weight="800" fill="#e88466">нн</text></svg>
+      <svg class="app" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#2b2622"/><circle cx="14" cy="32" r="4" fill="#fbf7f2"/><text x="22" y="40" font-size="22" font-weight="800" fill="#e88466">нн</text></svg>
+    </div>
+  </div>
+  <div class="info"><b>5. Бирка</b>
+    <p>Логотип — это сама бирка с дырочкой и верёвочкой, как на новой вещи. Строго, «магазинно», с подписью «с 2026».</p>
+    <p class="use">👍 Если хочется выглядеть солиднее и дороже. Бирки можно печатать и вешать на товар.</p></div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

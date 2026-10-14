@@ -1,0 +1,60 @@
+# Демо-версия магазина на GitHub Pages: собирается при каждом пуше в main
+name: Демо на GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: shop/package-lock.json
+      - run: npm ci
+      - name: Сборка статичной демо-версии
+        run: npx next build
+        env:
+          DEMO: '1'
+          NEXT_PUBLIC_DEMO: '1'
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+      - name: Демо фотостудии рядом с сайтом
+        run: |
+          mkdir -p out/studio
+          cp -r ../studio/public/. out/studio/
+          cp ../studio/lib/scenes.mjs out/studio/scenes.mjs
+          cp src/lib/avito-text.mjs out/studio/avito-text.mjs
+          cp src/data/products.json out/studio/products.json
+          if [ -d ../studio/demo ]; then cp -r ../studio/demo/. out/studio/demo/; fi
+          touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: shop/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
