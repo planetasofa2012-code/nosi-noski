@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Badges } from './ProductCard';
 import { SizeGuide } from './SizeGuide';
-import { sizesOf, type Product, type StockMap } from '@/lib/catalog';
+import { isSocks, sizesOf, type Product, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
 import { asset, DELIVERY_METHODS, formatPrice, freeShippingText, IS_DEMO, site } from '@/lib/site';
 
@@ -253,4 +253,5 @@ function Gallery({ product }: { product: Product }) {
   );
 }
 
-const fromKorea = (p: Product) => /Коре/.test(p.title + p.description) || !!p.label?.some((l) => l.includes('Корея'));
+// Все носки — из Кореи (подтверждено владельцем); бельё — только если указано в описании
+const fromKorea = (p: Product) => isSocks(p.category) || /Коре/.test(p.title + p.description);
