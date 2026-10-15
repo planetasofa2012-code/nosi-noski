@@ -34,6 +34,9 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 /** Путь к файлу из public/ с учётом подпапки (next/image сам её не добавляет) */
 export const asset = (src: string) => (src.startsWith('/') ? BASE_PATH + src : src);
 
+/** Вписан ли настоящий Telegram Иры (а не заглушка t.me/username) */
+export const telegramReady = !/t\.me\/username$/.test(site.telegram);
+
 export const freeShippingText = `Доставка бесплатно от ${site.freeShippingPairs} пар`;
 
 /** Бесплатна ли доставка: от N пар или от суммы */

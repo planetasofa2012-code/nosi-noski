@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { colorName, findVariant, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
-import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, type DeliveryMethod } from '@/lib/site';
+import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, telegramReady, type DeliveryMethod } from '@/lib/site';
 
 export function CartView() {
   const { items, ready, total, setQty, remove, clear } = useCart();
@@ -266,7 +266,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
   const text = orderText(items, total, free, method, point.trim(), comment.trim());
   const tgHref = `${site.telegram}?text=${encodeURIComponent(text)}`;
   // Пока не вписан настоящий @username Иры — не отправляем заказы на заглушку t.me/username
-  const tgReady = !/t\.me\/username$/.test(site.telegram);
+  const tgReady = telegramReady;
 
   async function copy() {
     try {

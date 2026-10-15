@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { CATEGORIES } from '@/lib/catalog';
-import { site } from '@/lib/site';
+import { site, telegramReady } from '@/lib/site';
 import { Logo } from './Logo';
 
 export function Footer() {
@@ -24,7 +24,9 @@ export function Footer() {
           <Link href="/delivery" className="text-[#a39d93] hover:text-[#dcff3a]">Доставка, оплата и возврат</Link>
           <Link href="/about" className="text-[#a39d93] hover:text-[#dcff3a]">О нас</Link>
           <Link href="/privacy" className="text-[#a39d93] hover:text-[#dcff3a]">Политика конфиденциальности</Link>
-          <a href={site.telegram} className="text-[#a39d93] hover:text-[#dcff3a]" target="_blank" rel="noreferrer">Написать в Telegram</a>
+          {telegramReady && (
+            <a href={site.telegram} className="text-[#a39d93] hover:text-[#dcff3a]" target="_blank" rel="noreferrer">Написать в Telegram</a>
+          )}
           {site.max && (
             <a href={site.max} className="text-[#a39d93] hover:text-[#dcff3a]" target="_blank" rel="noreferrer">Написать в MAX</a>
           )}

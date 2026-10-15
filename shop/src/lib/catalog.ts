@@ -23,8 +23,6 @@ export type Product = {
   care: string;
   /** Перевод корейской бирки — строки списком (показывается в карточке) */
   label?: string[];
-  /** Что уточнить у Иры — только для нас, на сайт не выводится */
-  todo?: string[];
   badges: Badge[];
   popularity: number;
   avitoUrl?: string;
@@ -33,7 +31,8 @@ export type Product = {
 export type StockMap = Record<string, number>;
 
 // На витрине — только товары с настоящими фото (заглушки .svg не показываем)
-export const products = (data as Product[]).filter((p) => p.images.some((i) => !i.endsWith('.svg')));
+export const products = (data as Product[])
+  .filter((p) => p.images.some((i) => !i.endsWith('.svg')));
 
 type CategoryInfo = {
   id: Category;

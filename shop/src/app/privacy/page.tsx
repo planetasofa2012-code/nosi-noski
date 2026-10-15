@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Prose } from '@/components/Prose';
-import { site } from '@/lib/site';
+import { site, telegramReady } from '@/lib/site';
 
 export const metadata: Metadata = { title: 'Политика конфиденциальности' };
 
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
       <h2>Как храним</h2>
       <p>Данные заказа передаются Продавцу и хранятся не дольше, чем нужно для исполнения заказа и требований закона. Сайт не использует рекламные трекеры. Корзина хранится только в вашем браузере.</p>
       <h2>Ваши права</h2>
-      <p>Вы можете запросить уточнение или удаление своих данных и отозвать согласие, написав нам: {site.phone}, <a href={site.telegram} className="underline">Telegram</a>.</p>
+      <p>Вы можете запросить уточнение или удаление своих данных и отозвать согласие, написав нам: {site.phone}{telegramReady && (<>, <a href={site.telegram} className="underline">Telegram</a></>)}.</p>
     </Prose>
   );
 }

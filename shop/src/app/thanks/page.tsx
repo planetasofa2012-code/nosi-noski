@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { OrderNumber } from '@/components/OrderNumber';
-import { IS_DEMO, site } from '@/lib/site';
+import { IS_DEMO, site, telegramReady } from '@/lib/site';
 
 export const metadata: Metadata = { title: 'Заказ принят', robots: { index: false } };
 
@@ -25,7 +25,7 @@ export default function ThanksPage() {
       </ol>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Link href="/catalog" className="btn-sticker rounded-full bg-accent px-7 py-3.5 font-bold text-accent-ink">Вернуться в каталог</Link>
-        <a href={site.max || site.telegram} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-surface px-7 py-3.5 font-semibold">Написать нам</a>
+        <a href={site.max || (telegramReady ? site.telegram : `tel:${site.phone.replace(/[^+\d]/g, '')}`)} target="_blank" rel="noreferrer" className="rounded-full border border-line bg-surface px-7 py-3.5 font-semibold">Написать нам</a>
       </div>
     </div>
   );
