@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="1024" height="1024">
+<title>Носи носки — аватар бота</title>
+<!-- фон на весь кадр: мессенджеры обрезают аватар кругом, носок — по центру с запасом от края -->
+<rect width="64" height="64" fill="#dcff3a"/>
+<g transform="rotate(-8 32 32) translate(3 9.5) scale(.5)"><path d="M30 8q0-4 4-4h22q4 0 4 4v40l23 12q12 7 6 20t-17 8H42q-14 0-14-14z" fill="#ff3d8b" stroke="#111" stroke-width="5"/>
+<rect x="30" y="12" width="30" height="7" fill="#111"/><rect x="30" y="23" width="30" height="4" fill="#111"/></g>
+</svg>
