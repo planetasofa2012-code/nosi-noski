@@ -19,12 +19,31 @@
 | **Демо фотостудии** | https://planetasofa2012-code.github.io/nosi-noski/studio/ |
 | **Предложение для Иры** | https://planetasofa2012-code.github.io/nosi-noski/ira/ (исходник `brand/predlozhenie-ire.html`) |
 | **Чек-лист встречи с Ирой** | https://github.com/planetasofa2012-code/nosi-noski/blob/main/VSTRECHA.md |
-| Склад (файл для Google Таблиц) | `stock/sklad-nosinoski.xlsx`, пересобрать `python stock/make-sheet.py`; копия «Склад Носи носки.xlsx» на рабочем столе |
+| **Склад — Google Таблица** | https://docs.google.com/spreadsheets/d/1c9MkNja5vQA-2FM-6Et_UD2klKKCtWEbqb21mxO8qhI/edit (аккаунт noskinosi9) |
+| Склад (исходный .xlsx) | `stock/sklad-nosinoski.xlsx`, пересобрать `python stock/make-sheet.py`; копия «Склад Носи носки.xlsx» на рабочем столе |
 | Google-аккаунт магазина | `noskinosi9@gmail.com` (склад, позже — почта для заказов, Яндекс Вебмастер) |
 | Код (GitHub, публичный) | https://github.com/planetasofa2012-code/nosi-noski |
 | Локально: магазин | http://localhost:3333 (`cd shop && npm run dev`) |
 | Локально: студия (настоящая генерация) | http://127.0.0.1:4545 (`studio/start.bat`) |
 | Обновить демо | `bash deploy/publish-demo.sh` из корня проекта |
+
+---
+
+## Сессия: 2026-10-15 (вечер-3) — Google Таблица склада, дешевле фото
+
+### Сделано
+- Google Таблица «Носи носки — склад» создана в аккаунте `noskinosi9` загрузкой `stock/sklad-nosinoski.xlsx` через коннектор Google Drive (коннектора Sheets нет — правки таблицы пока только руками или новой загрузкой). Проверено чтением: 123 позиции, листы stock / Итого / Как пользоваться.
+- `nosinoski.ru` в 18:30 ещё не резолвится (NXDOMAIN) — делегирование .ru не дошло.
+- Тест моделей для фото «на ногах» (носки Teddy 1986, текст на стопе, 4:5) через OpenRouter:
+
+| Модель | Цена за фото | Время | Итог |
+|---|---|---|---|
+| `google/gemini-nano-banana-2.1` | **$0.039** | 12 с | лучший: текст верный, мишка как в оригинале |
+| `google/gemini-3.1-flash-image` (NB2, было по умолч.) | $0.068 | 17 с | хорошо, но вдвое дороже |
+| `google/gemini-3.1-flash-lite-image` | $0.034 | 7 с | прилично, «1986» обрезано — для черновиков |
+| `openai/gpt-5-image-mini` | $0.048 | 41 с | игнорирует 4:5, мультяшно — не берём |
+
+- Студия: модель по умолчанию → **Nano Banana 2.1** (`studio/lib/scenes.mjs`, первая в `MODELS`).
 
 ---
 

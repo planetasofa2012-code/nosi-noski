@@ -35,10 +35,11 @@ export const SCENES = {
 };
 
 export const MODELS = [
-  { id: 'google/gemini-3.1-flash-image', title: 'Nano Banana 2 — быстро и недорого (рекомендуется)' },
-  { id: 'google/gemini-3.1-flash-lite-image', title: 'Nano Banana 2 Lite — черновики, дешевле всего' },
+  // Замер 2026-10-15 (носки Teddy, сцена «на ногах»): 2.1 — $0.039 и лучший текст, 2 — $0.068, Lite — $0.034
+  { id: 'google/gemini-nano-banana-2.1', title: 'Nano Banana 2.1 — ≈3,5 ₽ за фото, лучшее качество/цена (рекомендуется)' },
+  { id: 'google/gemini-3.1-flash-lite-image', title: 'Nano Banana 2 Lite — черновики, ≈3 ₽' },
+  { id: 'google/gemini-3.1-flash-image', title: 'Nano Banana 2 — ≈6 ₽ за фото' },
   { id: 'google/gemini-3-pro-image', title: 'Nano Banana Pro — максимальное качество (дороже)' },
-  { id: 'google/gemini-nano-banana-2.1', title: 'Nano Banana 2.1 — новая версия' },
   { id: 'google/gemini-2.5-flash-image', title: 'Nano Banana (первая версия)' },
 ];
 
