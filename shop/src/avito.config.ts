@@ -4,7 +4,7 @@
 import type { Category } from '@/lib/catalog';
 
 export const avitoConfig = {
-  address: 'Москва', // адрес/город, где лежит товар
+  address: 'Новосибирск', // адрес/город, где лежит товар
   contactPhone: '', // можно оставить пустым — возьмётся из профиля
   managerName: '',
   condition: 'Новое с биркой',

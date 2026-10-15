@@ -5,7 +5,7 @@ export const site = {
   description:
     'Яркие носки с принтами: мишки, буквы, ромбы. Доставка СДЭК, Почтой России и Авито, самовывоз. Заказ за минуту — без регистрации.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3333',
-  city: 'Москва',
+  city: 'Новосибирск',
   phone: '+7 900 000-00-00',
   telegram: 'https://t.me/username',
   max: '', // ссылка на профиль/чат в MAX, например https://max.ru/u/…
