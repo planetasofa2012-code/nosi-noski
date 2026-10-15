@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} — ${site.tagline.toLowerCase()}`, template: `%s — ${site.name}` },
   description: site.description,
-  openGraph: { siteName: site.name, locale: 'ru_RU', type: 'website' },
+  // картинка явным путём: файловый opengraph-image дублирует basePath в демо
+  openGraph: {
+    siteName: site.name,
+    locale: 'ru_RU',
+    type: 'website',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: site.name }],
+  },
 };
 
 export const viewport: Viewport = {
