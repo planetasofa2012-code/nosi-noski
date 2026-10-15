@@ -1,6 +1,6 @@
 /**
  * Склад «Носи носки» — веб-приложение Google Таблицы.
- * Лист «stock»: A sku | B товар | C размер | D цвет | E остаток
+ * Лист «stock»: колонки «sku…» и «остаток» ищутся по заголовку (есть ещё фото, товар, размер, цвет, категория, цена)
  * Лист «log»:   дата | заказ | sku | кол-во | остаток после
  *
  * Установка: Расширения → Apps Script → вставить этот код → в KEY вписать секрет →
@@ -17,15 +17,20 @@ function json(obj) {
 function readStock_() {
   const sheet = SpreadsheetApp.getActive().getSheetByName(STOCK_SHEET);
   const rows = sheet.getDataRange().getValues();
+  // колонки по заголовку — порядок колонок в таблице можно менять
+  const head = rows[0].map((h) => String(h).trim().toLowerCase());
+  const skuCol = head.findIndex((h) => h.startsWith('sku'));
+  const qtyCol = head.indexOf('остаток');
+  if (skuCol < 0 || qtyCol < 0) throw new Error('Нет колонки «sku» или «остаток» в первой строке листа stock');
   const stock = {};
   const rowBySku = {};
   for (let i = 1; i < rows.length; i++) {
-    const sku = String(rows[i][0]).trim();
+    const sku = String(rows[i][skuCol]).trim();
     if (!sku) continue;
-    stock[sku] = Math.max(0, Number(rows[i][4]) || 0);
+    stock[sku] = Math.max(0, Number(rows[i][qtyCol]) || 0);
     rowBySku[sku] = i + 1;
   }
-  return { sheet, stock, rowBySku };
+  return { sheet, stock, rowBySku, qtyCol };
 }
 
 // GET ?key=… → { stock: { sku: остаток } }
@@ -47,7 +52,7 @@ function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(20000); // два заказа одновременно не уведут остаток в минус
   try {
-    const { sheet, stock, rowBySku } = readStock_();
+    const { sheet, stock, rowBySku, qtyCol } = readStock_();
     for (const it of body.items) {
       if ((stock[it.sku] || 0) < it.qty) {
         return json({ ok: false, error: 'Недостаточно: ' + it.sku + ' (осталось ' + (stock[it.sku] || 0) + ')' });
@@ -58,7 +63,7 @@ function doPost(e) {
     const result = {};
     for (const it of body.items) {
       const left = stock[it.sku] - it.qty;
-      sheet.getRange(rowBySku[it.sku], 5).setValue(left);
+      sheet.getRange(rowBySku[it.sku], qtyCol + 1).setValue(left);
       stock[it.sku] = left;
       result[it.sku] = left;
       log.appendRow([now, body.orderId, it.sku, it.qty, left]);

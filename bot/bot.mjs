@@ -200,7 +200,8 @@ async function handle(t, m) {
   if (m.text === '/id') return reply(`Ваш id в ${t.name}: <b>${m.chat}</b>`);
 
   // Продавец: реплай на пересланный заказ → ответ покупателю в его мессенджер
-  if (t.admins.includes(m.chat)) {
+  // (заказ с сайта по ссылке — обрабатываем как покупательский даже от продавца: так удобно тестировать)
+  if (t.admins.includes(m.chat) && !(m.start && decodeOrder(m.payload))) {
     const target = m.replyTo && state.links[`${t.key}:${m.chat}:${m.replyTo}`];
     if (target) {
       await byKey[target.via].send(target.chat, esc(m.text));
