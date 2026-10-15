@@ -5,13 +5,13 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { colorName, findVariant, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
-import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, site, type DeliveryMethod } from '@/lib/site';
+import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, type DeliveryMethod } from '@/lib/site';
 
 export function CartView() {
   const { items, ready, total, setQty, remove, clear } = useCart();
   const router = useRouter();
   const [stock, setStock] = useState<StockMap | null>(null);
-  const [method, setMethod] = useState<DeliveryMethod>('cdek');
+  const [method, setMethod] = useState<DeliveryMethod>('pickup');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
@@ -40,11 +40,15 @@ export function CartView() {
     );
   }
 
-  const toFree = Math.max(0, site.freeShippingFrom - total);
+  const qty = items.reduce((n, i) => n + i.qty, 0);
+  const free = isFreeShipping(qty, total);
+  const toFreePairs = Math.max(0, site.freeShippingPairs - qty);
+  const progress = Math.min(100, Math.max(qty / site.freeShippingPairs, total / site.freeShippingFrom) * 100);
   const delivery = DELIVERY_METHODS[method];
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (site.orderMode === 'messenger') return;
     setError('');
     const f = new FormData(e.currentTarget);
     setSending(true);
@@ -142,10 +146,17 @@ export function CartView() {
         </div>
         <div className="mt-3">
           <div className="h-2 overflow-hidden rounded-full bg-surface-2">
-            <div className="h-full rounded-full bg-accent-2 ring-1 ring-black/60 transition-all" style={{ width: `${Math.min(100, (total / site.freeShippingFrom) * 100)}%` }} />
+            <div className="h-full rounded-full bg-accent-2 ring-1 ring-black/60 transition-all" style={{ width: `${progress}%` }} />
           </div>
-          <p className="mt-1.5 text-sm text-muted">{toFree ? `До бесплатной доставки ${formatPrice(toFree)}` : 'Доставка бесплатно 🎉'}</p>
+          <p className="mt-1.5 text-sm text-muted">
+            {free ? 'Доставка бесплатно 🎉' : `Добавьте ещё ${toFreePairs} ${plural(toFreePairs, 'пару', 'пары', 'пар')} — и доставка бесплатно`}
+          </p>
         </div>
+
+        {site.orderMode === 'messenger' ? (
+          <MessengerOrder items={items} total={total} free={free} method={method} setMethod={setMethod} />
+        ) : (
+          <>
 
         <h2 className="mt-6 font-semibold">Получатель</h2>
         <div className="mt-2 space-y-2.5">
@@ -199,6 +210,8 @@ export function CartView() {
         <p className="mt-3 text-center text-xs text-muted">
           Мы свяжемся в Telegram, MAX или по телефону, подтвердим наличие и пришлём реквизиты для оплаты (СБП) или оформим оплату при получении.
         </p>
+          </>
+        )}
       </form>
     </div>
   );
@@ -210,5 +223,127 @@ function Field({ label, ...props }: { label: string } & React.InputHTMLAttribute
       <span className="text-sm text-muted">{label}</span>
       <input {...props} className="mt-1 h-12 w-full rounded-[14px] border border-line bg-bg px-3.5 outline-none focus:border-ink" />
     </label>
+  );
+}
+
+const plural = (n: number, one: string, few: string, many: string) =>
+  n % 10 === 1 && n % 100 !== 11 ? one : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? few : many;
+
+/** Текст заказа для мессенджера — без имени и телефона: контакт покупателя остаётся в самом мессенджере */
+function orderText(items: { sku: string; qty: number }[], total: number, free: boolean, method: DeliveryMethod, point: string, comment: string) {
+  const lines = items.flatMap((i) => {
+    const f = findVariant(i.sku);
+    if (!f) return [];
+    const { product, variant } = f;
+    return [`• ${product.title} — ${variant.size}, ${colorName(product, variant.color).toLowerCase()} × ${i.qty} = ${formatPrice(product.price * i.qty)}`];
+  });
+  const d = DELIVERY_METHODS[method];
+  const cost = method === 'pickup' ? '' : method === 'avito' ? ' (по тарифу Авито)' : free ? ' (бесплатно)' : ` (доставка ${site.deliveryPrice})`;
+  return [
+    `Здравствуйте! Хочу заказать в «${site.name}»:`,
+    ...lines,
+    `Итого: ${formatPrice(total)}`,
+    `Получение: ${d.title}${point ? ` — ${point}` : ''}${cost}`,
+    comment ? `Комментарий: ${comment}` : '',
+  ]
+    .filter(Boolean)
+    .join('\n');
+}
+
+function MessengerOrder({ items, total, free, method, setMethod }: {
+  items: { sku: string; qty: number }[];
+  total: number;
+  free: boolean;
+  method: DeliveryMethod;
+  setMethod: (m: DeliveryMethod) => void;
+}) {
+  const [point, setPoint] = useState('');
+  const [comment, setComment] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [sent, setSent] = useState(false);
+  const { clear } = useCart();
+  const delivery = DELIVERY_METHODS[method];
+  const text = orderText(items, total, free, method, point.trim(), comment.trim());
+  const tgHref = `${site.telegram}?text=${encodeURIComponent(text)}`;
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+    } catch {
+      window.prompt('Скопируйте текст заказа:', text);
+    }
+  }
+
+  return (
+    <>
+      <h2 className="mt-6 font-semibold">Как получить</h2>
+      <div className="mt-2 grid gap-2">
+        {(Object.keys(DELIVERY_METHODS) as DeliveryMethod[]).map((m) => (
+          <button
+            key={m}
+            type="button"
+            onClick={() => setMethod(m)}
+            aria-pressed={method === m}
+            className={`rounded-2xl border px-3 py-2.5 text-left text-sm transition ${method === m ? 'border-ink bg-surface-2 font-semibold' : 'border-line hover:border-ink'}`}
+          >
+            {DELIVERY_METHODS[m].title}
+            <span className="font-normal text-muted"> · {m === 'avito' ? 'по тарифу Авито' : m === 'pickup' || free ? 'бесплатно' : site.deliveryPrice}</span>
+          </button>
+        ))}
+      </div>
+      <p className="mt-2 text-sm text-muted">{delivery.hint}</p>
+      {delivery.needsAddress && (
+        <label className="mt-2.5 block">
+          <span className="text-sm text-muted">Удобный пункт выдачи — район или адрес (необязательно)</span>
+          <input
+            value={point}
+            onChange={(e) => setPoint(e.target.value)}
+            maxLength={150}
+            className="mt-1 h-12 w-full rounded-[14px] border border-line bg-bg px-3.5 outline-none focus:border-ink"
+            placeholder="Например: м. Площадь Маркса"
+          />
+        </label>
+      )}
+      <label className="mt-4 block">
+        <span className="text-sm text-muted">Комментарий</span>
+        <textarea
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          rows={2}
+          maxLength={300}
+          className="mt-1 w-full rounded-[14px] border border-line bg-bg px-3.5 py-2.5 outline-none focus:border-ink"
+          placeholder="Вопрос по размеру, удобное время…"
+        />
+      </label>
+
+      <a
+        href={tgHref}
+        target="_blank"
+        rel="noreferrer"
+        onClick={() => setSent(true)}
+        className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink"
+      >
+        Отправить заказ в Telegram — {formatPrice(total)}
+      </a>
+      <button type="button" onClick={copy} className="mt-2.5 w-full rounded-full border border-line bg-surface py-3 text-sm font-semibold hover:border-ink">
+        {copied ? 'Скопировано ✓ — вставьте в чат с нами' : 'Скопировать текст заказа'}
+      </button>
+      <p className="mt-3 text-center text-xs text-muted">
+        Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.
+        {site.avitoProfile && (
+          <>
+            {' '}Удобнее на Авито? <a href={site.avitoProfile} target="_blank" rel="noreferrer" className="underline">Наш профиль</a>.
+          </>
+        )}{' '}
+        Или позвоните: <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`} className="underline">{site.phone}</a>
+      </p>
+      {sent && (
+        <div className="mt-4 rounded-2xl bg-surface-2 p-3 text-center text-sm">
+          Отправили? Ответим в Telegram в течение дня.{' '}
+          <button type="button" onClick={clear} className="font-semibold underline">Очистить корзину</button>
+        </div>
+      )}
+    </>
   );
 }

@@ -6,7 +6,7 @@ import { Badges } from './ProductCard';
 import { SizeGuide } from './SizeGuide';
 import { sizesOf, type Product, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
-import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, site } from '@/lib/site';
+import { asset, DELIVERY_METHODS, formatPrice, freeShippingText, IS_DEMO, site } from '@/lib/site';
 
 export function ProductView({ product, initialStock }: { product: Product; initialStock: StockMap }) {
   const [stock, setStock] = useState(initialStock);
@@ -170,7 +170,7 @@ export function ProductView({ product, initialStock }: { product: Product; initi
               ))}
             </ul>
             <p className="mt-2 text-muted">
-              Бесплатно от {formatPrice(site.freeShippingFrom)}. Оплата после подтверждения заказа — переводом по СБП или при получении.{' '}
+              {freeShippingText}, меньше — {site.deliveryPrice}. Оплата после подтверждения заказа: при встрече, переводом или на Авито.{' '}
               <Link href="/delivery" className="underline">Подробнее</Link>
             </p>
           </Details>

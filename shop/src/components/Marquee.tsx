@@ -1,13 +1,13 @@
-import { formatPrice, site } from '@/lib/site';
+import { freeShippingText } from '@/lib/site';
 
 // Бегущая лаймовая лента под шапкой
 export function Marquee() {
   const items = [
-    `Бесплатная доставка от ${formatPrice(site.freeShippingFrom)}`,
+    freeShippingText,
     'Носи носки',
-    'Мишки · буквы · ромбы',
+    'Мишки · бантики · розы',
     'Авито Доставка',
-    'СДЭК и Почта',
+    'Яндекс Доставка · Новосибирск',
     'Носи носки',
   ];
   const row = (

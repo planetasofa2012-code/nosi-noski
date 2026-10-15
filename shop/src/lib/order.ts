@@ -1,7 +1,7 @@
 // Заказ: схема, пересчёт по каталогу, текст уведомления
 import { z } from 'zod';
 import { colorName, findVariant, type StockMap } from './catalog';
-import { DELIVERY_METHODS, formatPrice, site, type DeliveryMethod } from './site';
+import { DELIVERY_METHODS, formatPrice, isFreeShipping, site, type DeliveryMethod } from './site';
 import { escapeHtml } from './telegram';
 
 const deliveryKeys = Object.keys(DELIVERY_METHODS) as [DeliveryMethod, ...DeliveryMethod[]];
@@ -72,7 +72,7 @@ export function orderMessage(id: string, order: OrderInput, lines: OrderLine[], 
     '',
     ...lines.map((l) => `• ${e(l.title)} — ${e(l.size)}, ${e(l.color.toLowerCase())} × ${l.qty} = ${formatPrice(l.sum)}`),
     '',
-    `💰 <b>Итого: ${formatPrice(total)}</b>${total >= site.freeShippingFrom ? ' (бесплатная доставка)' : ''}`,
+    `💰 <b>Итого: ${formatPrice(total)}</b>${isFreeShipping(lines.reduce((n, l) => n + l.qty, 0), total) ? ' (бесплатная доставка)' : ''}`,
     order.comment ? `💬 «${e(order.comment)}»` : '',
   ].filter((s, i, a) => s !== '' || a[i - 1] !== '').join('\n');
 }

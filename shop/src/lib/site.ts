@@ -3,23 +3,27 @@ export const site = {
   name: 'Носи носки',
   tagline: 'Носки, за которые не стыдно разуться',
   description:
-    'Яркие носки с принтами: мишки, буквы, ромбы. Доставка СДЭК, Почтой России и Авито, самовывоз. Заказ за минуту — без регистрации.',
+    'Яркие носки с принтами: мишки, бантики, розы. Новосибирск: самовывоз, Яндекс Доставка в пункт выдачи, Авито Доставка. Заказ в Telegram за минуту.',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3333',
   city: 'Новосибирск',
   phone: '+7 913 928-59-47',
-  telegram: 'https://t.me/username',
+  telegram: 'https://t.me/username', // TODO: @username Иры — сюда уходят заказы
+  // Пилот без ИП: сайт не собирает имя/телефон, заказ отправляется Ире сообщением в мессенджер.
+  // 'form' — форма заказа с отправкой в бот (включить вместе с ИП и уведомлением в РКН)
+  orderMode: 'messenger' as 'messenger' | 'form',
   max: '', // ссылка на профиль/чат в MAX, например https://max.ru/u/…
   avitoProfile: '', // ссылка на профиль на Авито (если есть)
-  freeShippingFrom: 2000,
+  freeShippingPairs: 3, // доставка бесплатно от N пар в корзине…
+  freeShippingFrom: 2000, // …или от этой суммы (коробка боксеров)
+  deliveryPrice: '≈ 150 ₽', // Яндекс ПВЗ → ПВЗ по Новосибирску, уточнить у Иры
   lowStockThreshold: 3, // показывать «Осталось N шт»
   alertStockThreshold: 1, // слать в Telegram «Заканчивается»
 } as const;
 
 export const DELIVERY_METHODS = {
-  pickup: { title: 'Самовывоз', hint: 'Адрес пришлём после подтверждения', needsAddress: false },
-  cdek: { title: 'СДЭК', hint: 'Город и пункт выдачи', needsAddress: true },
-  post: { title: 'Почта России', hint: 'Индекс и полный адрес', needsAddress: true },
-  avito: { title: 'Авито Доставка', hint: 'Оформим через Авито — пришлём ссылку', needsAddress: false },
+  pickup: { title: 'Самовывоз', hint: 'Встреча в Новосибирске — место и время согласуем', needsAddress: false },
+  yandex: { title: 'Яндекс Доставка', hint: 'В пункт выдачи Яндекса в Новосибирске, обычно на следующий день', needsAddress: true },
+  avito: { title: 'Авито Доставка', hint: 'По городу и в другие города — пришлём ссылку на объявление, оплата на Авито', needsAddress: false },
 } as const;
 
 export type DeliveryMethod = keyof typeof DELIVERY_METHODS;
@@ -29,6 +33,13 @@ export const IS_DEMO = process.env.NEXT_PUBLIC_DEMO === '1';
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 /** Путь к файлу из public/ с учётом подпапки (next/image сам её не добавляет) */
 export const asset = (src: string) => (src.startsWith('/') ? BASE_PATH + src : src);
+
+export const freeShippingText = `Доставка бесплатно от ${site.freeShippingPairs} пар`;
+
+/** Бесплатна ли доставка: от N пар или от суммы */
+export function isFreeShipping(qty: number, total: number) {
+  return qty >= site.freeShippingPairs || total >= site.freeShippingFrom;
+}
 
 export function formatPrice(value: number) {
   return new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
