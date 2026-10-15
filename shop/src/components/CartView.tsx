@@ -265,6 +265,8 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
   const delivery = DELIVERY_METHODS[method];
   const text = orderText(items, total, free, method, point.trim(), comment.trim());
   const tgHref = `${site.telegram}?text=${encodeURIComponent(text)}`;
+  // Пока не вписан настоящий @username Иры — не отправляем заказы на заглушку t.me/username
+  const tgReady = !/t\.me\/username$/.test(site.telegram);
 
   async function copy() {
     try {
@@ -317,20 +319,28 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
         />
       </label>
 
-      <a
-        href={tgHref}
-        target="_blank"
-        rel="noreferrer"
-        onClick={() => setSent(true)}
-        className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink"
-      >
-        Отправить заказ в Telegram — {formatPrice(total)}
-      </a>
-      <button type="button" onClick={copy} className="mt-2.5 w-full rounded-full border border-line bg-surface py-3 text-sm font-semibold hover:border-ink">
+      {tgReady ? (
+        <a
+          href={tgHref}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => setSent(true)}
+          className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink"
+        >
+          Отправить заказ в Telegram — {formatPrice(total)}
+        </a>
+      ) : (
+        <button type="button" onClick={copy} className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink">
+          {copied ? 'Заказ скопирован ✓' : `Скопировать заказ — ${formatPrice(total)}`}
+        </button>
+      )}
+      {tgReady && <button type="button" onClick={copy} className="mt-2.5 w-full rounded-full border border-line bg-surface py-3 text-sm font-semibold hover:border-ink">
         {copied ? 'Скопировано ✓ — вставьте в чат с нами' : 'Скопировать текст заказа'}
-      </button>
+      </button>}
       <p className="mt-3 text-center text-xs text-muted">
-        Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.
+        {tgReady
+          ? 'Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.'
+          : 'Чат для заказов скоро подключим — пока отправьте скопированный заказ по телефону.'}
         {site.avitoProfile && (
           <>
             {' '}Удобнее на Авито? <a href={site.avitoProfile} target="_blank" rel="noreferrer" className="underline">Наш профиль</a>.
