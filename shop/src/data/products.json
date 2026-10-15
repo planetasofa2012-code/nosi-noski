@@ -200,7 +200,7 @@
   },
   {
     "slug": "socks-smile-upside",
-    "title": "Носки «Смайл вверх ногами»",
+    "title": "Носки «Смайлик-класс»",
     "price": 300,
     "popularity": 95,
     "badges": [
@@ -223,7 +223,7 @@
         "hex": "#1d1b1a"
       }
     ],
-    "description": "Весёлый оранжевый смайлик стоит на руках прямо на щиколотке. Носки, которые поднимают настроение. Бренд ARIES.",
+    "description": "Весёлый оранжевый смайлик на ножках показывает «класс» прямо на щиколотке. Носки, которые поднимают настроение. Бренд ARIES.",
     "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
     "category": "socks",
     "variants": [
@@ -247,9 +247,9 @@
       }
     ],
     "images": [
-      "/products/socks-smile-upside/1792040197951.jpg",
-      "/products/socks-smile-upside/1792040197965.jpg",
-      "/products/socks-smile-upside/1792040197974.jpg"
+      "/products/socks-smile-upside/1792040948922.jpg",
+      "/products/socks-smile-upside/1792040948963.jpg",
+      "/products/socks-smile-upside/1792040948971.jpg"
     ],
     "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
   },
