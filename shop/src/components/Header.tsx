@@ -16,7 +16,7 @@ export function Header() {
           <Logo className="h-10 w-auto md:h-11" />
         </Link>
         <nav className="hidden gap-5 text-sm font-semibold text-muted md:flex" aria-label="Категории">
-          {CATEGORIES.map((c) => (
+          {CATEGORIES.filter((c) => c.nav).map((c) => (
             <Link key={c.id} href={`/catalog?c=${c.id}`} className="transition hover:text-ink">
               {c.short}
             </Link>

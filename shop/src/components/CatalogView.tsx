@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { ProductCard } from './ProductCard';
-import { CATEGORIES, products, totalStock, type Category, type StockMap } from '@/lib/catalog';
+import { CATEGORIES, inCategory, products, totalStock, type Category, type StockMap } from '@/lib/catalog';
 
 const SORTS = {
   popular: 'Популярные',
@@ -19,7 +19,7 @@ export function CatalogView({ stock }: { stock: StockMap }) {
   const sort: Sort = sortParam && sortParam in SORTS ? (sortParam as Sort) : 'popular';
 
   const list = products
-    .filter((p) => !category || p.category === category)
+    .filter((p) => !category || inCategory(p, category))
     .sort((a, b) => {
       // Товары без остатка — в конец
       const inA = totalStock(a, stock) > 0 ? 0 : 1;
@@ -40,11 +40,13 @@ export function CatalogView({ stock }: { stock: StockMap }) {
     return s ? `/catalog?${s}` : '/catalog';
   };
 
-  const title = category ? CATEGORIES.find((x) => x.id === category)!.title : 'Весь каталог';
+  const info = category ? CATEGORIES.find((x) => x.id === category) : undefined;
+  const title = info?.title ?? 'Весь каталог';
 
   return (
     <div className="mx-auto max-w-6xl px-4 pt-8">
       <h1 className="inline-block -rotate-1 rounded-lg bg-accent px-3 py-1 font-display text-2xl font-black text-accent-ink uppercase ring-2 ring-black md:text-3xl">{title}</h1>
+      {info?.note && <p className="mt-3 max-w-xl text-sm font-medium">{info.note}</p>}
       <p className="mt-2 text-sm text-muted">{list.length} товаров</p>
 
       <div className="no-scrollbar -mx-4 mt-6 flex gap-2 overflow-x-auto px-4 pt-1 pb-2">

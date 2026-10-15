@@ -1,13 +1,15 @@
 'use client';
 import { useRef } from 'react';
-import type { Category } from '@/lib/catalog';
+import { isSocks, type Category } from '@/lib/catalog';
 
 // Размерные сетки — поправьте под свою продукцию
 const GUIDES: Record<'socks' | 'underwear', { head: string[]; rows: string[][] }> = {
   socks: {
     head: ['Размер носков', 'Размер обуви', 'Длина стопы'],
     rows: [
+      ['5-6 лет', '—', '14–16 см'],
       ['35-40', '35–40', '22,5–25,5 см'],
+      ['36-42', '36–42', '23–27 см (FREE)'],
       ['36-39', '36–39', '23–25 см'],
       ['40-45', '40–45', '25,5–29 см'],
       ['40-43', '40–43', '25,5–28 см'],
@@ -29,7 +31,7 @@ const GUIDES: Record<'socks' | 'underwear', { head: string[]; rows: string[][] }
 
 export function SizeGuide({ category }: { category: Category }) {
   const ref = useRef<HTMLDialogElement>(null);
-  const guide = GUIDES[category === 'socks' || category === 'sets' ? 'socks' : 'underwear'];
+  const guide = GUIDES[isSocks(category) ? 'socks' : 'underwear'];
   return (
     <>
       <button type="button" onClick={() => ref.current?.showModal()} className="text-sm underline underline-offset-4">

@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Sock } from '@/components/Logo';
 import { ProductCard } from '@/components/ProductCard';
-import { CATEGORIES, products, totalStock } from '@/lib/catalog';
-import { asset, formatPrice, site } from '@/lib/site';
+import { CATEGORIES, inCategory, products, totalStock, type Category } from '@/lib/catalog';
+import { asset, formatPrice, freeShippingText } from '@/lib/site';
 import { getStock } from '@/lib/stock';
 
 // Цвета и наклон «наклеек» категорий — по очереди
@@ -20,7 +20,11 @@ export default async function Home() {
   const hits = [...available].filter((p) => p.badges.includes('hit')).sort((a, b) => b.popularity - a.popularity);
   const fresh = available.filter((p) => p.badges.includes('new'));
   const sets = available.filter((p) => p.category === 'sets');
-  const cover = (id: string) => products.find((p) => p.category === id)?.images[0];
+  // Обложка категории — самый популярный товар, у которого это основная категория
+  const cover = (id: Category) =>
+    [...products].sort((a, b) => Number(b.category === id) - Number(a.category === id) || b.popularity - a.popularity).find((p) => inCategory(p, id))?.images[0];
+  // В сетке — подкатегории носков и бельё (группа «Все носки» — кнопкой в шапке и на главной)
+  const tiles = CATEGORIES.filter((c) => !c.group);
   const heroImage = hits[0]?.images[1] ?? products[0].images[0];
   const minPrice = Math.min(...available.map((p) => p.price));
 
@@ -37,7 +41,7 @@ export default async function Home() {
             разуться
           </h1>
           <p className="mt-5 max-w-md text-lg text-muted">
-            Мишки, бантики, розы — носки с характером. И бельё на каждый день. Бесплатная доставка от {formatPrice(site.freeShippingFrom)}.
+            Мишки, бантики, розы — носки с характером. И бельё на каждый день. {freeShippingText}.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-sticker rounded-full bg-accent px-7 py-3.5 font-bold text-accent-ink">
@@ -61,8 +65,8 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto mt-6 max-w-6xl px-4">
-        <div className={`grid grid-cols-2 gap-4 ${CATEGORIES.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
-          {CATEGORIES.map((c, i) => {
+        <div className={`grid grid-cols-2 gap-4 ${tiles.length % 3 === 0 && tiles.length % 4 !== 0 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
+          {tiles.map((c, i) => {
             const img = cover(c.id);
             const st = STICKERS[i % STICKERS.length];
             return (
@@ -89,7 +93,7 @@ export default async function Home() {
 
       <section className="mx-auto mt-16 grid max-w-6xl gap-5 px-4 sm:grid-cols-3">
         {[
-          ['🚚', 'Доставка по России', `СДЭК, Почта, Авито Доставка. Бесплатно от ${formatPrice(site.freeShippingFrom)}`, 'bg-accent-2 text-accent-2-ink', '-rotate-1'],
+          ['🚚', 'Доставка по Новосибирску', `Самовывоз, Яндекс Доставка, Авито. ${freeShippingText}`, 'bg-accent-2 text-accent-2-ink', '-rotate-1'],
           ['🧦', 'Принты с характером', 'Мишки, буквы, ромбы — носки, которые хочется показать', 'bg-accent text-accent-ink', 'rotate-1'],
           ['📏', 'Подскажем размер', 'Сомневаетесь — напишите нам в Telegram или MAX, поможем выбрать', 'bg-surface text-ink', '-rotate-1'],
         ].map(([icon, title, text, tone, rot]) => (

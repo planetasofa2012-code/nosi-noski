@@ -15,6 +15,12 @@ export const avitoConfig = {
 // Соответствие категорий сайта категориям Авито
 export const avitoCategories: Record<Category, { Category: string; GoodsType: string; Apparel: string }> = {
   socks: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Женская одежда', Apparel: 'Нижнее бельё' },
+  'women-socks': { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Женская одежда', Apparel: 'Нижнее бельё' },
+  'men-socks': { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Мужская одежда', Apparel: 'Нижнее бельё' },
+  kids: { Category: 'Детская одежда и обувь', GoodsType: 'Для девочек', Apparel: 'Нижнее бельё' }, // ⚠️ сверить с шаблоном Авито
+  sport: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Мужская одежда', Apparel: 'Нижнее бельё' },
+  warm: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Мужская одежда', Apparel: 'Нижнее бельё' },
+  soft: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Мужская одежда', Apparel: 'Нижнее бельё' },
   women: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Женская одежда', Apparel: 'Нижнее бельё' },
   men: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Мужская одежда', Apparel: 'Нижнее бельё' },
   sets: { Category: 'Одежда, обувь, аксессуары', GoodsType: 'Женская одежда', Apparel: 'Нижнее бельё' },

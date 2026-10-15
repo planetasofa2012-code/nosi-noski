@@ -2,7 +2,7 @@
   {
     "slug": "socks-teddy-1986",
     "title": "Носки «Мишка Teddy 1986»",
-    "category": "socks",
+    "category": "women-socks",
     "price": 250,
     "colors": [
       {
@@ -58,7 +58,7 @@
   {
     "slug": "socks-leopard-letter",
     "title": "Носки «Леопардовая буква»",
-    "category": "socks",
+    "category": "women-socks",
     "price": 250,
     "colors": [
       {
@@ -102,7 +102,7 @@
   {
     "slug": "men-socks-argyle",
     "title": "Мужские носки «Ромб», Корея",
-    "category": "socks",
+    "category": "men-socks",
     "price": 220,
     "colors": [
       {
@@ -141,6 +141,9 @@
         "color": "beige",
         "stock": 5
       }
+    ],
+    "tags": [
+      "soft"
     ]
   },
   {
@@ -170,7 +173,7 @@
     ],
     "description": "Женские носки с большим бантом на резинке и двумя маленькими бантиками рядом. Яркий акцент к кедам и платью. Бренд ARIES.",
     "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
-    "category": "socks",
+    "category": "women-socks",
     "variants": [
       {
         "sku": "socks-bows-35-40-blue",
@@ -225,7 +228,7 @@
     ],
     "description": "Весёлый оранжевый смайлик на ножках показывает «класс» прямо на щиколотке. Носки, которые поднимают настроение. Бренд ARIES.",
     "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
-    "category": "socks",
+    "category": "women-socks",
     "variants": [
       {
         "sku": "socks-smile-upside-35-40-gray",
@@ -270,7 +273,7 @@
     ],
     "description": "Нежные белые носки с рюшей по краю и россыпью маленьких бантиков и точек. Идеально с туфлями Мэри Джейн. Бренд Cozy Socks.",
     "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
-    "category": "socks",
+    "category": "women-socks",
     "variants": [
       {
         "sku": "socks-mini-bows-35-40-white",
@@ -306,7 +309,7 @@
     ],
     "description": "Классика в цветочек: розы по всей длине носка. Две версии — светлая и тёмная. Бренд ARIES.",
     "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
-    "category": "socks",
+    "category": "women-socks",
     "variants": [
       {
         "sku": "socks-roses-35-40-cream",
@@ -361,7 +364,7 @@
     ],
     "description": "Пушистый жёлтый смайл на резинке в рубчик — его хочется потрогать. Четыре цвета. Бренд Cozy Socks.",
     "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
-    "category": "socks",
+    "category": "women-socks",
     "variants": [
       {
         "sku": "socks-fluffy-smile-35-40-black",
@@ -394,7 +397,10 @@
       "/products/socks-fluffy-smile/1792040198077.jpg",
       "/products/socks-fluffy-smile/1792040198082.jpg"
     ],
-    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи",
+    "tags": [
+      "warm"
+    ]
   },
   {
     "slug": "women-briefs-floral",
@@ -681,7 +687,7 @@
   {
     "slug": "men-socks-stripe",
     "title": "Мужские короткие носки «Полоска», Корея",
-    "category": "socks",
+    "category": "men-socks",
     "price": 220,
     "popularity": 88,
     "badges": [],
@@ -718,6 +724,9 @@
       "/products/men-socks-stripe/1792040432048.jpg",
       "/products/men-socks-stripe/1792040432061.jpg",
       "/products/men-socks-stripe/1792040432071.jpg"
+    ],
+    "tags": [
+      "sport"
     ]
   },
   {
@@ -1398,5 +1407,1506 @@
       "hit"
     ],
     "popularity": 92
+  },
+  {
+    "slug": "kids-socks-kitty",
+    "title": "Детские носки «Котик»",
+    "category": "kids",
+    "price": 230,
+    "popularity": 84,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "lilac",
+        "name": "Сиреневая полоска, розовый котик",
+        "hex": "#c9a3c7"
+      },
+      {
+        "id": "beige",
+        "name": "Бежевый, розовый котик",
+        "hex": "#d9cbb8"
+      },
+      {
+        "id": "coral",
+        "name": "Коралловый, жёлтый котик",
+        "hex": "#f08a7a"
+      }
+    ],
+    "description": "Детские носки с котиком на стопе: мордочка выглядывает над мыском. Три расцветки. Сделано в Корее (Kids Future).",
+    "composition": "70% хлопок, 25% полиуретан, 5% нейлон (по бирке)",
+    "care": "Стирка 30°, деликатно, нейтральным средством; не отбеливать хлором; сушить на вешалке (по бирке)",
+    "variants": [
+      {
+        "sku": "kids-socks-kitty-kids-lilac",
+        "size": "Детский",
+        "color": "lilac",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-kitty-kids-beige",
+        "size": "Детский",
+        "color": "beige",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-kitty-kids-coral",
+        "size": "Детский",
+        "color": "coral",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/kids-socks-kitty/1792100000001.jpg",
+      "/products/kids-socks-kitty/1792100000002.jpg",
+      "/products/kids-socks-kitty/1792100000003.jpg",
+      "/products/kids-socks-kitty/1792100000004.jpg"
+    ]
+  },
+  {
+    "slug": "kids-footies-dino",
+    "title": "Детские следки «Динозаврики»",
+    "category": "kids",
+    "price": 230,
+    "popularity": 83,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые, жёлтый динозавр",
+        "hex": "#b8b8b8"
+      },
+      {
+        "id": "green",
+        "name": "Белые, зелёный динозавр",
+        "hex": "#3f9d4a"
+      },
+      {
+        "id": "mint",
+        "name": "Мятные, машинки и киты",
+        "hex": "#cfe9d6"
+      },
+      {
+        "id": "blue",
+        "name": "Голубые, рыбка",
+        "hex": "#8fbfd6"
+      },
+      {
+        "id": "lime",
+        "name": "Белые, синий динозавр",
+        "hex": "#b6e04a"
+      }
+    ],
+    "description": "Короткие детские следки под кеды и сандалии: динозавры, машинки и рыбки. Размер по упаковке — 5–6 лет, стопа 14–16 см. Сделано в Корее (Kids Future).",
+    "composition": "⚠️ Состав на упаковке не виден — уточнить у Иры",
+    "care": "Стирка при 30°, не отбеливать",
+    "variants": [
+      {
+        "sku": "kids-footies-dino-5-6y-grey",
+        "size": "5-6 лет",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "kids-footies-dino-5-6y-green",
+        "size": "5-6 лет",
+        "color": "green",
+        "stock": 5
+      },
+      {
+        "sku": "kids-footies-dino-5-6y-mint",
+        "size": "5-6 лет",
+        "color": "mint",
+        "stock": 5
+      },
+      {
+        "sku": "kids-footies-dino-5-6y-blue",
+        "size": "5-6 лет",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "kids-footies-dino-5-6y-lime",
+        "size": "5-6 лет",
+        "color": "lime",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/kids-footies-dino/1792100000005.jpg",
+      "/products/kids-footies-dino/1792100000006.jpg",
+      "/products/kids-footies-dino/1792100000007.jpg"
+    ]
+  },
+  {
+    "slug": "kids-socks-halloween",
+    "title": "Детские носки «Хэллоуин»",
+    "category": "kids",
+    "price": 230,
+    "popularity": 82,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "ghost",
+        "name": "Привидение",
+        "hex": "#b9b6d6"
+      },
+      {
+        "id": "pumpkin",
+        "name": "Тыква PUMPKIN",
+        "hex": "#f28a2e"
+      },
+      {
+        "id": "yellow",
+        "name": "Жёлтые «halloween»",
+        "hex": "#f5c518"
+      },
+      {
+        "id": "witch",
+        "name": "Зелёные «HALLOWEEN»",
+        "hex": "#2f8f5b"
+      },
+      {
+        "id": "cat",
+        "name": "Котик со звёздами",
+        "hex": "#7c8db5"
+      }
+    ],
+    "description": "Весёлые носки к Хэллоуину: привидение, тыква, котик-пират и надписи. Бренд MIK (Mother in Kids).",
+    "composition": "⚠️ Состав на бирке не виден — уточнить у Иры",
+    "care": "Стирка при 30°, наизнанку, не отбеливать",
+    "variants": [
+      {
+        "sku": "kids-socks-halloween-kids-ghost",
+        "size": "Детский",
+        "color": "ghost",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-halloween-kids-pumpkin",
+        "size": "Детский",
+        "color": "pumpkin",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-halloween-kids-yellow",
+        "size": "Детский",
+        "color": "yellow",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-halloween-kids-witch",
+        "size": "Детский",
+        "color": "witch",
+        "stock": 5
+      },
+      {
+        "sku": "kids-socks-halloween-kids-cat",
+        "size": "Детский",
+        "color": "cat",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/kids-socks-halloween/1792100000008.jpg",
+      "/products/kids-socks-halloween/1792100000009.jpg",
+      "/products/kids-socks-halloween/1792100000010.jpg"
+    ]
+  },
+  {
+    "slug": "women-socks-flowers",
+    "title": "Женские носки «Цветочки», мягкая резинка",
+    "category": "women-socks",
+    "tags": [
+      "soft"
+    ],
+    "price": 220,
+    "popularity": 81,
+    "badges": [],
+    "colors": [
+      {
+        "id": "beige",
+        "name": "Бежевые",
+        "hex": "#e3d3bb"
+      },
+      {
+        "id": "lilac",
+        "name": "Сиреневые",
+        "hex": "#c3a9d6"
+      },
+      {
+        "id": "grey",
+        "name": "Тёмно-серые",
+        "hex": "#6b6866"
+      }
+    ],
+    "description": "Женские носки в мелкий цветочек. На бирке — «без сдавливания»: резинка мягкая, не стягивает щиколотку. Длина стопы по бирке — 24 см. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер, полиуретан и др. (по бирке, без процентов)",
+    "care": "Ручная стирка 30°, нейтральным средством, не отбеливать, не отжимать сильно (по бирке)",
+    "variants": [
+      {
+        "sku": "women-socks-flowers-35-40-beige",
+        "size": "35-40",
+        "color": "beige",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-flowers-35-40-lilac",
+        "size": "35-40",
+        "color": "lilac",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-flowers-35-40-grey",
+        "size": "35-40",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-socks-flowers/1792100000011.jpg",
+      "/products/women-socks-flowers/1792100000012.jpg",
+      "/products/women-socks-flowers/1792100000013.jpg"
+    ]
+  },
+  {
+    "slug": "women-socks-bowknot",
+    "title": "Женские носки «Bowknot» с рюшей",
+    "category": "women-socks",
+    "price": 220,
+    "popularity": 80,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "cream",
+        "name": "Молочные",
+        "hex": "#f3eee3"
+      },
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "navy",
+        "name": "Тёмно-синие",
+        "hex": "#1e2a4a"
+      }
+    ],
+    "description": "Носки с волнистой рюшей на резинке, бантиками и надписью BOWKNOT. Бренд Cozy Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (⚠️ по бирке соседней модели Cozy — уточнить)",
+    "care": "Стирка 30° нейтральным средством, не отбеливать (по бирке)",
+    "variants": [
+      {
+        "sku": "women-socks-bowknot-35-40-cream",
+        "size": "35-40",
+        "color": "cream",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-bowknot-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-bowknot-35-40-navy",
+        "size": "35-40",
+        "color": "navy",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-socks-bowknot/1792100000014.jpg",
+      "/products/women-socks-bowknot/1792100000015.jpg",
+      "/products/women-socks-bowknot/1792100000016.jpg"
+    ]
+  },
+  {
+    "slug": "women-socks-ruffle-stripes",
+    "title": "Женские носки с рюшей и полосками",
+    "category": "women-socks",
+    "price": 220,
+    "popularity": 79,
+    "badges": [],
+    "colors": [
+      {
+        "id": "white",
+        "name": "Белые, чёрные полоски",
+        "hex": "#f4f1ea"
+      },
+      {
+        "id": "grey",
+        "name": "Серые, белые полоски",
+        "hex": "#6b6b6b"
+      }
+    ],
+    "description": "Высокие носки с рюшей и спортивными полосками, надпись «…in yourself». Бренд Cozy Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Стирка 30° нейтральным средством, не отбеливать, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "women-socks-ruffle-stripes-35-40-white",
+        "size": "35-40",
+        "color": "white",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-ruffle-stripes-35-40-grey",
+        "size": "35-40",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-socks-ruffle-stripes/1792100000017.jpg",
+      "/products/women-socks-ruffle-stripes/1792100000018.jpg",
+      "/products/women-socks-ruffle-stripes/1792100000019.jpg"
+    ]
+  },
+  {
+    "slug": "women-socks-glam",
+    "title": "Носки Glam Socks, белые",
+    "category": "women-socks",
+    "price": 200,
+    "popularity": 70,
+    "badges": [],
+    "colors": [
+      {
+        "id": "white",
+        "name": "Белые",
+        "hex": "#f4f2f6"
+      },
+      {
+        "id": "whitegrey",
+        "name": "Белые с серой вставкой",
+        "hex": "#bdbdbd"
+      }
+    ],
+    "description": "Базовые белые носки с высокой резинкой в рубчик. Вторая модель — с серой вставкой по пятке и подошве. Glam Socks, Корея, размер FREE.",
+    "composition": "⚠️ На бирке только значки ухода — состав уточнить у Иры",
+    "care": "Ручная стирка, не отбеливать, не сушить в барабане (по значкам на бирке)",
+    "variants": [
+      {
+        "sku": "women-socks-glam-35-40-white",
+        "size": "35-40",
+        "color": "white",
+        "stock": 5
+      },
+      {
+        "sku": "women-socks-glam-35-40-whitegrey",
+        "size": "35-40",
+        "color": "whitegrey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-socks-glam/1792100000020.jpg",
+      "/products/women-socks-glam/1792100000021.jpg",
+      "/products/women-socks-glam/1792100000022.jpg"
+    ]
+  },
+  {
+    "slug": "socks-ny-crew",
+    "title": "Носки «Нью-Йорк», высокие",
+    "category": "men-socks",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 250,
+    "popularity": 78,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "blackyellow",
+        "name": "Чёрные, жёлтый NY",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "grey",
+        "name": "Серые, белый NY",
+        "hex": "#8a8a8a"
+      },
+      {
+        "id": "navyred",
+        "name": "Тёмно-синие, красный NY",
+        "hex": "#1e2a4a"
+      },
+      {
+        "id": "blackred",
+        "name": "Чёрные, красный NY",
+        "hex": "#2a1a1a"
+      }
+    ],
+    "description": "Унисекс-носки с крупным вязаным принтом NY на голени. Размер FREE. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер, полиуретан и др. (по бирке)",
+    "care": "Ручная стирка 30°, не отбеливать, не сушить в барабане, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "socks-ny-crew-free-blackyellow",
+        "size": "36-42",
+        "color": "blackyellow",
+        "stock": 5
+      },
+      {
+        "sku": "socks-ny-crew-free-grey",
+        "size": "36-42",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "socks-ny-crew-free-navyred",
+        "size": "36-42",
+        "color": "navyred",
+        "stock": 5
+      },
+      {
+        "sku": "socks-ny-crew-free-blackred",
+        "size": "36-42",
+        "color": "blackred",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-ny-crew/1792100000023.jpg",
+      "/products/socks-ny-crew/1792100000024.jpg",
+      "/products/socks-ny-crew/1792100000025.jpg",
+      "/products/socks-ny-crew/1792100000026.jpg"
+    ]
+  },
+  {
+    "slug": "socks-ny-short",
+    "title": "Носки «Нью-Йорк», короткие",
+    "category": "men-socks",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 250,
+    "popularity": 77,
+    "badges": [],
+    "colors": [
+      {
+        "id": "blackyellow",
+        "name": "Чёрные, жёлтый NY",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "navyred",
+        "name": "Тёмно-синие, красный NY",
+        "hex": "#1e2a4a"
+      },
+      {
+        "id": "white",
+        "name": "Белые, чёрный NY",
+        "hex": "#f4f1ea"
+      }
+    ],
+    "description": "Короткие носки под кеды с принтом NY сбоку. Унисекс, размер FREE. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер, полиуретан и др. (по бирке)",
+    "care": "Ручная стирка 30°, не отбеливать (по бирке)",
+    "variants": [
+      {
+        "sku": "socks-ny-short-free-blackyellow",
+        "size": "36-42",
+        "color": "blackyellow",
+        "stock": 5
+      },
+      {
+        "sku": "socks-ny-short-free-navyred",
+        "size": "36-42",
+        "color": "navyred",
+        "stock": 5
+      },
+      {
+        "sku": "socks-ny-short-free-white",
+        "size": "36-42",
+        "color": "white",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-ny-short/1792100000027.jpg",
+      "/products/socks-ny-short/1792100000028.jpg",
+      "/products/socks-ny-short/1792100000029.jpg",
+      "/products/socks-ny-short/1792100000030.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-smile",
+    "title": "Мужские носки «Smile!»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 76,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#7a7a7a"
+      },
+      {
+        "id": "white",
+        "name": "Белые",
+        "hex": "#f4f1ea"
+      },
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Носки с жёлтым смайликом и надписью Smile! на стопе, контрастные пятка и мысок. На бирке — «for man», стопа 25–27 см. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер и др. (по бирке, без процентов)",
+    "care": "Ручная стирка нейтральным средством, без отбеливателей, не гладить, не сушить в барабане (по бирке)",
+    "variants": [
+      {
+        "sku": "men-socks-smile-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-smile-40-45-white",
+        "size": "40-45",
+        "color": "white",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-smile-40-45-black",
+        "size": "40-45",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-smile/1792100000031.jpg",
+      "/products/men-socks-smile/1792100000032.jpg",
+      "/products/men-socks-smile/1792100000033.jpg"
+    ]
+  },
+  {
+    "slug": "socks-studios",
+    "title": "Носки «Studios»",
+    "category": "men-socks",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 220,
+    "popularity": 75,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрные, хаки",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "cream",
+        "name": "Молочные, синий",
+        "hex": "#f1ece0"
+      },
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#7a7a7a"
+      }
+    ],
+    "description": "Носки в рубчик с крупной вязаной надписью Studios и контрастной линией у пятки. Унисекс, FREE. Cozy Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Стирка 30° нейтральным средством, не отбеливать, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "socks-studios-free-black",
+        "size": "36-42",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "socks-studios-free-cream",
+        "size": "36-42",
+        "color": "cream",
+        "stock": 5
+      },
+      {
+        "sku": "socks-studios-free-grey",
+        "size": "36-42",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-studios/1792100000034.jpg",
+      "/products/socks-studios/1792100000035.jpg",
+      "/products/socks-studios/1792100000036.jpg"
+    ]
+  },
+  {
+    "slug": "socks-look-at-this",
+    "title": "Носки «Look at this»",
+    "category": "men-socks",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 220,
+    "popularity": 74,
+    "badges": [],
+    "colors": [
+      {
+        "id": "look",
+        "name": "LOOK AT THIS (синяя полоса)",
+        "hex": "#2b3f8f"
+      },
+      {
+        "id": "time",
+        "name": "Time heals all wounds (чёрные полосы)",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Серые носки с надписями на резинке: LOOK AT THIS или Time heals all wounds. Cozy Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (⚠️ по бирке соседней модели Cozy — уточнить)",
+    "care": "Стирка 30° нейтральным средством, не отбеливать",
+    "variants": [
+      {
+        "sku": "socks-look-at-this-free-look",
+        "size": "36-42",
+        "color": "look",
+        "stock": 5
+      },
+      {
+        "sku": "socks-look-at-this-free-time",
+        "size": "36-42",
+        "color": "time",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-look-at-this/1792100000037.jpg",
+      "/products/socks-look-at-this/1792100000038.jpg",
+      "/products/socks-look-at-this/1792100000039.jpg"
+    ]
+  },
+  {
+    "slug": "socks-france",
+    "title": "Носки «France»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 73,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрно-серые",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "white",
+        "name": "Серо-белые",
+        "hex": "#e9e9e9"
+      }
+    ],
+    "description": "Двухцветные носки с крупной надписью FRANCE и флажком-триколором у мыска. Cozy Socks, Корея.",
+    "composition": "⚠️ Бирка снята в кадре нечитаемо — состав уточнить у Иры",
+    "care": "Стирка 30° нейтральным средством, не отбеливать",
+    "variants": [
+      {
+        "sku": "socks-france-free-black",
+        "size": "36-42",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "socks-france-free-white",
+        "size": "36-42",
+        "color": "white",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-france/1792100000040.jpg",
+      "/products/socks-france/1792100000041.jpg",
+      "/products/socks-france/1792100000042.jpg"
+    ]
+  },
+  {
+    "slug": "socks-painting",
+    "title": "Носки «Painting» с брызгами краски",
+    "category": "men-socks",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 220,
+    "popularity": 72,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#7a7a7a"
+      }
+    ],
+    "description": "Носки с неоновыми «брызгами краски» и надписью Painting. By Cozy, Корея, размер FREE.",
+    "composition": "Хлопок, полиэстер и др. (по бирке)",
+    "care": "Ручная стирка 30°, не отбеливать, не сушить в барабане (по бирке)",
+    "variants": [
+      {
+        "sku": "socks-painting-free-black",
+        "size": "36-42",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "socks-painting-free-grey",
+        "size": "36-42",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-painting/1792100000043.jpg",
+      "/products/socks-painting/1792100000044.jpg",
+      "/products/socks-painting/1792100000045.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-polo-wave",
+    "title": "Мужские носки «Волна»",
+    "category": "men-socks",
+    "tags": [
+      "sport"
+    ],
+    "price": 220,
+    "popularity": 71,
+    "badges": [],
+    "colors": [
+      {
+        "id": "blue",
+        "name": "Синяя волна",
+        "hex": "#2c5aa0"
+      },
+      {
+        "id": "black",
+        "name": "Чёрная волна",
+        "hex": "#2a2a2a"
+      },
+      {
+        "id": "green",
+        "name": "Зелёные полосы",
+        "hex": "#2f6b3f"
+      }
+    ],
+    "description": "Серые мужские носки средней высоты с вышитым всадником на резинке и крупной «волной» сбоку. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "men-socks-polo-wave-40-45-blue",
+        "size": "40-45",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-polo-wave-40-45-black",
+        "size": "40-45",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-polo-wave-40-45-green",
+        "size": "40-45",
+        "color": "green",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-polo-wave/1792100000046.jpg",
+      "/products/men-socks-polo-wave/1792100000047.jpg",
+      "/products/men-socks-polo-wave/1792100000048.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-rider",
+    "title": "Мужские носки «Всадник»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 69,
+    "badges": [],
+    "colors": [
+      {
+        "id": "stripe",
+        "name": "Светло-серые, полоска на стопе",
+        "hex": "#a9a9a9"
+      },
+      {
+        "id": "dark",
+        "name": "Тёмно-серые",
+        "hex": "#5f6366"
+      },
+      {
+        "id": "lines",
+        "name": "Светло-серые, дуги на стопе",
+        "hex": "#b5b5b5"
+      }
+    ],
+    "description": "Классические мужские носки средней высоты с вышитым всадником. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "men-socks-rider-40-45-stripe",
+        "size": "40-45",
+        "color": "stripe",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-rider-40-45-dark",
+        "size": "40-45",
+        "color": "dark",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-rider-40-45-lines",
+        "size": "40-45",
+        "color": "lines",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-rider/1792100000049.jpg",
+      "/products/men-socks-rider/1792100000050.jpg",
+      "/products/men-socks-rider/1792100000051.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-diamonds",
+    "title": "Мужские носки «Ромбики»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 68,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#a9a9a9"
+      }
+    ],
+    "description": "Серые мужские носки с дорожкой из маленьких красно-чёрно-белых ромбиков сбоку и вышитым всадником. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "men-socks-diamonds-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-diamonds/1792100000052.jpg",
+      "/products/men-socks-diamonds/1792100000053.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-tricolor",
+    "title": "Мужские носки «Триколор»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 67,
+    "badges": [],
+    "colors": [
+      {
+        "id": "navy",
+        "name": "Тёмно-синие, полоски-нашивки",
+        "hex": "#1e2a4a"
+      },
+      {
+        "id": "grey",
+        "name": "Серые, полоски-нашивки",
+        "hex": "#8a8a8a"
+      },
+      {
+        "id": "stripe",
+        "name": "Серые, полоса сбоку",
+        "hex": "#9a9a9a"
+      },
+      {
+        "id": "flag",
+        "name": "Серые, флажок",
+        "hex": "#a0a0a0"
+      }
+    ],
+    "description": "Мужские носки средней высоты с красно-бело-синими полосками. По бирке — мужские, стопа 26 см. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер, полиуретан и др. (по бирке)",
+    "care": "Ручная стирка 30° нейтральным средством, без отбеливателей, не сушить в барабане (по бирке)",
+    "variants": [
+      {
+        "sku": "men-socks-tricolor-40-45-navy",
+        "size": "40-45",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-tricolor-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-tricolor-40-45-stripe",
+        "size": "40-45",
+        "color": "stripe",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-tricolor-40-45-flag",
+        "size": "40-45",
+        "color": "flag",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-tricolor/1792100000054.jpg",
+      "/products/men-socks-tricolor/1792100000055.jpg",
+      "/products/men-socks-tricolor/1792100000056.jpg",
+      "/products/men-socks-tricolor/1792100000057.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-updown",
+    "title": "Мужские носки «Up down»",
+    "category": "men-socks",
+    "price": 220,
+    "popularity": 66,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#7f858c"
+      }
+    ],
+    "description": "Носки с двумя стрелками и надписью up down на голени. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "men-socks-updown-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-updown/1792100000058.jpg",
+      "/products/men-socks-updown/1792100000059.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-short-stripes",
+    "title": "Мужские короткие носки «Полоски»",
+    "category": "men-socks",
+    "tags": [
+      "sport"
+    ],
+    "price": 220,
+    "popularity": 65,
+    "badges": [],
+    "colors": [
+      {
+        "id": "greyred",
+        "name": "Серые, красная полоска",
+        "hex": "#d64545"
+      },
+      {
+        "id": "black",
+        "name": "Чёрные, белые полоски",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "greygreen",
+        "name": "Серые, зелёная полоска",
+        "hex": "#3a8a4a"
+      },
+      {
+        "id": "greyblue",
+        "name": "Серые, синяя полоска",
+        "hex": "#2f5fd0"
+      }
+    ],
+    "description": "Короткие мужские носки под кеды с цветными полосками на стопе. По бирке — мужские, стопа 26 см. Сделано в Корее.",
+    "composition": "Хлопок, полиэстер, полиуретан и др. (по бирке)",
+    "care": "Стирка нейтральным средством, без отбеливателей (по бирке)",
+    "variants": [
+      {
+        "sku": "men-socks-short-stripes-40-45-greyred",
+        "size": "40-45",
+        "color": "greyred",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-short-stripes-40-45-black",
+        "size": "40-45",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-short-stripes-40-45-greygreen",
+        "size": "40-45",
+        "color": "greygreen",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-short-stripes-40-45-greyblue",
+        "size": "40-45",
+        "color": "greyblue",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-short-stripes/1792100000060.jpg",
+      "/products/men-socks-short-stripes/1792100000061.jpg",
+      "/products/men-socks-short-stripes/1792100000062.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-slazenger-short",
+    "title": "Мужские короткие носки Slazenger",
+    "category": "men-socks",
+    "price": 200,
+    "popularity": 64,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#9a9a9a"
+      },
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Однотонные короткие носки с тонкой вязаной надписью Slazenger. Лицензия Slazenger, производитель Yong Shin Socks, Корея. Стопа 26–28 см.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Стирать наизнанку, не отбеливать, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "men-socks-slazenger-short-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-slazenger-short-40-45-black",
+        "size": "40-45",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-slazenger-short/1792100000063.jpg",
+      "/products/men-socks-slazenger-short/1792100000064.jpg",
+      "/products/men-socks-slazenger-short/1792100000065.jpg"
+    ]
+  },
+  {
+    "slug": "sport-socks-3stripes",
+    "title": "Спортивные носки «Три полоски»",
+    "category": "sport",
+    "price": 220,
+    "popularity": 63,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрные, белые полоски",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "grey",
+        "name": "Серые, чёрные полоски",
+        "hex": "#9a9a9a"
+      },
+      {
+        "id": "white",
+        "name": "Белые, чёрные полоски",
+        "hex": "#f4f1ea"
+      }
+    ],
+    "description": "Спортивные носки средней высоты с тремя полосками на резинке. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "sport-socks-3stripes-free-black",
+        "size": "36-42",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "sport-socks-3stripes-free-grey",
+        "size": "36-42",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "sport-socks-3stripes-free-white",
+        "size": "36-42",
+        "color": "white",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/sport-socks-3stripes/1792100000066.jpg",
+      "/products/sport-socks-3stripes/1792100000067.jpg",
+      "/products/sport-socks-3stripes/1792100000068.jpg"
+    ]
+  },
+  {
+    "slug": "sport-socks-white",
+    "title": "Белые спортивные носки",
+    "category": "sport",
+    "price": 220,
+    "popularity": 62,
+    "badges": [],
+    "colors": [
+      {
+        "id": "chevron",
+        "name": "Белые, уголок",
+        "hex": "#f4f1ea"
+      },
+      {
+        "id": "stripes",
+        "name": "Белые, три полоски",
+        "hex": "#ecebe6"
+      }
+    ],
+    "description": "Белые носки в рубчик: с чёрным уголком или тремя полосками на резинке. Premium, Корея.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "sport-socks-white-free-chevron",
+        "size": "36-42",
+        "color": "chevron",
+        "stock": 5
+      },
+      {
+        "sku": "sport-socks-white-free-stripes",
+        "size": "36-42",
+        "color": "stripes",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/sport-socks-white/1792100000069.jpg",
+      "/products/sport-socks-white/1792100000070.jpg",
+      "/products/sport-socks-white/1792100000071.jpg"
+    ]
+  },
+  {
+    "slug": "socks-diagonal",
+    "title": "Носки «Диагональ»",
+    "category": "sport",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 220,
+    "popularity": 61,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Чёрные носки с белыми диагональными полосами, зелёной полосой FLEX и крестиками на стопе. Cozy Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Ручная стирка 30° нейтральным средством, не отбеливать, не сушить в барабане, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "socks-diagonal-free-black",
+        "size": "36-42",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-diagonal/1792100000072.jpg",
+      "/products/socks-diagonal/1792100000073.jpg"
+    ]
+  },
+  {
+    "slug": "sport-socks-trek-pile",
+    "title": "Трекинговые махровые носки Slazenger",
+    "category": "sport",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 220,
+    "popularity": 60,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серый меланж",
+        "hex": "#8a8a8a"
+      },
+      {
+        "id": "navy",
+        "name": "Тёмно-синие с меланжем",
+        "hex": "#1e2a4a"
+      }
+    ],
+    "description": "Плотные махровые носки для походов, бега и велосипеда. На бирке: «Cool pile» (махра из кручёной нити) и «хлопок высшего сорта». Лицензия Slazenger, Yong Shin Socks, Корея.",
+    "composition": "⚠️ Обратная сторона бирки не снята — состав уточнить у Иры",
+    "care": "Стирка при 30°, не отбеливать",
+    "variants": [
+      {
+        "sku": "sport-socks-trek-pile-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      },
+      {
+        "sku": "sport-socks-trek-pile-40-45-navy",
+        "size": "40-45",
+        "color": "navy",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/sport-socks-trek-pile/1792100000074.jpg",
+      "/products/sport-socks-trek-pile/1792100000075.jpg",
+      "/products/sport-socks-trek-pile/1792100000076.jpg"
+    ]
+  },
+  {
+    "slug": "women-socks-trek-pile",
+    "title": "Женские трекинговые носки Slazenger",
+    "category": "sport",
+    "tags": [
+      "women-socks"
+    ],
+    "price": 220,
+    "popularity": 59,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серый меланж",
+        "hex": "#6f6f6f"
+      }
+    ],
+    "description": "Женские махровые носки «Cool pile» для походов, роликов и велосипеда, с противоскользящими точками на подошве. Стопа по бирке — 24 см. Лицензия Slazenger, Yong Shin Socks, Корея.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Ручная стирка 30° нейтральным средством, не отбеливать хлором, не выкручивать, сушить в расправленном виде, не подвергать химчистке (по бирке)",
+    "variants": [
+      {
+        "sku": "women-socks-trek-pile-35-40-grey",
+        "size": "35-40",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-socks-trek-pile/1792100000077.jpg",
+      "/products/women-socks-trek-pile/1792100000078.jpg"
+    ]
+  },
+  {
+    "slug": "soft-socks-slazenger",
+    "title": "Мужские носки с мягкой резинкой Slazenger",
+    "category": "soft",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 200,
+    "popularity": 58,
+    "badges": [],
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрные",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "charcoal",
+        "name": "Тёмно-серые",
+        "hex": "#3f4650"
+      },
+      {
+        "id": "grey",
+        "name": "Серые",
+        "hex": "#6f6f6f"
+      }
+    ],
+    "description": "Классические однотонные носки. На бирке: «без сдавливания», «удобная посадка», «не стягивают щиколотку» — широкая мягкая резинка не оставляет следов. Лицензия Slazenger, Yong Shin Socks, Корея. Стопа 25–27 см.",
+    "composition": "Хлопок, полиэстер, полиуретан (по бирке)",
+    "care": "Стирать наизнанку, не отбеливать, не гладить (по бирке)",
+    "variants": [
+      {
+        "sku": "soft-socks-slazenger-40-45-black",
+        "size": "40-45",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "soft-socks-slazenger-40-45-charcoal",
+        "size": "40-45",
+        "color": "charcoal",
+        "stock": 5
+      },
+      {
+        "sku": "soft-socks-slazenger-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/soft-socks-slazenger/1792100000079.jpg",
+      "/products/soft-socks-slazenger/1792100000080.jpg",
+      "/products/soft-socks-slazenger/1792100000081.jpg"
+    ]
+  },
+  {
+    "slug": "soft-socks-thin-stripe",
+    "title": "Мужские носки в тонкую полоску, мягкая резинка",
+    "category": "soft",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 220,
+    "popularity": 57,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Серые в полоску",
+        "hex": "#6f6f6f"
+      }
+    ],
+    "description": "Носки в мелкую полоску для костюма и на каждый день. На бирке: «без сдавливания», «удобная посадка», «не стягивают щиколотку», «для мужчин». Сделано в Корее.",
+    "composition": "⚠️ Состав на бирке не снят — уточнить у Иры",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "soft-socks-thin-stripe-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/soft-socks-thin-stripe/1792100000082.jpg",
+      "/products/soft-socks-thin-stripe/1792100000083.jpg",
+      "/products/soft-socks-thin-stripe/1792100000084.jpg"
+    ]
+  },
+  {
+    "slug": "warm-socks-aeroheat",
+    "title": "Супертёплые носки Slazenger Aeroheat",
+    "category": "warm",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 370,
+    "popularity": 86,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "dark",
+        "name": "Тёмно-серые, синие полоски",
+        "hex": "#55595f"
+      },
+      {
+        "id": "light",
+        "name": "Светло-серые, синие полоски",
+        "hex": "#9aa0a8"
+      },
+      {
+        "id": "plaid",
+        "name": "Серые, клетка",
+        "hex": "#6c7078"
+      }
+    ],
+    "description": "Зимние термоноски средней высоты. На бирке: «согревают и держат тепло», «усиленная нить на подошве», «отличное сохранение тепла». Линия Aeroheat Extreme, лицензия Slazenger, Yong Shin Socks, Корея. Мужской размер 25–27 см.",
+    "composition": "⚠️ Состав на бирке не снят — уточнить у Иры",
+    "care": "Стирка при 30°, не отбеливать, не гладить (по значкам на бирке)",
+    "variants": [
+      {
+        "sku": "warm-socks-aeroheat-40-45-dark",
+        "size": "40-45",
+        "color": "dark",
+        "stock": 5
+      },
+      {
+        "sku": "warm-socks-aeroheat-40-45-light",
+        "size": "40-45",
+        "color": "light",
+        "stock": 5
+      },
+      {
+        "sku": "warm-socks-aeroheat-40-45-plaid",
+        "size": "40-45",
+        "color": "plaid",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/warm-socks-aeroheat/1792100000085.jpg",
+      "/products/warm-socks-aeroheat/1792100000086.jpg",
+      "/products/warm-socks-aeroheat/1792100000087.jpg"
+    ]
+  },
+  {
+    "slug": "warm-socks-polo-stars",
+    "title": "Утеплённые мужские носки «Звёзды»",
+    "category": "warm",
+    "tags": [
+      "men-socks"
+    ],
+    "price": 300,
+    "popularity": 85,
+    "badges": [],
+    "colors": [
+      {
+        "id": "grey",
+        "name": "Тёмно-серые со звёздами",
+        "hex": "#5c6066"
+      }
+    ],
+    "description": "Утеплённые носки средней высоты (на бирке — «тёплые, средняя высота») с дорожкой звёзд сбоку и полосками у резинки. Сделано в Корее.",
+    "composition": "⚠️ Состав уточнить у Иры",
+    "care": "Стирка при 30°, не отбеливать",
+    "variants": [
+      {
+        "sku": "warm-socks-polo-stars-40-45-grey",
+        "size": "40-45",
+        "color": "grey",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/warm-socks-polo-stars/1792100000088.jpg",
+      "/products/warm-socks-polo-stars/1792100000089.jpg"
+    ]
   }
 ]

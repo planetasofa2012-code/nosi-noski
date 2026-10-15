@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ProductCard } from '@/components/ProductCard';
 import { ProductView } from '@/components/ProductView';
-import { CATEGORIES, getProduct, products, related } from '@/lib/catalog';
+import { categoryInfo, getProduct, products, related } from '@/lib/catalog';
 import { formatPrice } from '@/lib/site';
 import { getStock } from '@/lib/stock';
 
@@ -27,7 +27,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const product = getProduct(slug);
   if (!product) notFound();
   const stock = await getStock();
-  const category = CATEGORIES.find((c) => c.id === product.category)!;
+  const category = categoryInfo(product.category);
   const variantStock = Object.fromEntries(product.variants.map((v) => [v.sku, stock[v.sku] ?? 0]));
 
   return (
