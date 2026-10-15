@@ -15,6 +15,7 @@
 | **Демо-сайт** (можно отправлять) | https://planetasofa2012-code.github.io/nosi-noski/ |
 | **Демо фотостудии** | https://planetasofa2012-code.github.io/nosi-noski/studio/ |
 | **Предложение для Иры** | https://planetasofa2012-code.github.io/nosi-noski/ira/ (исходник `brand/predlozhenie-ire.html`) |
+| **Чек-лист встречи с Ирой** | https://github.com/planetasofa2012-code/nosi-noski/blob/main/VSTRECHA.md |
 | Код (GitHub, публичный) | https://github.com/planetasofa2012-code/nosi-noski |
 | Локально: магазин | http://localhost:3333 (`cd shop && npm run dev`) |
 | Локально: студия (настоящая генерация) | http://127.0.0.1:4545 (`studio/start.bat`) |
