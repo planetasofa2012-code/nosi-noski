@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { colorName, findVariant, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
-import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, telegramReady, type DeliveryMethod } from '@/lib/site';
+import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, telegramIsBot, telegramReady, type DeliveryMethod } from '@/lib/site';
 
 export function CartView() {
   const { items, ready, total, setQty, remove, clear } = useCart();
@@ -264,7 +264,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
   const { clear } = useCart();
   const delivery = DELIVERY_METHODS[method];
   const text = orderText(items, total, free, method, point.trim(), comment.trim());
-  const tgHref = `${site.telegram}?text=${encodeURIComponent(text)}`;
+  const tgHref = telegramIsBot ? `${site.telegram.replace(/\/$/, '')}?start=order` : `${site.telegram}?text=${encodeURIComponent(text)}`;
   // Пока не вписан настоящий @username Иры — не отправляем заказы на заглушку t.me/username
   const tgReady = telegramReady;
   const phoneDigits = site.phone.replace(/[^+\d]/g, '');
@@ -325,7 +325,11 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           href={tgHref}
           target="_blank"
           rel="noreferrer"
-          onClick={() => setSent(true)}
+          onClick={() => {
+            // боту текст в ссылке не передать — кладём заказ в буфер, покупатель вставит его в чат
+            if (telegramIsBot) navigator.clipboard?.writeText(text).then(() => setCopied(true), () => {});
+            setSent(true);
+          }}
           className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink"
         >
           Отправить заказ в Telegram — {formatPrice(total)}
@@ -350,11 +354,28 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           <a href={`tel:${phoneDigits}`} className="mt-2 block text-center text-sm underline">Или позвоните: {site.phone}</a>
         </div>
       )}
+      {site.max && (
+        // MAX-бот: как и в Telegram, текст в ссылке не передать — копируем заказ и открываем чат
+        <a
+          href={`${site.max.replace(/\/$/, '')}?start=order`}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => {
+            navigator.clipboard?.writeText(text).then(() => setCopied(true), () => {});
+            setSent(true);
+          }}
+          className="mt-2.5 block w-full rounded-full border-2 border-ink bg-surface py-3.5 text-center font-bold"
+        >
+          Отправить заказ в MAX
+        </a>
+      )}
       {tgReady && <button type="button" onClick={copy} className="mt-2.5 w-full rounded-full border border-line bg-surface py-3 text-sm font-semibold hover:border-ink">
         {copied ? 'Скопировано ✓ — вставьте в чат с нами' : 'Скопировать текст заказа'}
       </button>}
       <p className="mt-3 text-center text-xs text-muted">
-        {tgReady
+        {tgReady && telegramIsBot
+          ? 'Заказ скопируется, откроется чат с ботом магазина: нажмите «Старт», вставьте текст и отправьте. Подтвердим наличие и договоримся об оплате.'
+          : tgReady
           ? 'Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.'
           : copied
             ? 'Получим заказ — подтвердим наличие и договоримся об оплате.'

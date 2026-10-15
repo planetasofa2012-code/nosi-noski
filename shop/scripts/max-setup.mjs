@@ -13,7 +13,7 @@ if (fs.existsSync(envFile)) {
 }
 
 const TOKEN = process.env.MAX_BOT_TOKEN;
-const BASE = process.env.MAX_API_URL ?? 'https://platform-api2.max.ru';
+const BASE = process.env.MAX_API_URL ?? 'https://platform-api.max.ru';
 if (!TOKEN) {
   console.log('❌ Нет MAX_BOT_TOKEN. Создайте бота в MAX у @MasterBot (/newbot), токен впишите в shop/.env.local:\nMAX_BOT_TOKEN=...');
   process.exit(1);

@@ -11,7 +11,7 @@ export const site = {
   // Пилот без ИП: сайт не собирает имя/телефон, заказ отправляется Ире сообщением в мессенджер.
   // 'form' — форма заказа с отправкой в бот (включить вместе с ИП и уведомлением в РКН)
   orderMode: 'messenger' as 'messenger' | 'form',
-  max: '', // ссылка на профиль/чат в MAX, например https://max.ru/u/…
+  max: '' as string, // ссылка на MAX-бота (https://max.ru/<имя_бота>) или на профиль/чат в MAX, например https://max.ru/u/…
   avitoProfile: '', // ссылка на профиль на Авито (если есть)
   freeShippingPairs: 3, // доставка бесплатно от N пар в корзине…
   freeShippingFrom: 2000, // …или от этой суммы (коробка боксеров)
@@ -36,6 +36,9 @@ export const asset = (src: string) => (src.startsWith('/') ? BASE_PATH + src : s
 
 /** Вписан ли настоящий Telegram Иры (а не заглушка t.me/username) */
 export const telegramReady = !/t\.me\/username$/.test(site.telegram);
+
+/** Заказы принимает бот (t.me/…bot): ему текст через ?text= не передать — копируем и открываем чат */
+export const telegramIsBot = /bot\/?$/i.test(site.telegram);
 
 export const freeShippingText = `Доставка бесплатно от ${site.freeShippingPairs} пар`;
 

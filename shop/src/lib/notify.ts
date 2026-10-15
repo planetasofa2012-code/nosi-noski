@@ -29,7 +29,7 @@ function channels(): Channel[] {
   const maxChat = process.env.MAX_CHAT_ID;
   const maxUser = process.env.MAX_USER_ID;
   if (maxToken && (maxChat || maxUser)) {
-    const base = process.env.MAX_API_URL ?? 'https://platform-api2.max.ru';
+    const base = process.env.MAX_API_URL ?? 'https://platform-api.max.ru';
     const target = maxChat ? `chat_id=${encodeURIComponent(maxChat)}` : `user_id=${encodeURIComponent(maxUser!)}`;
     list.push({
       name: 'MAX',
