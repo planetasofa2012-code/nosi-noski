@@ -15,7 +15,7 @@ export const site = {
   avitoProfile: '', // ссылка на профиль на Авито (если есть)
   // Склад в Google Таблице: URL веб-приложения Apps Script (…/exec). Пусто — остатки из products.json
   stockUrl: '' as string,
-  freeShippingPairs: 3, // доставка бесплатно от N пар в корзине…
+  freeShippingPairs: 5, // доставка бесплатно от N пар в корзине…
   freeShippingFrom: 2000, // …или от этой суммы (коробка боксеров)
   deliveryPrice: '≈ 150 ₽', // Яндекс ПВЗ → ПВЗ по Новосибирску, уточнить у Иры
   lowStockThreshold: 3, // показывать «Осталось N шт»

@@ -34,8 +34,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 // ─── Заказ из ссылки сайта (?start=<код>, формат — shop/src/lib/orderCode.ts) ──
 const CATALOG = join(here, '../shop/src/data/products.json');
 const METHODS = { p: 'Самовывоз', y: 'Яндекс Доставка (ПВЗ)', a: 'Авито Доставка' };
-// как в shop/src/lib/site.ts: бесплатная доставка от 3 пар или от 2000 ₽
-const FREE_PAIRS = 3;
+// как в shop/src/lib/site.ts: бесплатная доставка от 5 пар или от 2000 ₽
+const FREE_PAIRS = 5;
 const FREE_FROM = 2000;
 const DELIVERY_PRICE = '≈ 150 ₽';
 const rub = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
