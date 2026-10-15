@@ -16,6 +16,8 @@ const here = dirname(fileURLToPath(import.meta.url));
 loadEnv(join(here, '.env'));
 
 const SHOP = 'Носи носки';
+// Сайт со страницей заказа /order/?c=<код> (фото, цвет, размер) — ссылку бот добавляет продавцу
+const SITE = (process.env.ORDER_SITE_URL ?? 'https://nosinoski.ru').replace(/\/$/, '');
 const STATE_FILE = join(here, 'state.json');
 const ids = (v) => (v ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 
@@ -215,6 +217,7 @@ async function handle(t, m) {
   const fromSite = m.start && decodeOrder(m.payload);
   if (fromSite) {
     m.text = fromSite;
+    m.orderCode = m.payload;
     await forward(t, m);
     return reply(
       `Спасибо, заказ получен! ✅
@@ -242,7 +245,8 @@ ${esc(fromSite)}
 /** Переслать сообщение покупателя всем продавцам (во все мессенджеры) с привязкой для ответа */
 async function forward(t, m) {
   const head = isOrder(m.text) ? '🛒 <b>Новый заказ</b>' : '💬 <b>Сообщение</b>';
-  const html = `${head} · ${t.name}\nОт: ${esc(m.from.name ?? '')} (${t.contact(m.from)})\n\n${esc(m.text)}`;
+  const link = m.orderCode ? `\n\n📷 Заказ с фото: ${SITE}/order/?c=${m.orderCode}` : '';
+  const html = `${head} · ${t.name}\nОт: ${esc(m.from.name ?? '')} (${t.contact(m.from)})\n\n${esc(m.text)}${link}`;
   let delivered = 0;
   for (const a of transports) {
     for (const admin of a.admins) {
