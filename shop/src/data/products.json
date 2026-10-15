@@ -1468,6 +1468,8 @@
     ],
     "images": [
       "/products/kids-socks-kitty/1792100000001.jpg",
+      "/products/kids-socks-kitty/ai-model-kitty-coral.jpg",
+      "/products/kids-socks-kitty/ai-model-kitty-lilac.jpg",
       "/products/kids-socks-kitty/1792100000002.jpg",
       "/products/kids-socks-kitty/1792100000003.jpg",
       "/products/kids-socks-kitty/1792100000004.jpg"
@@ -1549,6 +1551,8 @@
     ],
     "images": [
       "/products/kids-footies-dino/1792100000005.jpg",
+      "/products/kids-footies-dino/ai-model-dino-green.jpg",
+      "/products/kids-footies-dino/ai-model-dino-grey.jpg",
       "/products/kids-footies-dino/1792100000006.jpg",
       "/products/kids-footies-dino/1792100000007.jpg"
     ],
@@ -1630,6 +1634,8 @@
     ],
     "images": [
       "/products/kids-socks-halloween/1792100000008.jpg",
+      "/products/kids-socks-halloween/ai-model-halloween-cat.jpg",
+      "/products/kids-socks-halloween/ai-model-halloween-pumpkin.jpg",
       "/products/kids-socks-halloween/1792100000009.jpg",
       "/products/kids-socks-halloween/1792100000010.jpg"
     ]
@@ -1686,6 +1692,7 @@
     ],
     "images": [
       "/products/women-socks-flowers/1792100000011.jpg",
+      "/products/women-socks-flowers/ai-model-1.jpg",
       "/products/women-socks-flowers/1792100000012.jpg",
       "/products/women-socks-flowers/1792100000013.jpg"
     ],
@@ -1748,6 +1755,7 @@
     ],
     "images": [
       "/products/women-socks-bowknot/1792100000014.jpg",
+      "/products/women-socks-bowknot/ai-model-1.jpg",
       "/products/women-socks-bowknot/1792100000015.jpg",
       "/products/women-socks-bowknot/1792100000016.jpg"
     ],
@@ -1794,6 +1802,7 @@
     ],
     "images": [
       "/products/women-socks-ruffle-stripes/1792100000017.jpg",
+      "/products/women-socks-ruffle-stripes/ai-model-1.jpg",
       "/products/women-socks-ruffle-stripes/1792100000018.jpg",
       "/products/women-socks-ruffle-stripes/1792100000019.jpg"
     ],
@@ -1841,6 +1850,7 @@
     ],
     "images": [
       "/products/women-socks-glam/1792100000020.jpg",
+      "/products/women-socks-glam/ai-model-1.jpg",
       "/products/women-socks-glam/1792100000021.jpg",
       "/products/women-socks-glam/1792100000022.jpg"
     ],
@@ -1914,6 +1924,7 @@
     ],
     "images": [
       "/products/socks-ny-crew/1792100000023.jpg",
+      "/products/socks-ny-crew/ai-model-1.jpg",
       "/products/socks-ny-crew/1792100000024.jpg",
       "/products/socks-ny-crew/1792100000025.jpg",
       "/products/socks-ny-crew/1792100000026.jpg"
@@ -2035,6 +2046,7 @@
     ],
     "images": [
       "/products/men-socks-smile/1792100000031.jpg",
+      "/products/men-socks-smile/ai-model-1.jpg",
       "/products/men-socks-smile/1792100000032.jpg",
       "/products/men-socks-smile/1792100000033.jpg"
     ],
@@ -2098,6 +2110,7 @@
     ],
     "images": [
       "/products/socks-studios/1792100000034.jpg",
+      "/products/socks-studios/ai-model-1.jpg",
       "/products/socks-studios/1792100000035.jpg",
       "/products/socks-studios/1792100000036.jpg"
     ],
@@ -2148,6 +2161,7 @@
     ],
     "images": [
       "/products/socks-look-at-this/1792100000037.jpg",
+      "/products/socks-look-at-this/ai-model-w-old.jpg",
       "/products/socks-look-at-this/1792100000038.jpg",
       "/products/socks-look-at-this/1792100000039.jpg"
     ]
@@ -2190,6 +2204,7 @@
     ],
     "images": [
       "/products/socks-france/1792100000040.jpg",
+      "/products/socks-france/ai-model-1.jpg",
       "/products/socks-france/1792100000041.jpg",
       "/products/socks-france/1792100000042.jpg"
     ]
@@ -2235,6 +2250,7 @@
     ],
     "images": [
       "/products/socks-painting/1792100000043.jpg",
+      "/products/socks-painting/ai-model-1.jpg",
       "/products/socks-painting/1792100000044.jpg",
       "/products/socks-painting/1792100000045.jpg"
     ],
@@ -2296,6 +2312,7 @@
     ],
     "images": [
       "/products/men-socks-polo-wave/1792100000046.jpg",
+      "/products/men-socks-polo-wave/ai-model-1.jpg",
       "/products/men-socks-polo-wave/1792100000047.jpg",
       "/products/men-socks-polo-wave/1792100000048.jpg"
     ]
@@ -2443,6 +2460,7 @@
     ],
     "images": [
       "/products/men-socks-tricolor/1792100000054.jpg",
+      "/products/men-socks-tricolor/ai-model-m-mid.jpg",
       "/products/men-socks-tricolor/1792100000055.jpg",
       "/products/men-socks-tricolor/1792100000056.jpg",
       "/products/men-socks-tricolor/1792100000057.jpg"
@@ -2657,6 +2675,7 @@
     ],
     "images": [
       "/products/sport-socks-3stripes/1792100000066.jpg",
+      "/products/sport-socks-3stripes/ai-model-m-teen.jpg",
       "/products/sport-socks-3stripes/1792100000067.jpg",
       "/products/sport-socks-3stripes/1792100000068.jpg"
     ]
@@ -2699,6 +2718,7 @@
     ],
     "images": [
       "/products/sport-socks-white/1792100000069.jpg",
+      "/products/sport-socks-white/ai-model-w-teen.jpg",
       "/products/sport-socks-white/1792100000070.jpg",
       "/products/sport-socks-white/1792100000071.jpg"
     ]
@@ -2822,6 +2842,7 @@
     ],
     "images": [
       "/products/women-socks-trek-pile/1792100000077.jpg",
+      "/products/women-socks-trek-pile/ai-model-w-mid.jpg",
       "/products/women-socks-trek-pile/1792100000078.jpg"
     ],
     "label": [
@@ -2993,6 +3014,7 @@
     ],
     "images": [
       "/products/warm-socks-aeroheat/1792100000085.jpg",
+      "/products/warm-socks-aeroheat/ai-model-m-old.jpg",
       "/products/warm-socks-aeroheat/1792100000086.jpg",
       "/products/warm-socks-aeroheat/1792100000087.jpg"
     ],
