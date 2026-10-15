@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Badges } from './ProductCard';
 import { SizeGuide } from './SizeGuide';
+import { StockPanel } from './StockPanel';
+import { fetchLiveStock } from '@/lib/liveStock';
 import { isSocks, sizesOf, type Product, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
 import { asset, DELIVERY_METHODS, formatPrice, freeShippingText, IS_DEMO, site } from '@/lib/site';
@@ -20,8 +22,12 @@ export function ProductView({ product, initialStock }: { product: Product; initi
   const [size, setSize] = useState(firstAvailable.size);
   const [added, setAdded] = useState(false);
 
-  // Свежие остатки при открытии карточки
+  // Свежие остатки при открытии карточки: из Google Таблицы (если подключена) или со своего сервера
   useEffect(() => {
+    if (site.stockUrl) {
+      fetchLiveStock().then((s) => s && setStock((prev) => ({ ...prev, ...s })));
+      return;
+    }
     if (IS_DEMO) return; // в демо нет сервера остатков
     const skus = product.variants.map((v) => v.sku).join(',');
     fetch(`/api/stock?skus=${encodeURIComponent(skus)}`)
@@ -159,6 +165,8 @@ export function ProductView({ product, initialStock }: { product: Product; initi
             Купить на Авито с доставкой ↗
           </a>
         )}
+
+        <StockPanel product={product} stock={stock} onSaved={(s) => setStock((prev) => ({ ...prev, ...s }))} />
 
         <div className="mt-8 divide-y divide-line border-y border-line">
           <Details title="Описание" open>{product.description}</Details>

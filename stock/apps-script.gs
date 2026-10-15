@@ -33,13 +33,14 @@ function readStock_() {
   return { sheet, stock, rowBySku, qtyCol };
 }
 
-// GET ?key=… → { stock: { sku: остаток } }
+// GET → { stock: { sku: остаток } }. Остатки не секрет — сайт читает их прямо из браузера покупателя
 function doGet(e) {
-  if (e.parameter.key !== KEY) return json({ error: 'forbidden' });
   return json({ stock: readStock_().stock });
 }
 
-// POST { key, orderId, items: [{ sku, qty }] } → списание
+// POST { key, action: 'check' } → проверка ключа (вход Иры на сайте)
+// POST { key, action: 'set', items: [{ sku, stock }] } → Ира проставила остатки в карточке товара
+// POST { key, orderId, items: [{ sku, qty }] } → списание по заказу
 function doPost(e) {
   let body;
   try {
@@ -48,6 +49,8 @@ function doPost(e) {
     return json({ ok: false, error: 'bad json' });
   }
   if (body.key !== KEY) return json({ ok: false, error: 'forbidden' });
+  if (body.action === 'check') return json({ ok: true });
+  if (body.action === 'set') return setStock_(body.items || []);
 
   const lock = LockService.getScriptLock();
   lock.waitLock(20000); // два заказа одновременно не уведут остаток в минус
@@ -67,6 +70,30 @@ function doPost(e) {
       stock[it.sku] = left;
       result[it.sku] = left;
       log.appendRow([now, body.orderId, it.sku, it.qty, left]);
+    }
+    return json({ ok: true, stock: result });
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+// Правка остатков с сайта: абсолютные значения, каждая правка — строка в log
+function setStock_(items) {
+  const lock = LockService.getScriptLock();
+  lock.waitLock(20000);
+  try {
+    const { sheet, stock, rowBySku, qtyCol } = readStock_();
+    const log = SpreadsheetApp.getActive().getSheetByName(LOG_SHEET) || SpreadsheetApp.getActive().insertSheet(LOG_SHEET);
+    const now = new Date();
+    const result = {};
+    for (const it of items) {
+      const value = Math.max(0, Math.floor(Number(it.stock)));
+      if (!rowBySku[it.sku] || !isFinite(value)) continue;
+      if (value !== stock[it.sku]) {
+        sheet.getRange(rowBySku[it.sku], qtyCol + 1).setValue(value);
+        log.appendRow([now, 'правка с сайта', it.sku, value - stock[it.sku], value]);
+      }
+      result[it.sku] = value;
     }
     return json({ ok: true, stock: result });
   } finally {
