@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,12013,e=>{"use strict";var t=e.i(43476),r=e.i(18566);e.s(["OrderNumber",0,function(){let e=(0,r.useSearchParams)().get("id");return e?(0,t.jsxs)("p",{className:"mt-2 text-lg",children:["Номер заказа: ",(0,t.jsx)("b",{children:e})]}):null}])}]);

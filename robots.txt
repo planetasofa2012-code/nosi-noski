@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /cart/
+Sitemap: https://nosinoski.ru/sitemap.xml
