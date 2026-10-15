@@ -267,6 +267,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
   const tgHref = `${site.telegram}?text=${encodeURIComponent(text)}`;
   // Пока не вписан настоящий @username Иры — не отправляем заказы на заглушку t.me/username
   const tgReady = telegramReady;
+  const phoneDigits = site.phone.replace(/[^+\d]/g, '');
 
   async function copy() {
     try {
@@ -334,13 +335,30 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           {copied ? 'Заказ скопирован ✓' : `Скопировать заказ — ${formatPrice(total)}`}
         </button>
       )}
+      {!tgReady && copied && (
+        // Шаг 2: куда отправить скопированный заказ (пока нет @username Иры)
+        <div className="mt-4 rounded-2xl border-2 border-black bg-surface-2 p-3.5">
+          <p className="text-sm font-semibold">Шаг 2 — отправьте заказ нам:</p>
+          <div className="mt-2.5 grid grid-cols-2 gap-2">
+            <a href={`sms:${phoneDigits}?&body=${encodeURIComponent(text)}`} onClick={() => setSent(true)} className="rounded-full bg-accent py-3 text-center text-sm font-bold text-accent-ink ring-1 ring-black">
+              SMS — текст уже вписан
+            </a>
+            <a href={`https://t.me/${phoneDigits}`} target="_blank" rel="noreferrer" onClick={() => setSent(true)} className="rounded-full border border-ink bg-surface py-3 text-center text-sm font-bold">
+              Telegram — вставьте текст
+            </a>
+          </div>
+          <a href={`tel:${phoneDigits}`} className="mt-2 block text-center text-sm underline">Или позвоните: {site.phone}</a>
+        </div>
+      )}
       {tgReady && <button type="button" onClick={copy} className="mt-2.5 w-full rounded-full border border-line bg-surface py-3 text-sm font-semibold hover:border-ink">
         {copied ? 'Скопировано ✓ — вставьте в чат с нами' : 'Скопировать текст заказа'}
       </button>}
       <p className="mt-3 text-center text-xs text-muted">
         {tgReady
           ? 'Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.'
-          : 'Чат для заказов скоро подключим — пока отправьте скопированный заказ по телефону.'}
+          : copied
+            ? 'Получим заказ — подтвердим наличие и договоримся об оплате.'
+            : 'Нажмите — текст заказа скопируется, потом выберите, куда его отправить: SMS или Telegram.'}
         {site.avitoProfile && (
           <>
             {' '}Удобнее на Авито? <a href={site.avitoProfile} target="_blank" rel="noreferrer" className="underline">Наш профиль</a>.
@@ -350,7 +368,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
       </p>
       {sent && (
         <div className="mt-4 rounded-2xl bg-surface-2 p-3 text-center text-sm">
-          Отправили? Ответим в Telegram в течение дня.{' '}
+          Отправили? Ответим в течение дня.{' '}
           <button type="button" onClick={clear} className="font-semibold underline">Очистить корзину</button>
         </div>
       )}
