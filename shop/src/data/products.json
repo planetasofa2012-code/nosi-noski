@@ -22,8 +22,8 @@
       }
     ],
     "images": [
-      "/products/socks-teddy-1986/1791995509438.png",
-      "/products/socks-teddy-1986/1791995509457.png",
+      "/products/socks-teddy-1986/1791995509438.jpg",
+      "/products/socks-teddy-1986/1791995509457.jpg",
       "/products/socks-teddy-1986/1791995509465.jpg"
     ],
     "description": "Высокие носки с мягким плюшевым мишкой на голени и вязаной надписью «Teddy Bear 1986» на стопе. Резинка в рубчик держит и не давит. Бренд Cozy Socks.",
@@ -73,8 +73,8 @@
       }
     ],
     "images": [
-      "/products/socks-leopard-letter/1791995509482.png",
-      "/products/socks-leopard-letter/1791995509498.png",
+      "/products/socks-leopard-letter/1791995509482.jpg",
+      "/products/socks-leopard-letter/1791995509498.jpg",
       "/products/socks-leopard-letter/1791995509503.jpg"
     ],
     "description": "Носки с пушистой буквой в леопардовый принт — стильно с кедами и как маленький подарок с инициалом. Рубчик на резинке. Бренд Cozy Socks.",
@@ -117,8 +117,8 @@
       }
     ],
     "images": [
-      "/products/men-socks-argyle/1791995509517.png",
-      "/products/men-socks-argyle/1791995509532.png",
+      "/products/men-socks-argyle/1791995509517.jpg",
+      "/products/men-socks-argyle/1791995509532.jpg",
       "/products/men-socks-argyle/1791995509537.jpg"
     ],
     "description": "Классические мужские носки с узором «аргайл» — под брюки и на каждый день. Мягкая резинка без сдавливания (без давления на щиколотку). Сделано в Корее.",
@@ -144,60 +144,753 @@
     ]
   },
   {
-    "slug": "socks-avocado",
-    "title": "Носки «Авокадо»",
-    "category": "socks",
-    "price": 390,
-    "oldPrice": 450,
+    "slug": "socks-bows",
+    "title": "Носки «Бантики»",
+    "price": 300,
+    "popularity": 96,
+    "badges": [
+      "new"
+    ],
     "colors": [
       {
-        "id": "green",
-        "name": "Зелёный",
-        "hex": "#7BA05B"
+        "id": "blue",
+        "name": "Голубой (оранжевый бант)",
+        "hex": "#6fb3e6"
       },
       {
-        "id": "mustard",
-        "name": "Горчичный",
-        "hex": "#D9A441"
+        "id": "black",
+        "name": "Чёрный (красный бант)",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "cream",
+        "name": "Кремовый (розовый бант)",
+        "hex": "#f6ebdd"
       }
     ],
+    "description": "Женские носки с большим бантом на резинке и двумя маленькими бантиками рядом. Яркий акцент к кедам и платью. Бренд ARIES.",
+    "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
+    "category": "socks",
     "variants": [
       {
-        "sku": "socks-avocado-36-39-green",
-        "size": "36-39",
-        "color": "green",
-        "stock": 3
+        "sku": "socks-bows-35-40-blue",
+        "size": "35-40",
+        "color": "blue",
+        "stock": 5
       },
       {
-        "sku": "socks-avocado-36-39-mustard",
-        "size": "36-39",
-        "color": "mustard",
-        "stock": 2
+        "sku": "socks-bows-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
       },
       {
-        "sku": "socks-avocado-40-43-green",
-        "size": "40-43",
-        "color": "green",
-        "stock": 6
-      },
-      {
-        "sku": "socks-avocado-40-43-mustard",
-        "size": "40-43",
-        "color": "mustard",
-        "stock": 1
+        "sku": "socks-bows-35-40-cream",
+        "size": "35-40",
+        "color": "cream",
+        "stock": 5
       }
     ],
     "images": [
-      "/products/socks-avocado/1791994496310.png",
-      "/products/socks-avocado/1791994496329.png"
+      "/products/socks-bows/1792040197912.jpg",
+      "/products/socks-bows/1792040197931.jpg",
+      "/products/socks-bows/1792040197937.jpg"
     ],
-    "description": "Яркие хлопковые носки с принтом авокадо. Мягкая резинка не давит, усиленные пятка и мысок.",
-    "composition": "80% хлопок, 17% полиамид, 3% эластан",
-    "care": "Стирка при 30–40°, не отбеливать, сушить без батареи",
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+  },
+  {
+    "slug": "socks-smile-upside",
+    "title": "Носки «Смайл вверх ногами»",
+    "price": 300,
+    "popularity": 95,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "gray",
+        "name": "Серый",
+        "hex": "#a7a7a7"
+      },
+      {
+        "id": "white",
+        "name": "Белый",
+        "hex": "#f7f5f0"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Весёлый оранжевый смайлик стоит на руках прямо на щиколотке. Носки, которые поднимают настроение. Бренд ARIES.",
+    "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
+    "category": "socks",
+    "variants": [
+      {
+        "sku": "socks-smile-upside-35-40-gray",
+        "size": "35-40",
+        "color": "gray",
+        "stock": 5
+      },
+      {
+        "sku": "socks-smile-upside-35-40-white",
+        "size": "35-40",
+        "color": "white",
+        "stock": 5
+      },
+      {
+        "sku": "socks-smile-upside-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-smile-upside/1792040197951.jpg",
+      "/products/socks-smile-upside/1792040197965.jpg",
+      "/products/socks-smile-upside/1792040197974.jpg"
+    ],
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+  },
+  {
+    "slug": "socks-mini-bows",
+    "title": "Носки «Мини-бантики» с рюшей",
+    "price": 350,
+    "popularity": 94,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "white",
+        "name": "Белый с тёмно-синими бантиками",
+        "hex": "#f7f5f0"
+      }
+    ],
+    "description": "Нежные белые носки с рюшей по краю и россыпью маленьких бантиков и точек. Идеально с туфлями Мэри Джейн. Бренд Cozy Socks.",
+    "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
+    "category": "socks",
+    "variants": [
+      {
+        "sku": "socks-mini-bows-35-40-white",
+        "size": "35-40",
+        "color": "white",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-mini-bows/1792040197986.jpg",
+      "/products/socks-mini-bows/1792040198002.jpg",
+      "/products/socks-mini-bows/1792040198008.jpg"
+    ],
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+  },
+  {
+    "slug": "socks-roses",
+    "title": "Носки «Розы»",
+    "price": 300,
+    "popularity": 93,
+    "badges": [],
+    "colors": [
+      {
+        "id": "cream",
+        "name": "Молочный с чёрными розами",
+        "hex": "#f3ecdf"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный с белыми розами",
+        "hex": "#1d1b1a"
+      }
+    ],
+    "description": "Классика в цветочек: розы по всей длине носка. Две версии — светлая и тёмная. Бренд ARIES.",
+    "composition": "70% хлопок, 25% спандекс, 5% полиэстер (по бирке ARIES)",
+    "category": "socks",
+    "variants": [
+      {
+        "sku": "socks-roses-35-40-cream",
+        "size": "35-40",
+        "color": "cream",
+        "stock": 5
+      },
+      {
+        "sku": "socks-roses-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-roses/1792040198022.jpg",
+      "/products/socks-roses/1792040198036.jpg",
+      "/products/socks-roses/1792040198041.jpg",
+      "/products/socks-roses/1792040198045.jpg"
+    ],
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+  },
+  {
+    "slug": "socks-fluffy-smile",
+    "title": "Носки «Плюшевый смайл»",
+    "price": 350,
+    "popularity": 92,
     "badges": [
       "hit"
     ],
-    "popularity": 95
+    "colors": [
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#1d1b1a"
+      },
+      {
+        "id": "cream",
+        "name": "Молочный",
+        "hex": "#f3ecdf"
+      },
+      {
+        "id": "gray",
+        "name": "Серый",
+        "hex": "#8e8e8e"
+      },
+      {
+        "id": "red",
+        "name": "Бордовый",
+        "hex": "#9b1b25"
+      }
+    ],
+    "description": "Пушистый жёлтый смайл на резинке в рубчик — его хочется потрогать. Четыре цвета. Бренд Cozy Socks.",
+    "composition": "Хлопок с добавлением полиэстера и эластана (⚠️ уточнить у Иры)",
+    "category": "socks",
+    "variants": [
+      {
+        "sku": "socks-fluffy-smile-35-40-black",
+        "size": "35-40",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "socks-fluffy-smile-35-40-cream",
+        "size": "35-40",
+        "color": "cream",
+        "stock": 5
+      },
+      {
+        "sku": "socks-fluffy-smile-35-40-gray",
+        "size": "35-40",
+        "color": "gray",
+        "stock": 5
+      },
+      {
+        "sku": "socks-fluffy-smile-35-40-red",
+        "size": "35-40",
+        "color": "red",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/socks-fluffy-smile/1792040198058.jpg",
+      "/products/socks-fluffy-smile/1792040198072.jpg",
+      "/products/socks-fluffy-smile/1792040198077.jpg",
+      "/products/socks-fluffy-smile/1792040198082.jpg"
+    ],
+    "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
+  },
+  {
+    "slug": "women-briefs-floral",
+    "title": "Трусики женские «Цветочки»",
+    "category": "women",
+    "price": 450,
+    "popularity": 90,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "floral",
+        "name": "Мелкий цветочек, синяя резинка",
+        "hex": "#d9a7a0"
+      },
+      {
+        "id": "roses",
+        "name": "Розочки с кружевом",
+        "hex": "#f4d3d6"
+      }
+    ],
+    "description": "Мягкие хлопковые трусики с цветочным принтом. Два варианта: мелкий цветочек с синей резинкой и нежные розочки с кружевом по краю. Бренд Mulang.",
+    "composition": "Хлопок с эластаном (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
+    "variants": [
+      {
+        "sku": "women-briefs-floral-s-floral",
+        "size": "S",
+        "color": "floral",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-m-floral",
+        "size": "M",
+        "color": "floral",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-l-floral",
+        "size": "L",
+        "color": "floral",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-xl-floral",
+        "size": "XL",
+        "color": "floral",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-s-roses",
+        "size": "S",
+        "color": "roses",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-m-roses",
+        "size": "M",
+        "color": "roses",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-l-roses",
+        "size": "L",
+        "color": "roses",
+        "stock": 5
+      },
+      {
+        "sku": "women-briefs-floral-xl-roses",
+        "size": "XL",
+        "color": "roses",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/women-briefs-floral/1792040431893.jpg",
+      "/products/women-briefs-floral/1792040431911.jpg",
+      "/products/women-briefs-floral/1792040431922.jpg",
+      "/products/women-briefs-floral/1792040431930.jpg"
+    ]
+  },
+  {
+    "slug": "men-boxers-speclo-3",
+    "title": "Боксеры мужские Speclo, набор 3 шт",
+    "category": "men",
+    "price": 1490,
+    "popularity": 89,
+    "badges": [
+      "hit"
+    ],
+    "colors": [
+      {
+        "id": "set",
+        "name": "Серый + голубой + тёмно-синий",
+        "hex": "#5f7fa6"
+      }
+    ],
+    "description": "Набор из трёх боксеров: серый меланж, голубой и тёмно-синий. Мягкий хлопок со стрейчем, плоские швы, в коробке. Бренд Speclo, Корея.",
+    "composition": "Хлопок, спандекс (по упаковке)",
+    "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
+    "variants": [
+      {
+        "sku": "men-boxers-speclo-3-m-set",
+        "size": "M",
+        "color": "set",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-speclo-3-l-set",
+        "size": "L",
+        "color": "set",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-speclo-3-xl-set",
+        "size": "XL",
+        "color": "set",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-speclo-3-xxl-set",
+        "size": "XXL",
+        "color": "set",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-boxers-speclo-3/1792040431945.jpg",
+      "/products/men-boxers-speclo-3/1792040431959.jpg",
+      "/products/men-boxers-speclo-3/1792040431965.jpg",
+      "/products/men-boxers-speclo-3/1792040431969.jpg"
+    ]
+  },
+  {
+    "slug": "men-boxers-ab-wide",
+    "title": "Боксеры Arnaldo Bassini, широкая резинка",
+    "category": "men",
+    "price": 590,
+    "popularity": 86,
+    "badges": [],
+    "colors": [
+      {
+        "id": "plum",
+        "name": "Сливовый",
+        "hex": "#5e3550"
+      },
+      {
+        "id": "navy",
+        "name": "Тёмно-синий",
+        "hex": "#2a3a5c"
+      },
+      {
+        "id": "black",
+        "name": "Чёрный",
+        "hex": "#1b1b1b"
+      }
+    ],
+    "description": "Боксеры с широкой резинкой-логотипом. Гладкая тянущаяся ткань, хорошо держат форму. Бренд Arnaldo Bassini.",
+    "composition": "Полиэстер, эластан (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
+    "variants": [
+      {
+        "sku": "men-boxers-ab-wide-m-plum",
+        "size": "M",
+        "color": "plum",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-l-plum",
+        "size": "L",
+        "color": "plum",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xl-plum",
+        "size": "XL",
+        "color": "plum",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xxl-plum",
+        "size": "XXL",
+        "color": "plum",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-m-navy",
+        "size": "M",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-l-navy",
+        "size": "L",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xl-navy",
+        "size": "XL",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xxl-navy",
+        "size": "XXL",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-m-black",
+        "size": "M",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-l-black",
+        "size": "L",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xl-black",
+        "size": "XL",
+        "color": "black",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-wide-xxl-black",
+        "size": "XXL",
+        "color": "black",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-boxers-ab-wide/1792040431980.jpg",
+      "/products/men-boxers-ab-wide/1792040431985.jpg"
+    ]
+  },
+  {
+    "slug": "men-boxers-ab-logo",
+    "title": "Боксеры Arnaldo Bassini с логотипом",
+    "category": "men",
+    "price": 590,
+    "popularity": 87,
+    "badges": [
+      "new"
+    ],
+    "colors": [
+      {
+        "id": "navy",
+        "name": "Тёмно-синий",
+        "hex": "#22304f"
+      },
+      {
+        "id": "teal",
+        "name": "Бирюзовый",
+        "hex": "#1f7f9e"
+      },
+      {
+        "id": "red",
+        "name": "Красный",
+        "hex": "#d42a2a"
+      }
+    ],
+    "description": "Яркие хлопковые боксеры с белой резинкой-надписью и значком AB на штанине. Бренд Arnaldo Bassini.",
+    "composition": "Хлопок, эластан (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
+    "variants": [
+      {
+        "sku": "men-boxers-ab-logo-m-navy",
+        "size": "M",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-l-navy",
+        "size": "L",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xl-navy",
+        "size": "XL",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xxl-navy",
+        "size": "XXL",
+        "color": "navy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-m-teal",
+        "size": "M",
+        "color": "teal",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-l-teal",
+        "size": "L",
+        "color": "teal",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xl-teal",
+        "size": "XL",
+        "color": "teal",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xxl-teal",
+        "size": "XXL",
+        "color": "teal",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-m-red",
+        "size": "M",
+        "color": "red",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-l-red",
+        "size": "L",
+        "color": "red",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xl-red",
+        "size": "XL",
+        "color": "red",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-logo-xxl-red",
+        "size": "XXL",
+        "color": "red",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-boxers-ab-logo/1792040431998.jpg",
+      "/products/men-boxers-ab-logo/1792040432011.jpg",
+      "/products/men-boxers-ab-logo/1792040432016.jpg"
+    ]
+  },
+  {
+    "slug": "men-boxers-ab-melange",
+    "title": "Боксеры Arnaldo Bassini меланж",
+    "category": "men",
+    "price": 590,
+    "popularity": 85,
+    "badges": [],
+    "colors": [
+      {
+        "id": "burgundy",
+        "name": "Бордовый меланж",
+        "hex": "#7a3b44"
+      },
+      {
+        "id": "blue",
+        "name": "Синий меланж",
+        "hex": "#4b5a8a"
+      },
+      {
+        "id": "graphite",
+        "name": "Графит меланж",
+        "hex": "#3d3d3d"
+      }
+    ],
+    "description": "Боксеры из мягкого меланжевого трикотажа с контрастной строчкой. Спокойные цвета на каждый день. Бренд Arnaldo Bassini.",
+    "composition": "Хлопок, полиэстер, эластан (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
+    "variants": [
+      {
+        "sku": "men-boxers-ab-melange-m-burgundy",
+        "size": "M",
+        "color": "burgundy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-l-burgundy",
+        "size": "L",
+        "color": "burgundy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xl-burgundy",
+        "size": "XL",
+        "color": "burgundy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xxl-burgundy",
+        "size": "XXL",
+        "color": "burgundy",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-m-blue",
+        "size": "M",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-l-blue",
+        "size": "L",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xl-blue",
+        "size": "XL",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xxl-blue",
+        "size": "XXL",
+        "color": "blue",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-m-graphite",
+        "size": "M",
+        "color": "graphite",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-l-graphite",
+        "size": "L",
+        "color": "graphite",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xl-graphite",
+        "size": "XL",
+        "color": "graphite",
+        "stock": 5
+      },
+      {
+        "sku": "men-boxers-ab-melange-xxl-graphite",
+        "size": "XXL",
+        "color": "graphite",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-boxers-ab-melange/1792040432026.jpg",
+      "/products/men-boxers-ab-melange/1792040432035.jpg"
+    ]
+  },
+  {
+    "slug": "men-socks-stripe",
+    "title": "Мужские короткие носки «Полоска», Корея",
+    "category": "socks",
+    "price": 250,
+    "popularity": 88,
+    "badges": [],
+    "colors": [
+      {
+        "id": "tricolor",
+        "name": "Серые, полоска красно-бело-синяя",
+        "hex": "#a9a9a9"
+      },
+      {
+        "id": "blackblue",
+        "name": "Серые, полоска чёрно-бело-синяя",
+        "hex": "#8f969e"
+      }
+    ],
+    "description": "Короткие спортивные носки под кеды с тонкой полоской на резинке и у мыска. Сделано в Корее.",
+    "composition": "Хлопок с полиэстером (⚠️ уточнить у Иры)",
+    "care": "Стирка при 30–40°, не отбеливать",
+    "variants": [
+      {
+        "sku": "men-socks-stripe-40-45-tricolor",
+        "size": "40-45",
+        "color": "tricolor",
+        "stock": 5
+      },
+      {
+        "sku": "men-socks-stripe-40-45-blackblue",
+        "size": "40-45",
+        "color": "blackblue",
+        "stock": 5
+      }
+    ],
+    "images": [
+      "/products/men-socks-stripe/1792040432048.jpg",
+      "/products/men-socks-stripe/1792040432061.jpg",
+      "/products/men-socks-stripe/1792040432071.jpg"
+    ]
   },
   {
     "slug": "socks-wool-cozy",

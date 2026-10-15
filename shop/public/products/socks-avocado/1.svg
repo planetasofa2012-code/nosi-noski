@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000"><rect width="800" height="1000" fill="#FBF7F2"/>
-  <circle cx="260" cy="780" r="120" fill="#7BA05B" opacity=".12"/><path d="M330 150h140v330c0 40 20 60 60 80l90 45c55 28 60 110-5 130-35 11-70 0-100-15l-150-75c-50-25-75-60-75-115V150z" fill="#7BA05B"/>
-       <rect x="320" y="140" width="160" height="70" rx="20" fill="#fff" opacity=".35"/>
-       <path d="M545 610l70 35c40 20 40 70 0 80" stroke="#fff" stroke-width="14" fill="none" opacity=".4"/>
-  <text x="400" y="930" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7A6F66">фото появится из фотостудии</text></svg>

@@ -22,6 +22,7 @@ export default async function Home() {
   const sets = available.filter((p) => p.category === 'sets');
   const cover = (id: string) => products.find((p) => p.category === id)?.images[0];
   const heroImage = hits[0]?.images[1] ?? products[0].images[0];
+  const minPrice = Math.min(...available.map((p) => p.price));
 
   return (
     <>
@@ -36,7 +37,7 @@ export default async function Home() {
             разуться
           </h1>
           <p className="mt-5 max-w-md text-lg text-muted">
-            Мишки, буквы, ромбы — носки с характером. Бесплатная доставка от {formatPrice(site.freeShippingFrom)}.
+            Мишки, бантики, розы — носки с характером. И бельё на каждый день. Бесплатная доставка от {formatPrice(site.freeShippingFrom)}.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-sticker rounded-full bg-accent px-7 py-3.5 font-bold text-accent-ink">
@@ -53,14 +54,14 @@ export default async function Home() {
           </div>
           {/* Наклейка-ценник на фото */}
           <div className="absolute -bottom-4 -left-3 rotate-[-8deg] rounded-xl bg-accent-2 px-4 py-2 font-display text-lg font-black text-accent-2-ink ring-2 ring-black shadow-hard md:-left-6 md:text-xl">
-            от 300 ₽
+            от {formatPrice(minPrice)}
           </div>
           <Sock className="absolute -top-5 -right-3 h-20 w-20 rotate-12 drop-shadow-[3px_3px_0_#111] md:h-24 md:w-24" />
         </div>
       </section>
 
       <section className="mx-auto mt-6 max-w-6xl px-4">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div className={`grid grid-cols-2 gap-4 ${CATEGORIES.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-4'}`}>
           {CATEGORIES.map((c, i) => {
             const img = cover(c.id);
             const st = STICKERS[i % STICKERS.length];
