@@ -17,6 +17,9 @@ cd ..
 mkdir -p shop/out/studio
 cp -r studio/public/. shop/out/studio/
 cp studio/lib/scenes.mjs shop/src/lib/avito-text.mjs shop/src/data/products.json shop/out/studio/
+# Предложение для Иры: /nosi-noski/ira/
+mkdir -p shop/out/ira
+cp brand/predlozhenie-ire.html shop/out/ira/index.html
 touch shop/out/.nojekyll
 
 # 3. Выкладка в ветку gh-pages

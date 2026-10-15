@@ -8,6 +8,7 @@
 |-----|-------|
 | **Демо-сайт** (можно отправлять) | https://planetasofa2012-code.github.io/nosi-noski/ |
 | **Демо фотостудии** | https://planetasofa2012-code.github.io/nosi-noski/studio/ |
+| **Предложение для Иры** | https://planetasofa2012-code.github.io/nosi-noski/ira/ (исходник `brand/predlozhenie-ire.html`) |
 | Код (GitHub, публичный) | https://github.com/planetasofa2012-code/nosi-noski |
 | Локально: магазин | http://localhost:3333 (`cd shop && npm run dev`) |
 | Локально: студия (настоящая генерация) | http://127.0.0.1:4545 (`studio/start.bat`) |
@@ -26,6 +27,7 @@
 2. ✅ Демо фотостудии: тот же интерфейс, генерация показывает готовые примеры на фото Иры; «Авито» и «Склад» работают; сохранение отключено. Ключ API в интернет не выкладывается.
 3. ✅ Товары без настоящих фото и пустые категории на витрине скрыты (на демо — 4 модели: Teddy, Леопардовая буква, Ромб, Авокадо-демо)
 4. ✅ Студия перекрашена в бренд
+6. ✅ Предложение для Иры: что готово, было → стало (фото), стоимость, что нужно от неё, шаги запуска — `/nosi-noski/ira/`
 5. ⬜ Автосборка через GitHub Actions — отложена: у токена `gh` нет scope `workflow`. Готовый файл: `deploy/pages.yml.example`. Включить: `gh auth refresh -s workflow` → перенести файл в `.github/workflows/pages.yml`
 
 ### Проверено
