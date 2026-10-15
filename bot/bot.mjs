@@ -29,6 +29,52 @@ const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt
 const isOrder = (text) => /Хочу заказать|Итого:/i.test(text);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// ─── Заказ из ссылки сайта (?start=<код>, формат — shop/src/lib/orderCode.ts) ──
+const CATALOG = join(here, '../shop/src/data/products.json');
+const METHODS = { p: 'Самовывоз', y: 'Яндекс Доставка (ПВЗ)', a: 'Авито Доставка' };
+// как в shop/src/lib/site.ts: бесплатная доставка от 3 пар или от 2000 ₽
+const FREE_PAIRS = 3;
+const FREE_FROM = 2000;
+const DELIVERY_PRICE = '≈ 150 ₽';
+const rub = (n) => new Intl.NumberFormat('ru-RU').format(n) + ' ₽';
+
+// ⚠ Та же функция — в shop/src/lib/orderCode.ts; менять только вместе
+function skuCode(sku) {
+  let x = 0x811c9dc5;
+  for (const c of new TextEncoder().encode(sku)) {
+    x ^= c;
+    x = Math.imul(x, 0x01000193) >>> 0;
+  }
+  return (x % 1679616).toString(36).padStart(4, '0');
+}
+
+/** Код → текст заказа, или null. Каталог читаем каждый раз — обновился сайт, обновился и бот (после git pull) */
+function decodeOrder(code) {
+  const m = /^o([pya])((?:[0-9a-z]{5})+)$/.exec(code ?? '');
+  if (!m) return null;
+  const index = new Map();
+  for (const p of JSON.parse(readFileSync(CATALOG, 'utf8'))) for (const v of p.variants) index.set(skuCode(v.sku), { p, v });
+  const lines = [];
+  let total = 0;
+  let qtyAll = 0;
+  for (const chunk of m[2].match(/.{5}/g)) {
+    const hit = index.get(chunk.slice(0, 4));
+    const qty = parseInt(chunk[4], 36);
+    if (!hit || !qty) {
+      lines.push('• ⚠ неизвестный товар (сайт обновился?) — уточнить у покупателя');
+      continue;
+    }
+    const { p, v } = hit;
+    const color = (p.colors.find((c) => c.id === v.color)?.name ?? v.color).toLowerCase();
+    lines.push(`• ${p.title} — ${v.size}, ${color} × ${qty} = ${rub(p.price * qty)}`);
+    total += p.price * qty;
+    qtyAll += qty;
+  }
+  const free = qtyAll >= FREE_PAIRS || total >= FREE_FROM;
+  const cost = m[1] === 'p' ? '' : m[1] === 'a' ? ' (по тарифу Авито)' : free ? ' (бесплатно)' : ` (доставка ${DELIVERY_PRICE})`;
+  return [`Хочу заказать в «${SHOP}»:`, ...lines, `Итого: ${rub(total)}`, `Получение: ${METHODS[m[1]]}${cost}`].join('\n');
+}
+
 // ─── Транспорты ───────────────────────────────────────────────
 // Общий вид входящего: { chat, from: {name, username, id}, text, replyTo, start }
 // send(chat, html) → id отправленного сообщения
@@ -70,6 +116,7 @@ function telegram(token, admins) {
           text: text || (m.photo || m.document ? '[фото/файл — посмотрите в чате бота]' : ''),
           replyTo: m.reply_to_message ? String(m.reply_to_message.message_id) : null,
           start: text.startsWith('/start'),
+          payload: text.startsWith('/start ') ? text.slice(7).trim() : '',
         });
       }
       return out;
@@ -109,7 +156,7 @@ function max(token, admins) {
       const out = [];
       for (const u of r.updates ?? []) {
         if (u.update_type === 'bot_started') {
-          out.push({ chat: String(u.user.user_id), from: { name: u.user.name, username: u.user.username, id: u.user.user_id }, text: '/start', replyTo: null, start: true });
+          out.push({ chat: String(u.user.user_id), from: { name: u.user.name, username: u.user.username, id: u.user.user_id }, text: '/start', replyTo: null, start: true, payload: u.payload ?? '' });
           continue;
         }
         const m = u.message;
@@ -121,12 +168,19 @@ function max(token, admins) {
           text: text || (m.body?.attachments?.length ? '[вложение — посмотрите в чате бота]' : ''),
           replyTo: m.link?.type === 'reply' ? String(m.link.message?.mid ?? '') : null,
           start: text.startsWith('/start'),
+          payload: text.startsWith('/start ') ? text.slice(7).trim() : '',
         });
       }
       return out;
     },
     contact: (f) => (f.username ? `@${f.username}` : `id ${f.id}`),
   };
+}
+
+// Проверка кода заказа без мессенджеров: node bot/bot.mjs --decode op7hym1…
+if (process.argv[2] === '--decode') {
+  console.log(decodeOrder(process.argv[3]) ?? 'Не код заказа');
+  process.exit(0);
 }
 
 const transports = [];
@@ -156,12 +210,36 @@ async function handle(t, m) {
     return reply('Чтобы ответить покупателю, нажмите «Ответить» на его сообщении.');
   }
 
+  // Покупатель пришёл с сайта по кнопке «Оформить» — заказ уже в ссылке
+  const fromSite = m.start && decodeOrder(m.payload);
+  if (fromSite) {
+    m.text = fromSite;
+    await forward(t, m);
+    return reply(
+      `Спасибо, заказ получен! ✅
+
+${esc(fromSite)}
+
+Продавец проверит наличие и напишет вам здесь. ` +
+        'Если нужно — напишите сюда удобный пункт выдачи, время или вопрос по размеру.',
+    );
+  }
+
   // Покупатель
   if (m.start) {
     return reply(`Здравствуйте! Это магазин «${SHOP}» 🧦\n\nВставьте сюда текст заказа — он уже скопирован на сайте (нажмите на поле ввода → «Вставить») — и отправьте.\n\nИли просто напишите вопрос — продавец ответит здесь же.`);
   }
   if (!m.text) return;
+  await forward(t, m);
+  return reply(
+    isOrder(m.text)
+      ? 'Спасибо, заказ получен! ✅ Продавец проверит наличие и напишет вам здесь в ближайшее время.'
+      : 'Сообщение передано продавцу — ответ придёт сюда.',
+  );
+}
 
+/** Переслать сообщение покупателя всем продавцам (во все мессенджеры) с привязкой для ответа */
+async function forward(t, m) {
   const head = isOrder(m.text) ? '🛒 <b>Новый заказ</b>' : '💬 <b>Сообщение</b>';
   const html = `${head} · ${t.name}\nОт: ${esc(m.from.name ?? '')} (${t.contact(m.from)})\n\n${esc(m.text)}`;
   let delivered = 0;
@@ -178,12 +256,6 @@ async function handle(t, m) {
   }
   save();
   if (!delivered) console.error('⚠ Заказ никому не доставлен — проверьте *_ADMIN_IDS:', m.text);
-
-  return reply(
-    isOrder(m.text)
-      ? 'Спасибо, заказ получен! ✅ Продавец проверит наличие и напишет вам здесь в ближайшее время.'
-      : 'Сообщение передано продавцу — ответ придёт сюда.',
-  );
 }
 
 async function loop(t) {

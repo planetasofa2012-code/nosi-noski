@@ -7,7 +7,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3333',
   city: 'Новосибирск',
   phone: '+7 913 928-59-47',
-  telegram: 'https://t.me/username', // TODO: @username Иры — сюда уходят заказы
+  telegram: 'https://t.me/Nosinoski_bot', // бот заказов (bot/bot.mjs); тестовый — потом заменить на бота Иры
   // Пилот без ИП: сайт не собирает имя/телефон, заказ отправляется Ире сообщением в мессенджер.
   // 'form' — форма заказа с отправкой в бот (включить вместе с ИП и уведомлением в РКН)
   orderMode: 'messenger' as 'messenger' | 'form',

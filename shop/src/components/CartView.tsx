@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { colorName, findVariant, type StockMap } from '@/lib/catalog';
 import { useCart } from '@/lib/cart';
+import { encodeOrder } from '@/lib/orderCode';
 import { asset, DELIVERY_METHODS, formatPrice, IS_DEMO, isFreeShipping, site, telegramIsBot, telegramReady, type DeliveryMethod } from '@/lib/site';
 
 export function CartView() {
@@ -264,7 +265,15 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
   const { clear } = useCart();
   const delivery = DELIVERY_METHODS[method];
   const text = orderText(items, total, free, method, point.trim(), comment.trim());
-  const tgHref = telegramIsBot ? `${site.telegram.replace(/\/$/, '')}?start=order` : `${site.telegram}?text=${encodeURIComponent(text)}`;
+  // Бот получает заказ прямо из ссылки (?start=код); не влезло в 64 символа — копируем текст, покупатель вставит
+  const code = encodeOrder(items, method);
+  const botLink = (base: string) => `${base.replace(/\/$/, '')}?start=${code ?? 'order'}`;
+  // Заказ уходит боту кодом — пункт выдачи и комментарий бот спросит сам, на сайте поля не нужны
+  const viaBot = Boolean(code) && telegramReady && telegramIsBot;
+  const tgHref = telegramIsBot ? botLink(site.telegram) : `${site.telegram}?text=${encodeURIComponent(text)}`;
+  const copyIfNeeded = () => {
+    if (!code) navigator.clipboard?.writeText(text).then(() => setCopied(true), () => {});
+  };
   // Пока не вписан настоящий @username Иры — не отправляем заказы на заглушку t.me/username
   const tgReady = telegramReady;
   const phoneDigits = site.phone.replace(/[^+\d]/g, '');
@@ -296,7 +305,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
         ))}
       </div>
       <p className="mt-2 text-sm text-muted">{delivery.hint}</p>
-      {delivery.needsAddress && (
+      {delivery.needsAddress && !viaBot && (
         <label className="mt-2.5 block">
           <span className="text-sm text-muted">Удобный пункт выдачи — район или адрес (необязательно)</span>
           <input
@@ -308,7 +317,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           />
         </label>
       )}
-      <label className="mt-4 block">
+      {!viaBot && <label className="mt-4 block">
         <span className="text-sm text-muted">Комментарий</span>
         <textarea
           value={comment}
@@ -318,7 +327,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           className="mt-1 w-full rounded-[14px] border border-line bg-bg px-3.5 py-2.5 outline-none focus:border-ink"
           placeholder="Вопрос по размеру, удобное время…"
         />
-      </label>
+      </label>}
 
       {tgReady ? (
         <a
@@ -327,7 +336,7 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
           rel="noreferrer"
           onClick={() => {
             // боту текст в ссылке не передать — кладём заказ в буфер, покупатель вставит его в чат
-            if (telegramIsBot) navigator.clipboard?.writeText(text).then(() => setCopied(true), () => {});
+            if (telegramIsBot) copyIfNeeded();
             setSent(true);
           }}
           className="btn-sticker mt-5 block w-full rounded-full bg-accent py-4 text-center font-bold text-accent-ink"
@@ -355,13 +364,13 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
         </div>
       )}
       {site.max && (
-        // MAX-бот: как и в Telegram, текст в ссылке не передать — копируем заказ и открываем чат
+        // MAX-бот: заказ уходит кодом в ссылке, как в Telegram
         <a
-          href={`${site.max.replace(/\/$/, '')}?start=order`}
+          href={botLink(site.max)}
           target="_blank"
           rel="noreferrer"
           onClick={() => {
-            navigator.clipboard?.writeText(text).then(() => setCopied(true), () => {});
+            copyIfNeeded();
             setSent(true);
           }}
           className="mt-2.5 block w-full rounded-full border-2 border-ink bg-surface py-3.5 text-center font-bold"
@@ -374,7 +383,9 @@ function MessengerOrder({ items, total, free, method, setMethod }: {
       </button>}
       <p className="mt-3 text-center text-xs text-muted">
         {tgReady && telegramIsBot
-          ? 'Заказ скопируется, откроется чат с ботом магазина: нажмите «Старт», вставьте текст и отправьте. Подтвердим наличие и договоримся об оплате.'
+          ? code
+            ? 'Откроется чат с ботом магазина — нажмите «Старт», и заказ сразу придёт нам. Подтвердим наличие и договоримся об оплате.'
+            : 'Заказ скопируется, откроется чат с ботом магазина: нажмите «Старт», вставьте текст и отправьте. Подтвердим наличие и договоримся об оплате.'
           : tgReady
           ? 'Откроется чат с нами, текст заказа уже вписан — останется нажать «Отправить». Подтвердим наличие и договоримся об оплате.'
           : copied
