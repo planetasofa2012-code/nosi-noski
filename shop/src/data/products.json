@@ -3,7 +3,7 @@
     "slug": "socks-teddy-1986",
     "title": "Носки «Мишка Teddy 1986»",
     "category": "socks",
-    "price": 350,
+    "price": 250,
     "colors": [
       {
         "id": "white",
@@ -59,7 +59,7 @@
     "slug": "socks-leopard-letter",
     "title": "Носки «Леопардовая буква»",
     "category": "socks",
-    "price": 350,
+    "price": 250,
     "colors": [
       {
         "id": "ivory",
@@ -103,7 +103,7 @@
     "slug": "men-socks-argyle",
     "title": "Мужские носки «Ромб», Корея",
     "category": "socks",
-    "price": 300,
+    "price": 220,
     "colors": [
       {
         "id": "blue",
@@ -146,7 +146,7 @@
   {
     "slug": "socks-bows",
     "title": "Носки «Бантики»",
-    "price": 300,
+    "price": 250,
     "popularity": 96,
     "badges": [
       "new"
@@ -201,7 +201,7 @@
   {
     "slug": "socks-smile-upside",
     "title": "Носки «Смайлик-класс»",
-    "price": 300,
+    "price": 250,
     "popularity": 95,
     "badges": [
       "new"
@@ -256,7 +256,7 @@
   {
     "slug": "socks-mini-bows",
     "title": "Носки «Мини-бантики» с рюшей",
-    "price": 350,
+    "price": 250,
     "popularity": 94,
     "badges": [
       "new"
@@ -289,7 +289,7 @@
   {
     "slug": "socks-roses",
     "title": "Носки «Розы»",
-    "price": 300,
+    "price": 250,
     "popularity": 93,
     "badges": [],
     "colors": [
@@ -332,7 +332,7 @@
   {
     "slug": "socks-fluffy-smile",
     "title": "Носки «Плюшевый смайл»",
-    "price": 350,
+    "price": 250,
     "popularity": 92,
     "badges": [
       "hit"
@@ -479,9 +479,9 @@
   },
   {
     "slug": "men-boxers-speclo-3",
-    "title": "Боксеры мужские Speclo, набор 3 шт",
+    "title": "Боксеры мужские Speclo, коробка 3 шт",
     "category": "men",
-    "price": 1490,
+    "price": 2400,
     "popularity": 89,
     "badges": [
       "hit"
@@ -493,7 +493,7 @@
         "hex": "#5f7fa6"
       }
     ],
-    "description": "Набор из трёх боксеров: серый меланж, голубой и тёмно-синий. Мягкий хлопок со стрейчем, плоские швы, в коробке. Бренд Speclo, Корея.",
+    "description": "Коробка из трёх боксеров: серый меланж, голубой и тёмно-синий. Мягкий хлопок со стрейчем, плоские швы. Бренд Speclo, Корея.",
     "composition": "Хлопок, спандекс (по упаковке)",
     "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
     "variants": [
@@ -531,102 +531,44 @@
   },
   {
     "slug": "men-boxers-ab-wide",
-    "title": "Боксеры Arnaldo Bassini, широкая резинка",
+    "title": "Боксеры Arnaldo Bassini, широкая резинка, коробка 3 шт",
     "category": "men",
-    "price": 590,
+    "price": 2400,
     "popularity": 86,
     "badges": [],
     "colors": [
       {
-        "id": "plum",
-        "name": "Сливовый",
-        "hex": "#5e3550"
-      },
-      {
-        "id": "navy",
-        "name": "Тёмно-синий",
-        "hex": "#2a3a5c"
-      },
-      {
-        "id": "black",
-        "name": "Чёрный",
-        "hex": "#1b1b1b"
+        "id": "set",
+        "name": "Сливовый + тёмно-синий + чёрный",
+        "hex": "#3a2f4a"
       }
     ],
-    "description": "Боксеры с широкой резинкой-логотипом. Гладкая тянущаяся ткань, хорошо держат форму. Бренд Arnaldo Bassini.",
+    "description": "Коробка из трёх боксеров с широкой резинкой-логотипом: сливовый, тёмно-синий и чёрный. Гладкая тянущаяся ткань. Бренд Arnaldo Bassini.",
     "composition": "Полиэстер, эластан (⚠️ уточнить у Иры)",
     "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
     "variants": [
       {
-        "sku": "men-boxers-ab-wide-m-plum",
+        "sku": "men-boxers-ab-wide-m-set",
         "size": "M",
-        "color": "plum",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-wide-l-plum",
+        "sku": "men-boxers-ab-wide-l-set",
         "size": "L",
-        "color": "plum",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-wide-xl-plum",
+        "sku": "men-boxers-ab-wide-xl-set",
         "size": "XL",
-        "color": "plum",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-wide-xxl-plum",
+        "sku": "men-boxers-ab-wide-xxl-set",
         "size": "XXL",
-        "color": "plum",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-m-navy",
-        "size": "M",
-        "color": "navy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-l-navy",
-        "size": "L",
-        "color": "navy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-xl-navy",
-        "size": "XL",
-        "color": "navy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-xxl-navy",
-        "size": "XXL",
-        "color": "navy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-m-black",
-        "size": "M",
-        "color": "black",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-l-black",
-        "size": "L",
-        "color": "black",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-xl-black",
-        "size": "XL",
-        "color": "black",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-wide-xxl-black",
-        "size": "XXL",
-        "color": "black",
+        "color": "set",
         "stock": 5
       }
     ],
@@ -638,104 +580,46 @@
   },
   {
     "slug": "men-boxers-ab-logo",
-    "title": "Боксеры Arnaldo Bassini с логотипом",
+    "title": "Боксеры Arnaldo Bassini с логотипом, коробка 3 шт",
     "category": "men",
-    "price": 590,
+    "price": 2400,
     "popularity": 87,
     "badges": [
       "new"
     ],
     "colors": [
       {
-        "id": "navy",
-        "name": "Тёмно-синий",
-        "hex": "#22304f"
-      },
-      {
-        "id": "teal",
-        "name": "Бирюзовый",
+        "id": "set",
+        "name": "Тёмно-синий + бирюзовый + красный",
         "hex": "#1f7f9e"
-      },
-      {
-        "id": "red",
-        "name": "Красный",
-        "hex": "#d42a2a"
       }
     ],
-    "description": "Яркие хлопковые боксеры с белой резинкой-надписью и значком AB на штанине. Бренд Arnaldo Bassini.",
+    "description": "Коробка из трёх ярких хлопковых боксеров с белой резинкой-надписью и значком AB: тёмно-синий, бирюзовый и красный. Бренд Arnaldo Bassini.",
     "composition": "Хлопок, эластан (⚠️ уточнить у Иры)",
     "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
     "variants": [
       {
-        "sku": "men-boxers-ab-logo-m-navy",
+        "sku": "men-boxers-ab-logo-m-set",
         "size": "M",
-        "color": "navy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-logo-l-navy",
+        "sku": "men-boxers-ab-logo-l-set",
         "size": "L",
-        "color": "navy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-logo-xl-navy",
+        "sku": "men-boxers-ab-logo-xl-set",
         "size": "XL",
-        "color": "navy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-logo-xxl-navy",
+        "sku": "men-boxers-ab-logo-xxl-set",
         "size": "XXL",
-        "color": "navy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-m-teal",
-        "size": "M",
-        "color": "teal",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-l-teal",
-        "size": "L",
-        "color": "teal",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-xl-teal",
-        "size": "XL",
-        "color": "teal",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-xxl-teal",
-        "size": "XXL",
-        "color": "teal",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-m-red",
-        "size": "M",
-        "color": "red",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-l-red",
-        "size": "L",
-        "color": "red",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-xl-red",
-        "size": "XL",
-        "color": "red",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-logo-xxl-red",
-        "size": "XXL",
-        "color": "red",
+        "color": "set",
         "stock": 5
       }
     ],
@@ -747,102 +631,44 @@
   },
   {
     "slug": "men-boxers-ab-melange",
-    "title": "Боксеры Arnaldo Bassini меланж",
+    "title": "Боксеры Arnaldo Bassini меланж, коробка 3 шт",
     "category": "men",
-    "price": 590,
+    "price": 2400,
     "popularity": 85,
     "badges": [],
     "colors": [
       {
-        "id": "burgundy",
-        "name": "Бордовый меланж",
-        "hex": "#7a3b44"
-      },
-      {
-        "id": "blue",
-        "name": "Синий меланж",
-        "hex": "#4b5a8a"
-      },
-      {
-        "id": "graphite",
-        "name": "Графит меланж",
-        "hex": "#3d3d3d"
+        "id": "set",
+        "name": "Бордовый + синий + графит (меланж)",
+        "hex": "#5a4a5a"
       }
     ],
-    "description": "Боксеры из мягкого меланжевого трикотажа с контрастной строчкой. Спокойные цвета на каждый день. Бренд Arnaldo Bassini.",
+    "description": "Коробка из трёх меланжевых боксеров с контрастной строчкой: бордовый, синий и графит. Бренд Arnaldo Bassini.",
     "composition": "Хлопок, полиэстер, эластан (⚠️ уточнить у Иры)",
     "care": "Стирка при 30–40°, не отбеливать, не гладить резинку",
     "variants": [
       {
-        "sku": "men-boxers-ab-melange-m-burgundy",
+        "sku": "men-boxers-ab-melange-m-set",
         "size": "M",
-        "color": "burgundy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-melange-l-burgundy",
+        "sku": "men-boxers-ab-melange-l-set",
         "size": "L",
-        "color": "burgundy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-melange-xl-burgundy",
+        "sku": "men-boxers-ab-melange-xl-set",
         "size": "XL",
-        "color": "burgundy",
+        "color": "set",
         "stock": 5
       },
       {
-        "sku": "men-boxers-ab-melange-xxl-burgundy",
+        "sku": "men-boxers-ab-melange-xxl-set",
         "size": "XXL",
-        "color": "burgundy",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-m-blue",
-        "size": "M",
-        "color": "blue",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-l-blue",
-        "size": "L",
-        "color": "blue",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-xl-blue",
-        "size": "XL",
-        "color": "blue",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-xxl-blue",
-        "size": "XXL",
-        "color": "blue",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-m-graphite",
-        "size": "M",
-        "color": "graphite",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-l-graphite",
-        "size": "L",
-        "color": "graphite",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-xl-graphite",
-        "size": "XL",
-        "color": "graphite",
-        "stock": 5
-      },
-      {
-        "sku": "men-boxers-ab-melange-xxl-graphite",
-        "size": "XXL",
-        "color": "graphite",
+        "color": "set",
         "stock": 5
       }
     ],
@@ -856,7 +682,7 @@
     "slug": "men-socks-stripe",
     "title": "Мужские короткие носки «Полоска», Корея",
     "category": "socks",
-    "price": 250,
+    "price": 220,
     "popularity": 88,
     "badges": [],
     "colors": [
