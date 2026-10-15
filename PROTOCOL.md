@@ -1,7 +1,7 @@
 # PROTOCOL.md — «Носи носки», мини-магазин носков Иры
 
 ## Текущий фокус
-▶ Следующий шаг — **домен и сервер** (инструкции в `ЗАПУСК/1_домен.md`, `ЗАПУСК/2_сервер.md`, `ЗАПУСК/3_сайт_на_сервер.md`).
+▶ Боевой сайт выложен: **https://nosinoski.ru** (Timeweb App Platform, Frontend). Обновление — `bash deploy/publish-site.sh`. Следующий шаг — уведомления о заказах и студия.
 Параллельно ждём от Иры данные (см. список в сессии «2026-10-15 (вечер-2)»): @username в Telegram, ссылка на Авито, закупочные цены, составы, цена Яндекс ПВЗ→ПВЗ.
 Демо уже опубликовано: https://planetasofa2012-code.github.io/nosi-noski/ (предложение для Иры: /ira/).
 
@@ -13,6 +13,8 @@
 ## 🔗 Ссылки
 | Что | Адрес |
 |-----|-------|
+| **Боевой сайт** | https://nosinoski.ru (и https://www.nosinoski.ru) |
+| Технический адрес приложения | https://planetasofa2012-code-nosi-noski-8c53.twc1.net |
 | **Демо-сайт** (можно отправлять) | https://planetasofa2012-code.github.io/nosi-noski/ |
 | **Демо фотостудии** | https://planetasofa2012-code.github.io/nosi-noski/studio/ |
 | **Предложение для Иры** | https://planetasofa2012-code.github.io/nosi-noski/ira/ (исходник `brand/predlozhenie-ire.html`) |
@@ -293,3 +295,16 @@
 | Nano Banana дорисовывает брендовую обувь | в промпте явно: plain unbranded shoes, no logos |
 | `opengraph-image.png` + basePath дублирует подпапку | OG-картинку класть в `public/` и указывать в `metadata.openGraph.images` |
 | Бельё и носки надлежащего качества не подлежат возврату | Постановление № 2463, но действует право отказа при дистанционной продаже |
+
+---
+
+## Сессия: 2026-10-15 — выкладка на nosinoski.ru (Timeweb App Platform)
+
+- Создано приложение Timeweb Cloud App Platform **Frontend** `nosinoski`, **id 270753**, IP 178.209.127.53, регион Москва (ru-3), пресет **2801 — 1 ₽**.
+- Источник: GitHub `planetasofa2012-code/nosi-noski`, ветка **`site`** (готовая статика), framework `static-nobuild`, build_cmd пустой, index_dir `/`, автодеплой включён.
+- Домены приложения: `nosinoski.ru` (A 178.209.127.53, запись создана Timeweb), `www.nosinoski.ru` (A 178.209.127.53, добавлена вручную через API), технический `planetasofa2012-code-nosi-noski-8c53.twc1.net`.
+- SSL: бесплатный Let's Encrypt, выпускается автоматически. Платный SSL не покупали.
+- Автопродление домена nosinoski.ru включено (оплачен до 15.10.2027).
+- Как обновлять: `bash deploy/publish-site.sh` → сборка → push в ветку `site` → Timeweb деплоит сам (~1 мин).
+- Находки API: привязка доменов к приложению — `PATCH /api/v1/apps/{id}/domains` с `{"domains":[...]}` (в документации нет). Список **заменяется целиком** — технический домен надо передавать вместе с остальными, иначе он пропадает из списка.
+- В момент выкладки домен ещё не был делегирован в зоне .ru (RIPN отвечал NXDOMAIN) — свежая регистрация, обычно до нескольких часов.
