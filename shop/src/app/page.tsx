@@ -33,7 +33,7 @@ export default async function Home() {
       <section className="mx-auto grid max-w-6xl items-center gap-8 px-4 pt-6 pb-10 md:grid-cols-2 md:pt-12">
         <div className="order-2 md:order-1">
           <p className="inline-block -rotate-2 rounded-md bg-accent-2 px-2.5 py-1 text-sm font-bold tracking-wide text-accent-2-ink uppercase ring-2 ring-black">
-            Новая коллекция
+            Носки из Кореи
           </p>
           <h1 className="mt-4 font-display text-4xl leading-[1.05] font-black uppercase md:text-6xl">
             Носки, за которые{' '}
@@ -41,7 +41,7 @@ export default async function Home() {
             разуться
           </h1>
           <p className="mt-5 max-w-md text-lg text-muted">
-            Мишки, бантики, розы — носки с характером. И бельё на каждый день. {freeShippingText}.
+            Привозим носки из Кореи: мягкая плотная ткань и аккуратная вязка — носить приятнее, чем магазинные. Мишки, бантики, розы и классика. {freeShippingText}.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/catalog" className="btn-sticker rounded-full bg-accent px-7 py-3.5 font-bold text-accent-ink">
@@ -94,8 +94,8 @@ export default async function Home() {
       <section className="mx-auto mt-16 grid max-w-6xl gap-5 px-4 sm:grid-cols-3">
         {[
           ['🚚', 'Доставка по Новосибирску', `Самовывоз, Яндекс Доставка, Авито. ${freeShippingText}`, 'bg-accent-2 text-accent-2-ink', '-rotate-1'],
-          ['🧦', 'Принты с характером', 'Мишки, буквы, ромбы — носки, которые хочется показать', 'bg-accent text-accent-ink', 'rotate-1'],
-          ['📏', 'Подскажем размер', 'Сомневаетесь — напишите нам в Telegram или MAX, поможем выбрать', 'bg-surface text-ink', '-rotate-1'],
+          ['🧦', 'Корейское качество', 'Мягкая плотная ткань, аккуратная вязка, удобная резинка — такие приятно носить и не стыдно подарить', 'bg-accent text-accent-ink', 'rotate-1'],
+          ['📏', 'Подскажем размер', 'Сомневаетесь — напишите нам в Telegram, поможем выбрать', 'bg-surface text-ink', '-rotate-1'],
         ].map(([icon, title, text, tone, rot]) => (
           <div key={title} className={`${tone} ${rot} rounded-[20px] border-2 border-black p-5 shadow-hard`}>
             <div className="text-3xl" aria-hidden>{icon}</div>

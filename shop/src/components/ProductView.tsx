@@ -68,6 +68,9 @@ export function ProductView({ product, initialStock }: { product: Product; initi
       <div>
         <Badges product={product} outOfStock={!anyStock} />
         <h1 className="mt-3 font-display text-2xl leading-tight font-semibold md:text-3xl">{product.title}</h1>
+        {fromKorea(product) && (
+          <p className="mt-2 inline-block rounded-full border border-line bg-surface px-3 py-1 text-sm font-semibold">Сделано в Корее</p>
+        )}
         <div className="mt-3 flex items-baseline gap-3">
           <span className="text-2xl font-semibold">{formatPrice(product.price)}</span>
           {product.oldPrice && <span className="text-lg text-muted line-through">{formatPrice(product.oldPrice)}</span>}
@@ -163,6 +166,15 @@ export function ProductView({ product, initialStock }: { product: Product; initi
             <p>{product.composition}</p>
             <p className="mt-1 text-muted">{product.care}</p>
           </Details>
+          {product.label?.length ? (
+            <Details title="С корейской бирки — перевод">
+              <ul className="space-y-1">
+                {product.label.map((l) => (
+                  <li key={l}>• {l}</li>
+                ))}
+              </ul>
+            </Details>
+          ) : null}
           <Details title="Доставка и оплата">
             <ul className="space-y-1">
               {Object.values(DELIVERY_METHODS).map((d) => (
@@ -240,3 +252,5 @@ function Gallery({ product }: { product: Product }) {
     </div>
   );
 }
+
+const fromKorea = (p: Product) => /Коре/.test(p.title + p.description) || !!p.label?.some((l) => l.includes('Корея'));

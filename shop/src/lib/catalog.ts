@@ -21,6 +21,10 @@ export type Product = {
   description: string;
   composition: string;
   care: string;
+  /** Перевод корейской бирки — строки списком (показывается в карточке) */
+  label?: string[];
+  /** Что уточнить у Иры — только для нас, на сайт не выводится */
+  todo?: string[];
   badges: Badge[];
   popularity: number;
   avitoUrl?: string;
