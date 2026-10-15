@@ -1,5 +1,5 @@
 // Шаблоны сцен для фото товара. Промпты на английском — модель понимает их точнее.
-const KEEP = `The product in the reference photo(s) must stay EXACTLY the same: identical colors, print/pattern, knit texture, ribbing, stitching, labels and proportions. Do not invent new details, do not change the design. Photorealistic, high-end e-commerce photography, soft natural light, sharp focus on the product, no text, no watermark, no logos added. Any shoes, clothing and props must be plain and unbranded — no brand logos, no swooshes, no stripes trademarks.`;
+const KEEP = `The product in the reference photo(s) must stay EXACTLY the same: identical colors, print/pattern, knit texture, ribbing, stitching, labels and proportions. Do not invent new details, do not change the design. Photorealistic, high-end e-commerce photography, soft natural light, sharp focus on the product, no text, no watermark, no logos added. Any shoes, clothing and props must be plain and unbranded — no brand logos, no swooshes, no stripes trademarks. Exactly two legs and two feet, anatomically correct and connected to the body, natural relaxed pose, legs not twisted. Both socks are an identical matching pair. Being in socks without shoes only indoors.`;
 
 export const SCENES = {
   packshot: {
@@ -25,7 +25,7 @@ export const SCENES = {
   lifestyle: {
     title: 'Лайфстайл на улице',
     icon: '🍂',
-    prompt: `Lifestyle street photo: adult person wearing these exact socks with white sneakers and cuffed jeans, stepping on autumn leaves on a city sidewalk, shallow depth of field, focus on the socks, warm golden hour light. ${KEEP}`,
+    prompt: `Lifestyle street photo: adult person wearing these exact socks with plain white sneakers on BOTH feet (never one shoe off) and cuffed jeans, stepping on autumn leaves on a city sidewalk, shallow depth of field, focus on the socks, warm golden hour light. ${KEEP}`,
   },
   custom: {
     title: 'Свой вариант',
