@@ -1,0 +1,34 @@
+# 7. Деплой — «Носи носки»
+
+> Стадия 7 цикла Георгия. Порядок: работает локально → код в GitHub → сервер → автодеплой. На сервере руками не править.
+
+## Где живёт
+| Что | Значение |
+|---|---|
+| Боевой сайт | https://nosinoski.ru, https://www.nosinoski.ru |
+| Хостинг | Timeweb Cloud App Platform, **Frontend**, приложение `nosinoski`, id **270753**, Москва (ru-3), тариф 1 ₽ |
+| Технический адрес | https://planetasofa2012-code-nosi-noski-8c53.twc1.net |
+| Источник | GitHub `planetasofa2012-code/nosi-noski`, ветка **`site`** (готовая статика), автодеплой включён |
+| DNS | A `@` и `www` → 178.209.127.53 (Timeweb) |
+| SSL | Let's Encrypt, выпускается автоматически |
+| Демо | GitHub Pages: https://planetasofa2012-code.github.io/nosi-noski/ |
+
+## Как выкладывать
+```bash
+bash deploy/publish-site.sh   # боевой: сборка → ветка site → Timeweb сам передеплоит (1–2 мин)
+bash deploy/publish-demo.sh   # демо на GitHub Pages
+```
+После выкладки — открыть живой адрес и проверить изменение, затем запись в журнал ниже.
+
+## Секреты
+Только имена; значения — в `~/.env.keys`: `TIMEWEB_CLOUD_TOKEN`, `OPENROUTER_API_KEY`. Пилот — статический сайт без серверных переменных.
+
+## Бэкапы и откат
+- Код и каталог (`shop/src/data/products.json`, фото) — в GitHub; откат: `git revert` → `publish-site.sh`.
+- Склад — Google Таблица (история версий Google). Данных покупателей на сайте нет.
+
+## Журнал деплоев
+| Дата | Что ушло | Проверка |
+|---|---|---|
+| 2026-10-15 | Первая выкладка на Timeweb (технический адрес) | 200 OK |
+| 2026-10-15 | 23 фото на моделях (женские, мужские, детские, разные возрасты) | nosinoski.ru, www и фото — 200, SSL валиден |

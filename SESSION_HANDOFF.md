@@ -1,27 +1,14 @@
 # Протокол передачи сессии
-**Дата:** 2026-10-15, ~18:10 (Новосибирск)
+**Дата:** 2026-10-15, вечер
 **Проект:** `C:\Users\Александр\.gemini\antigravity\scratch\миниинтернет магазин Ире`
 
-## Текущая задача
-Перезапуск сессии, чтобы подгрузился коннектор **Google Drive** (подключён на claude.ai к аккаунту магазина `noskinosi9@gmail.com`, права: все файлы Диска).
-
 ## Статус
-- ✅ Сайт выложен на Timeweb Cloud App Platform (Frontend, id 270753, 1 ₽): https://planetasofa2012-code-nosi-noski-8c53.twc1.net — работает.
-- ⏳ `nosinoski.ru` куплен (16:57), A-записи `@` и `www` → 178.209.127.53, автопродление включено. В 17:49 зона .ru ещё не опубликовала домен (NXDOMAIN). Whois: `REGISTERED, DELEGATED, UNVERIFIED` — пользователю сказано проверить, не просит ли Timeweb подтвердить данные владельца.
-- ✅ Файл склада: `stock/sklad-nosinoski.xlsx` (+ копия «Склад Носи носки.xlsx» на рабочем столе), генератор `python stock/make-sheet.py`. 123 позиции, лист `stock` (колонки A–E под Apps Script), «Итого», «Как пользоваться».
-- ✅ Google-аккаунт магазина: `noskinosi9@gmail.com` (записан в PROTOCOL.md и ЗАПУСК/8).
+- ✅ https://nosinoski.ru работает (200, SSL).
+- ✅ Склад в Google Таблицах: https://docs.google.com/spreadsheets/d/1c9MkNja5vQA-2FM-6Et_UD2klKKCtWEbqb21mxO8qhI/edit (аккаунт noskinosi9). Коннектора Google Sheets нет — правки только руками или перезагрузкой.
+- ✅ 23 фото на моделях на сайте; студия по умолчанию на Nano Banana 2.1 (≈3,5 ₽/фото).
+- ✅ Стадии 6–9 по Георгию (`6_testing.md` … `9_release.md`) + правило в глобальном CLAUDE.md.
 
 ## Следующие шаги
-1. Проверить, что Google-инструменты доступны (ToolSearch «google drive» / «google sheets»). Загрузить skill `anthropic-skills:google-workspace` и прочитать `references/sheets.md`.
-2. Создать в аккаунте `noskinosi9` Google Таблицу «Носи носки — склад» из `stock/sklad-nosinoski.xlsx` (Drive create_file с конвертацией) или собрать через Sheets-коннектор: лист `stock`, цвета 0/1–2, фильтр, закреплённая шапка, «Итого», памятка. Проверить чтением. Дать пользователю ссылку.
-3. Проверить nosinoski.ru: `socket.gethostbyname('nosinoski.ru')` == 178.209.127.53, https://nosinoski.ru и www → 200, сертификат (`GET /api/v1/apps/270753/domains`, токен `TIMEWEB_CLOUD_TOKEN` в `~/.env.keys`, не печатать). Напоминание через CronCreate было на 18:59 — после перезапуска оно пропало, проверить вручную.
-4. Потом: подключить Apps Script (stock/apps-script.gs) к таблице — через `clasp` (один вход пользователя в браузере) и чтение остатков на сайте.
-
-## Контекст
-- Пилот без ИП: заказы — сообщением в Telegram Иры (site.orderMode='messenger'); @username Иры ещё не получен → в корзине «Скопировать заказ».
-- Все носки — из Кореи; перевод бирок в поле `label`; вопросы к Ире — `ira-todo.json`.
-- Обновить сайт: `bash deploy/publish-site.sh` (ветка `site` → Timeweb сам передеплоит). Демо: `bash deploy/publish-demo.sh`.
-- Пользователь просит тяжёлую работу отдавать субагентам.
-
-## Изменённые файлы в этой сессии
-brand/logo/*, brand/og.*, brand/render.sh, shop/src/** (корзина, доставка, бирки, Корея), shop/src/data/products.json, ira-todo.json, deploy/publish-site.sh, stock/make-sheet.py, stock/sklad-nosinoski.xlsx, ЗАПУСК/*, PROTOCOL.md, 5.1_tasks.md
+1. Фото на моделях для оставшихся носков без них: men-socks-rider, men-socks-diamonds, men-socks-updown, men-socks-short-stripes, men-socks-slazenger-short, socks-ny-short, socks-diagonal, sport-socks-trek-pile, soft-socks-*, warm-socks-polo-stars. Скрипты-образцы: генерация через `studio/lib/nanobanana.mjs`, модель `google/gemini-nano-banana-2.1`, проверять каждое фото глазами.
+2. Подключить Apps Script (stock/apps-script.gs) к таблице — clasp, вход пользователя.
+3. Релиз-чек-лист `9_release.md`: Telegram Иры, Вебмастер, Метрика.
