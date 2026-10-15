@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { discountPercent, totalStock, type Product, type StockMap } from '@/lib/catalog';
+import { discountPercent, totalStock, type Category, type Product, type StockMap } from '@/lib/catalog';
 import { asset, formatPrice, site } from '@/lib/site';
 
 export function Badges({ product, outOfStock }: { product: Product; outOfStock?: boolean }) {
@@ -15,9 +15,10 @@ export function Badges({ product, outOfStock }: { product: Product; outOfStock?:
   );
 }
 
-export function ProductCard({ product, stock, priority }: { product: Product; stock?: StockMap; priority?: boolean }) {
+export function ProductCard({ product, stock, priority, category }: { product: Product; stock?: StockMap; priority?: boolean; category?: Category }) {
   const left = totalStock(product, stock);
-  const [first, second] = product.images;
+  const cover = category && product.coverFor?.[category];
+  const [first, second] = cover ? [cover, product.images[1] ?? product.images[0]] : product.images;
   return (
     <Link href={`/product/${product.slug}`} className="group block">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[20px] border-2 border-black bg-surface-2 transition group-hover:-translate-y-1 group-hover:shadow-hard">

@@ -22,8 +22,8 @@
       }
     ],
     "images": [
-      "/products/socks-teddy-1986/1791995509438.jpg",
       "/products/socks-teddy-1986/1791995509457.jpg",
+      "/products/socks-teddy-1986/1791995509438.jpg",
       "/products/socks-teddy-1986/1791995509465.jpg"
     ],
     "description": "Высокие носки с мягким плюшевым мишкой на голени и вязаной надписью «Teddy Bear 1986» на стопе. Резинка в рубчик держит и не давит. Бренд Cozy Socks.",
@@ -73,8 +73,8 @@
       }
     ],
     "images": [
-      "/products/socks-leopard-letter/1791995509482.jpg",
       "/products/socks-leopard-letter/1791995509498.jpg",
+      "/products/socks-leopard-letter/1791995509482.jpg",
       "/products/socks-leopard-letter/1791995509503.jpg"
     ],
     "description": "Носки с пушистой буквой в леопардовый принт — стильно с кедами и как маленький подарок с инициалом. Рубчик на резинке. Бренд Cozy Socks.",
@@ -117,8 +117,8 @@
       }
     ],
     "images": [
-      "/products/men-socks-argyle/1791995509517.jpg",
       "/products/men-socks-argyle/1791995509532.jpg",
+      "/products/men-socks-argyle/1791995509517.jpg",
       "/products/men-socks-argyle/1791995509537.jpg"
     ],
     "description": "Классические мужские носки с узором «аргайл» — под брюки и на каждый день. Мягкая резинка без сдавливания (без давления на щиколотку). Сделано в Корее.",
@@ -195,8 +195,8 @@
       }
     ],
     "images": [
-      "/products/socks-bows/1792040197912.jpg",
       "/products/socks-bows/1792040197931.jpg",
+      "/products/socks-bows/1792040197912.jpg",
       "/products/socks-bows/1792040197937.jpg"
     ],
     "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи",
@@ -253,8 +253,8 @@
       }
     ],
     "images": [
-      "/products/socks-smile-upside/1792040948922.jpg",
       "/products/socks-smile-upside/1792040948963.jpg",
+      "/products/socks-smile-upside/1792040948922.jpg",
       "/products/socks-smile-upside/1792040948971.jpg"
     ],
     "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи",
@@ -289,8 +289,8 @@
       }
     ],
     "images": [
-      "/products/socks-mini-bows/1792040197986.jpg",
       "/products/socks-mini-bows/1792040198002.jpg",
+      "/products/socks-mini-bows/1792040197986.jpg",
       "/products/socks-mini-bows/1792040198008.jpg"
     ],
     "care": "Стирка при 30°, наизнанку, не отбеливать, сушить без батареи"
@@ -331,8 +331,8 @@
       }
     ],
     "images": [
-      "/products/socks-roses/1792040198022.jpg",
       "/products/socks-roses/1792040198036.jpg",
+      "/products/socks-roses/1792040198022.jpg",
       "/products/socks-roses/1792040198041.jpg",
       "/products/socks-roses/1792040198045.jpg"
     ],
@@ -401,8 +401,8 @@
       }
     ],
     "images": [
+      "/products/socks-fluffy-smile/ai-model-1.jpg",
       "/products/socks-fluffy-smile/1792040198058.jpg",
-      "/products/socks-fluffy-smile/1792040198072.jpg",
       "/products/socks-fluffy-smile/1792040198077.jpg",
       "/products/socks-fluffy-smile/1792040198082.jpg"
     ],
@@ -730,8 +730,8 @@
       }
     ],
     "images": [
-      "/products/men-socks-stripe/1792040432048.jpg",
       "/products/men-socks-stripe/1792040432061.jpg",
+      "/products/men-socks-stripe/1792040432048.jpg",
       "/products/men-socks-stripe/1792040432071.jpg"
     ],
     "tags": [
@@ -1927,8 +1927,12 @@
       "/products/socks-ny-crew/1792100000023.jpg",
       "/products/socks-ny-crew/1792100000024.jpg",
       "/products/socks-ny-crew/1792100000025.jpg",
-      "/products/socks-ny-crew/1792100000026.jpg"
+      "/products/socks-ny-crew/1792100000026.jpg",
+      "/products/socks-ny-crew/ai-model-w.jpg"
     ],
+    "coverFor": {
+      "women-socks": "/products/socks-ny-crew/ai-model-w.jpg"
+    },
     "label": [
       "Состав: хлопок, полиэстер, полиуретан и др.",
       "Страна: Республика Корея",
@@ -1990,8 +1994,12 @@
       "/products/socks-ny-short/1792100000027.jpg",
       "/products/socks-ny-short/1792100000028.jpg",
       "/products/socks-ny-short/1792100000029.jpg",
-      "/products/socks-ny-short/1792100000030.jpg"
+      "/products/socks-ny-short/1792100000030.jpg",
+      "/products/socks-ny-short/ai-model-w-ny-short.jpg"
     ],
+    "coverFor": {
+      "women-socks": "/products/socks-ny-short/ai-model-w-ny-short.jpg"
+    },
     "label": [
       "Состав: хлопок, полиэстер, полиуретан и др.",
       "Страна: Республика Корея",
@@ -2113,8 +2121,12 @@
       "/products/socks-studios/ai-model-1.jpg",
       "/products/socks-studios/1792100000034.jpg",
       "/products/socks-studios/1792100000035.jpg",
-      "/products/socks-studios/1792100000036.jpg"
+      "/products/socks-studios/1792100000036.jpg",
+      "/products/socks-studios/ai-model-w-studios.jpg"
     ],
+    "coverFor": {
+      "women-socks": "/products/socks-studios/ai-model-w-studios.jpg"
+    },
     "label": [
       "Состав: хлопок, полиэстер, полиуретан",
       "Страна: Республика Корея",
@@ -2164,8 +2176,12 @@
       "/products/socks-look-at-this/ai-model-m-old.jpg",
       "/products/socks-look-at-this/1792100000037.jpg",
       "/products/socks-look-at-this/1792100000038.jpg",
-      "/products/socks-look-at-this/1792100000039.jpg"
-    ]
+      "/products/socks-look-at-this/1792100000039.jpg",
+      "/products/socks-look-at-this/ai-model-w-old.jpg"
+    ],
+    "coverFor": {
+      "women-socks": "/products/socks-look-at-this/ai-model-w-old.jpg"
+    }
   },
   {
     "slug": "socks-france",
@@ -2253,8 +2269,12 @@
       "/products/socks-painting/ai-model-1.jpg",
       "/products/socks-painting/1792100000043.jpg",
       "/products/socks-painting/1792100000044.jpg",
-      "/products/socks-painting/1792100000045.jpg"
+      "/products/socks-painting/1792100000045.jpg",
+      "/products/socks-painting/ai-model-w-painting.jpg"
     ],
+    "coverFor": {
+      "women-socks": "/products/socks-painting/ai-model-w-painting.jpg"
+    },
     "label": [
       "Состав: хлопок, полиэстер и др.",
       "Страна: Республика Корея",

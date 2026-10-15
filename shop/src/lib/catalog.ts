@@ -18,6 +18,8 @@ export type Product = {
   colors: Color[];
   variants: Variant[];
   images: string[];
+  /** Обложка в конкретном разделе (унисекс: в «Женских» — фото с женщиной) */
+  coverFor?: Partial<Record<Category, string>>;
   description: string;
   composition: string;
   care: string;
