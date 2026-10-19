@@ -36,3 +36,4 @@ bash deploy/publish-demo.sh   # демо на GitHub Pages
 | 2026-10-15 | Фото на модели — обложка карточек (30 товаров) | карточки отдают ai-model первым |
 | 2026-10-15 | Фото белья на моделях обложками (5 товаров); кнопки заказа в Telegram @Nosinoski_bot и MAX; страница заказа /order/?c=<код>; вход продавца /admin и панель «Склад» | 200: / + /order/?c=oy7hym17zuq2 + /admin; фото model-1.jpg и model-1-v2.jpg — 200; model-1.jpg первым на странице товара; bot-строки (Nosinoski_bot, se14698091_bot) в JS |
 | 2026-10-15 | Бесплатная доставка от 5 пар (было 3) | 200: https://nosinoski.ru; конфиг freeShippingPairs: 5 в site.ts |
+| 2026-10-19 | Подсказка "Помочь с выбором?" → бот (HelpBubble, через 25 с на каталоге и товаре, ведёт в @Nosinoski_bot и MAX с ?start=q_<slug> / ?start=help) | 200: /, /product/socks-teddy-1986/, www, /catalog/; SSL валиден; строки в чанке 0wqhund52tcxk.js; site 877487dc → 18db99ae |
