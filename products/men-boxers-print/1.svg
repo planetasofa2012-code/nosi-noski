@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000"><rect width="800" height="1000" fill="#FBF7F2"/>
+  <circle cx="260" cy="780" r="120" fill="#C8664A" opacity=".12"/><path d="M220 300h360l-40 260c-60 20-110 40-140 90-30-50-80-70-140-90z" fill="#C8664A"/>
+       <rect x="220" y="290" width="360" height="50" rx="14" fill="#fff" opacity=".35"/>
+  <text x="400" y="930" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#7A6F66">фото появится из фотостудии</text></svg>
