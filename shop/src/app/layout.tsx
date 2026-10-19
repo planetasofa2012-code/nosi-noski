@@ -3,6 +3,7 @@ import { Manrope, Unbounded } from 'next/font/google';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Marquee } from '@/components/Marquee';
+import { HelpBubble } from '@/components/HelpBubble';
 import { CartProvider } from '@/lib/cart';
 import { site } from '@/lib/site';
 import './globals.css';
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Marquee />
           <main className="flex-1">{children}</main>
           <Footer />
+          <HelpBubble />
         </CartProvider>
       </body>
     </html>

@@ -25,6 +25,7 @@ const ids = (v) => (v ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 const state = existsSync(STATE_FILE) ? JSON.parse(readFileSync(STATE_FILE, 'utf8')) : {};
 state.cursor ??= {};
 state.links ??= {};
+state.ctx ??= {}; // чат покупателя → slug товара, о котором он спрашивает
 const save = () => writeFileSync(STATE_FILE, JSON.stringify(state));
 
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[c]);
@@ -48,6 +49,12 @@ function skuCode(sku) {
     x = Math.imul(x, 0x01000193) >>> 0;
   }
   return (x % 1679616).toString(36).padStart(4, '0');
+}
+
+/** Товар по slug (для вопросов со страницы товара) или null */
+function productBySlug(slug) {
+  if (!slug) return null;
+  return JSON.parse(readFileSync(CATALOG, 'utf8')).find((p) => p.slug === slug) ?? null;
 }
 
 /** Код → текст заказа, или null. Каталог читаем каждый раз — обновился сайт, обновился и бот (после git pull) */
@@ -229,6 +236,18 @@ ${esc(fromSite)}
     );
   }
 
+  // Покупатель пришёл из подсказки «Помочь с выбором?» на сайте: ?start=help или ?start=q_<slug товара>
+  if (m.start && /^(help|q_[a-z0-9-]+)$/.test(m.payload)) {
+    const product = m.payload.startsWith('q_') ? productBySlug(m.payload.slice(2)) : null;
+    state.ctx[`${t.key}:${m.chat}`] = product?.slug ?? null;
+    save();
+    return reply(
+      `Здравствуйте! Это магазин «${SHOP}» 🧦\n\n` +
+        (product ? `Вы смотрели <b>${esc(product.title)}</b>. ` : '') +
+        'Напишите вопрос — про размер, цвет, наличие или что выбрать в подарок. Продавец ответит здесь же.',
+    );
+  }
+
   // Покупатель
   if (m.start) {
     return reply(`Здравствуйте! Это магазин «${SHOP}» 🧦\n\nВставьте сюда текст заказа — он уже скопирован на сайте (нажмите на поле ввода → «Вставить») — и отправьте.\n\nИли просто напишите вопрос — продавец ответит здесь же.`);
@@ -246,7 +265,10 @@ ${esc(fromSite)}
 async function forward(t, m) {
   const head = isOrder(m.text) ? '🛒 <b>Новый заказ</b>' : '💬 <b>Сообщение</b>';
   const link = m.orderCode ? `\n\n📷 Заказ с фото: ${SITE}/order/?c=${m.orderCode}` : '';
-  const html = `${head} · ${t.name}\nОт: ${esc(m.from.name ?? '')} (${t.contact(m.from)})\n\n${esc(m.text)}${link}`;
+  // о каком товаре спрашивает (запомнили, когда пришёл из подсказки на странице товара)
+  const about = !m.orderCode && productBySlug(state.ctx[`${t.key}:${m.chat}`]);
+  const ctx = about ? `\nПро товар: «${esc(about.title)}» — ${SITE}/product/${about.slug}/` : '';
+  const html = `${head} · ${t.name}\nОт: ${esc(m.from.name ?? '')} (${t.contact(m.from)})${ctx}\n\n${esc(m.text)}${link}`;
   let delivered = 0;
   for (const a of transports) {
     for (const admin of a.admins) {
