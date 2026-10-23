@@ -1,3 +1,4 @@
 .env
 state.json
 bot.log
+bot.old.log

@@ -285,16 +285,41 @@ async function forward(t, m) {
   if (!delivered) console.error('⚠ Заказ никому не доставлен — проверьте *_ADMIN_IDS:', m.text);
 }
 
+const now = () => new Date().toLocaleString('ru-RU');
+
 async function loop(t) {
-  console.log(`${t.name}: бот ${await t.me()} запущен, продавцы: ${t.admins.join(', ') || '— (напишите боту /id)'}`);
+  // при старте сети может ещё не быть (автозапуск при включении ПК) — ждём, а не падаем
+  let offline = null; // с какого момента нет связи
+  const fail = async (e) => {
+    if (!offline) {
+      offline = now();
+      console.error(`${offline} ${t.name}: нет связи (${e.message}) — повторяю каждые 5 с`);
+    }
+    await sleep(5000);
+  };
+  const ok = () => {
+    if (offline) console.log(`${now()} ${t.name}: связь вернулась (не было с ${offline})`);
+    offline = null;
+  };
+
+  for (;;) {
+    try {
+      const me = await t.me();
+      ok();
+      console.log(`${now()} ${t.name}: бот ${me} запущен, продавцы: ${t.admins.join(', ') || '— (напишите боту /id)'}`);
+      break;
+    } catch (e) {
+      await fail(e);
+    }
+  }
   for (;;) {
     try {
       const msgs = await t.poll();
-      for (const m of msgs) await handle(t, m).catch((e) => console.error(`${t.name}, ошибка обработки:`, e.message));
+      ok();
+      for (const m of msgs) await handle(t, m).catch((e) => console.error(`${now()} ${t.name}, ошибка обработки:`, e.message));
       save();
     } catch (e) {
-      console.error(`${t.name}, сеть:`, e.message, '— повтор через 5 с');
-      await sleep(5000);
+      await fail(e);
     }
   }
 }
